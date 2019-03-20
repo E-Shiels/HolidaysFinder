@@ -1,6 +1,6 @@
 import React from 'react'
 import Holiday from './Holiday.js'
-
+const uuidv4 = require('uuid/v4')
 export default class Holidays extends React.Component {
 renderHolidays = (props) => {
 
@@ -17,7 +17,7 @@ renderHolidays = (props) => {
         }
         console.log(typeof locationsList);
         return (
-          <Holiday key={holiday.description}
+          <Holiday key={uuidv4()}
                  date={holiday.date.iso}
                  name={holiday.name}
                  observance={holiday.type.toString()}
