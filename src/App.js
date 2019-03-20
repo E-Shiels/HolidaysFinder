@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Holiday from './components/Holiday'
+import Holidays from './components/Holidays.js'
 
 class App extends Component {
   render() {
@@ -21,21 +21,66 @@ class App extends Component {
       <br></br>
       <br></br>
       <br></br>
-      <div>
-      <h5>Holiday Date - Holiday Name</h5>
-      <p>Description</p>
-      <p>Observance</p>
-      <p>Locations</p>
-      </div>
       <br></br>
-      <div>
-      <h5>Holiday Date - Holiday Name</h5>
-      <p>Description</p>
-      <p>Observance</p>
-      <p>Locations</p>
-      </div>
-      <br></br>
-      <Holiday description={"The stupidest holiday ever"} name="The stupid holiday" date={1} states={[{id: "1", name: "Kentucky"}, {id: "2", name: "Missouri"}]}/>
+      <Holidays holidays={[{
+          "name": "New Year's Day",
+          "description": "New Year's Day is the first day of the Gregorian calendar, which is widely used in many countries such as the USA.",
+          "date": {
+              "iso": "2019-01-01",
+              "datetime": {
+                  "year": 2019,
+                  "month": 1,
+                  "day": 1
+              }
+          },
+          "type": [
+              "National holiday"
+          ],
+          "locations": "All",
+          "states": "All"
+      },
+      {
+          "name": "World Braille Day",
+          "description": "World Braille Day celebrates the life and achievements of Louis Braille, who invented the braille code for the visually impaired.",
+          "date": {
+              "iso": "2019-01-04",
+              "datetime": {
+                  "year": 2019,
+                  "month": 1,
+                  "day": 4
+              }
+          },
+          "type": [
+              "Worldwide observance"
+          ],
+          "locations": "All",
+          "states": "All"
+      },
+      {
+          "name": "Robert E. Lee's Birthday",
+          "description": "Robert E. Lee’s birthday is an annual official state holiday that is shared with Martin Luther King’s birthday in some parts of the US.",
+          "date": {
+              "iso": "2019-01-19",
+              "datetime": {
+                  "year": 2019,
+                  "month": 1,
+                  "day": 19
+              }
+          },
+          "type": [
+              "Local holiday"
+          ],
+          "locations": "FL",
+          "states": [
+              {
+                  "id": 12,
+                  "abbrev": "FL",
+                  "name": "Florida",
+                  "exception": null,
+                  "iso": "us-fl"
+              }
+          ]
+      }]}/>
       </div>
 
     );
