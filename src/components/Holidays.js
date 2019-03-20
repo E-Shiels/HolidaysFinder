@@ -2,24 +2,27 @@ import React from 'react'
 import Holiday from './Holiday.js'
 
 export default class Holidays extends React.Component {
-
 renderHolidays = (props) => {
+
       return this.props.holidays.map(holiday => {
-        let locations = [];
-        if (holiday.states.length === 3 || holiday.states.length === 1) {
-         locations = holiday.states[0].name
+        let locationsList = [];
+        if (holiday.states.length === 1) {
+         locationsList.push({id: holiday.name, name: holiday.states[0].name})
+       } else if (holiday.states === "All") {
+         locationsList.push({id: holiday.name, name: holiday.states})
        } else {
-         locations = holiday.states.forEach(
-          locations.push(this.name)
+         holiday.states.forEach(function(state) {
+          locationsList.push({id: state.id, name: state.name})}
         )
         }
-        debugger;
+        console.log(typeof locationsList);
         return (
-          <Holiday date={holiday.date.iso}
+          <Holiday key={holiday.description}
+                 date={holiday.date.iso}
                  name={holiday.name}
                  observance={holiday.type.toString()}
                  description={holiday.description}
-                 locations={locations} />
+                 locations={locationsList} />
         )
       })
     }

@@ -1,14 +1,19 @@
 import React from 'react'
+import HolidayLocation from './HolidayLocation.js'
 
 const HolidayLocations = props => {
-  const locations = props.locations;
-  const holidayLocations = locations.map((location) =>
-    <li key={location.id.toString()}>
-    {location.name}
-    </li>
-  );
+  function createHolidayLocations() {
+    if (typeof props.locations == "undefined") {
+      return "WHAT"
+    } else if (typeof props.locations === "string" || props.locations.length === 1) {
+    return <HolidayLocation location={{name: props.locations}} />
+  } else {
+      return props.locations.map((location) => {
+      return <HolidayLocation location={{name: location.name}}/>
+    })
+  }}
   return (
-    <ul>{holidayLocations}</ul>
+    createHolidayLocations()
   )
 }
 
