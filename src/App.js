@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Holiday from './components/Holiday'
 
 class App extends Component {
   render() {
@@ -33,6 +34,8 @@ class App extends Component {
       <p>Observance</p>
       <p>Locations</p>
       </div>
+      <br></br>
+      <Holiday description={"The stupidest holiday ever"} name="The stupid holiday" date={1} states={[{id: "1", name: "Kentucky"}, {id: "2", name: "Missouri"}]}/>
       </div>
 
     );
