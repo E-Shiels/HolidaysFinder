@@ -5,7 +5,7 @@ export default class Holidays extends React.Component {
 renderHolidays = (props) => {
 
       return this.props.holidays.map(holiday => {
-        let locationsList = [];
+        let locationsList = [""];
         if (holiday.states.length === 1) {
          locationsList.push({id: holiday.name, name: holiday.states[0].name})
        } else if (holiday.states === "All") {
