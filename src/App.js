@@ -20,8 +20,6 @@ class App extends Component {
       <input type="submit"/>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
       <Holidays holidays={[{
           "name": "New Year's Day",
           "description": "New Year's Day is the first day of the Gregorian calendar, which is widely used in many countries such as the USA.",
