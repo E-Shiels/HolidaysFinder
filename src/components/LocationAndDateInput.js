@@ -42,7 +42,7 @@ export default class LocationAndTimeInput extends React.Component {
 
 
   render() {
-    const { selectedLocation } = this.state;
+    const { selectedLocation } = this.state; //destructuring
     return(
       <>
       <h2>Find holidays in </h2>
