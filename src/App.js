@@ -4,8 +4,6 @@ import Holidays from './components/Holidays.js'
 import LocationAndDateInput from './components/LocationAndDateInput.js'
 let canadaHolidays = require('./data.json');
 
-
-
 class App extends Component {
   render() {
     return (
