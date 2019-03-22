@@ -115,6 +115,23 @@ class App extends Component {
                   "iso": "us-mo"
               }
           ]
+      },
+      {
+          "name": "World Cancer Day",
+          "description": "World Cancer Day is an annual global event on February 4 to raise people’s awareness of cancer.",
+          "date": {
+              "iso": "2019-02-04",
+              "datetime": {
+                  "year": 2019,
+                  "month": 2,
+                  "day": 4
+              }
+          },
+          "type": [
+              "United Nations observance", "TESTTESTTEST"
+          ],
+          "locations": "All",
+          "states": "All"
       }]}/>
       </div>
     );
