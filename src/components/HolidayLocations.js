@@ -1,6 +1,7 @@
 import React from 'react'
 import HolidayLocation from './HolidayLocation.js'
 const uuidv4 = require('uuid/v4')
+
 const HolidayLocations = props => {
   function createHolidayLocations() {
     if (typeof props.locations == "undefined") {
