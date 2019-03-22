@@ -15,7 +15,6 @@ renderHolidays = (props) => {
           locationsList.push({id: state.id, name: state.name})}
         )
         }
-        console.log(typeof locationsList);
         return (
           <Holiday key={uuidv4()}
                  date={holiday.date.iso}
