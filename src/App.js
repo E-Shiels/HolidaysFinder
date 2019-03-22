@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Holidays from './components/Holidays.js'
+import LocationAndDateInput from './components/LocationAndDateInput.js'
+
 
 class App extends Component {
   render() {
     return (
       <div>
-      <h2>Find holidays in </h2>
-      <select>
-      <option>All</option>
-      <option>Ontario</option>
-      <option>Quebec</option>
-      <option>Manitoba</option>
-      <option>Prince Edward Island</option>
-      </select>
-      <h3>On</h3>
-      <input type="date"/>
-      <br></br>
-      <input type="submit"/>
+      <LocationAndDateInput />
       <br></br>
       <br></br>
       <Holidays holidays={[{
