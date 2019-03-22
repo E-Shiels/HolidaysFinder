@@ -15,7 +15,7 @@ renderHolidays = (props) => {
         } else if (holiday.states === "All") {
           locationsList.push({
             id: holiday.name,
-            name: holiday.states
+            name: "Canada (All)"
           })
         } else {
           holiday.states.forEach((state) => {
@@ -33,12 +33,13 @@ renderHolidays = (props) => {
         })}
 
         return (
-          <Holiday key={uuidv4()}
-                 date={holiday.date.iso}
-                 name={holiday.name}
-                 observance={observanceList}
-                 description={holiday.description}
-                 locations={locationsList} />
+          <Holiday
+              key={uuidv4()}
+              date={holiday.date.iso}
+              name={holiday.name}
+              observance={observanceList}
+              description={holiday.description}
+              locations={locationsList} />
         )
       })
     }
