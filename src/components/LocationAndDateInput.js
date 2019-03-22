@@ -54,6 +54,7 @@ export default class LocationAndTimeInput extends React.Component {
           defaultValue={{ value: 'all', label:'Canada (All)' }}
           isMulti
         />
+
       <h3>On</h3>
       <SingleDatePicker
         date={this.state.date} // momentPropTypes.momentObj or null
