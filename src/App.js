@@ -7,8 +7,9 @@ let canadaHolidays = require('./data.json');
 
 class App extends Component {
   render() {
+        let style = {width: '90%'}
     return (
-      <div>
+      <div style={style}>
       <LocationAndDateInput />
       <br></br>
       <br></br>
