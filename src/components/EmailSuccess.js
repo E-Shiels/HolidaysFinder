@@ -2,6 +2,8 @@ import React from 'react'
 
 export default class EmailSuccess extends React.Component {
 
+
+  //REQUIRES REDUX TO RESET STATE
   // componentDidMount() {
   //   setTimeout(() => {
   //     this.props.prevStep()
