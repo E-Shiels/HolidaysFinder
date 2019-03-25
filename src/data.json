@@ -218,7 +218,7 @@
                 "type": [
                     "Common local holiday"
                 ],
-                "locations": "AB, ON, SK, NB",
+                "locations": "AB, ON, SK, NB, BC",
                 "states": [
                     {
                         "id": 57,
@@ -247,25 +247,7 @@
                         "name": "New Brunswick",
                         "exception": null,
                         "iso": "ca-nb"
-                    }
-                ]
-            },
-            {
-                "name": "Family Day",
-                "description": "Family Day is a public holiday in the Canadian provinces of Alberta, Ontario, Saskatchewan, British Columbia, and New Brunswick.",
-                "date": {
-                    "iso": "2019-02-18",
-                    "datetime": {
-                        "year": 2019,
-                        "month": 2,
-                        "day": 18
-                    }
-                },
-                "type": [
-                    "Common local holiday"
-                ],
-                "locations": "BC",
-                "states": [
+                    },
                     {
                         "id": 58,
                         "abbrev": "BC",
