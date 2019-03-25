@@ -12,3 +12,23 @@ Holiday.create(name: "New Year's Day",
     locations: "All",
     states: "All"
 )
+Holiday.create(name: "Epiphany",
+    description: "Many people in Canada annually observe Epiphany, or Three Kings’ Day, on January 6. It is a Christian observance.",
+    date: "2019-01-06",
+    holiday_type: "Observance, Christian",
+    locations: "All",
+    states: "All"
+)
+Holiday.create(name: "Islander Day",
+description: "Islander Day is a day off for many people in the province of Prince Edward Island in Canada.",
+date: "2019-02-18",
+holiday_type: "Common local holiday",
+locations: "PE",
+states:  "PE"
+)
+Holiday.create(name: "Family Day",
+    description: "Family Day is a public holiday in the Canadian provinces of Alberta, Ontario, Saskatchewan, British Columbia, and New Brunswick.",
+    date: "2019-02-18",
+    holiday_type: "Common local holiday",
+    locations: "AB, ON, SK, NB",
+    states: "AB, ON, SK, NB")
