@@ -37,6 +37,7 @@
 
 File.open('C:\Users\erics\Documents\Coding and Programming\TodaysHolidays\TodaysHolidays Git\TodaysHolidays\src\data.json') do |f|
 data = JSON.parse(f.read)
-h = Holiday.create(name: data["holidays"][11]["name"], description: data["holidays"][11]["description"], date: data["holidays"][11]["date"]["iso"])
- h.save
+data["holidays"].each do |holiday|
+  Holiday.create(name: holiday["name"], description: holiday["description"], date: holiday["date"]["iso"], holiday_type: holiday["type"].join(", "), locations: holiday["locations"], states: holiday["states"].class == String ? holiday["states"] : holiday["states"] .map {|state| state["name"].gsub(/[^\w\s]/, "").strip}.join(", "))
+end
 end
