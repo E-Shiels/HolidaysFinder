@@ -41,6 +41,16 @@ class Api::V1::HolidaysController < ApplicationController
   #   @holiday.destroy
   # end
 
+  def data_testing
+    #include "json"
+    rake db:seed
+    # File.open('C:\Users\erics\Documents\Coding and Programming\TodaysHolidays\TodaysHolidays Git\TodaysHolidays\TodaysHolidaysBackend\app\controllers\api\v1\data.json') do |f|
+    # data = JSON.parse(f.read)
+    # raise params.inspect
+    # end
+    #File.close('C:\Users\erics\Documents\Coding and Programming\TodaysHolidays\TodaysHolidays Git\TodaysHolidays\TodaysHolidaysBackend\app\controllers\api\v1\data.json')
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_holiday
