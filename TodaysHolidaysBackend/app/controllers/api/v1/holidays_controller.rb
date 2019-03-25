@@ -1,10 +1,11 @@
-class HolidaysController < ApplicationController
+class Api::V1::HolidaysController < ApplicationController
   before_action :set_holiday, only: [:show, :update, :destroy]
 
   # GET /holidays
   # GET /holidays.json
   def index
     @holidays = Holiday.all
+    render json: @holidays
   end
 
   # GET /holidays/1
@@ -12,17 +13,17 @@ class HolidaysController < ApplicationController
   def show
   end
 
-  # POST /holidays
-  # POST /holidays.json
-  def create
-    @holiday = Holiday.new(holiday_params)
-
-    if @holiday.save
-      render :show, status: :created, location: @holiday
-    else
-      render json: @holiday.errors, status: :unprocessable_entity
-    end
-  end
+  # # POST /holidays
+  # # POST /holidays.json
+  # def create
+  #   @holiday = Holiday.new(holiday_params)
+  #
+  #   if @holiday.save
+  #     render :show, status: :created, location: @holiday
+  #   else
+  #     render json: @holiday.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /holidays/1
   # PATCH/PUT /holidays/1.json
@@ -34,11 +35,11 @@ class HolidaysController < ApplicationController
     end
   end
 
-  # DELETE /holidays/1
-  # DELETE /holidays/1.json
-  def destroy
-    @holiday.destroy
-  end
+  # # DELETE /holidays/1
+  # # DELETE /holidays/1.json
+  # def destroy
+  #   @holiday.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
