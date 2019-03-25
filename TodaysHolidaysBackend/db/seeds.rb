@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Holiday.create(name: "New Year's Day",
+    description: "New Year's Day is the first day of a new year according to the Gregorian calendar used in Canada and many other countries.",
+    date: "2019-01-01",
+    holiday_type: "National holiday",
+    locations: "All",
+    states: "All"
+)
