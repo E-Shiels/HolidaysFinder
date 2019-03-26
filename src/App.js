@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Holidays from './components/Holidays.js'
+import HolidaysContainer from './components/HolidaysContainer.js'
 import LocationAndDateInput from './components/LocationAndDateInput.js'
 import SiteFooter from './components/SiteFooter.js'
 import EmailContainer from './components/EmailContainer.js'
-let canadaHolidays = require('./data.json');
+// let canadaHolidays = require('./data.json');
 
 class App extends Component {
   render() {
@@ -12,9 +12,7 @@ class App extends Component {
     return (
       <div style={style}>
       <LocationAndDateInput />
-      <br></br>
-      <br></br>
-      <Holidays holidays={canadaHolidays.holidays}/>
+      <HolidaysContainer />
       <EmailContainer />
       <SiteFooter />
       </div>
