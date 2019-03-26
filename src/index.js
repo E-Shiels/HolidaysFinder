@@ -9,7 +9,7 @@ import reducer from './modules/reducer.js'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-const store = createStore(reducer.js)
+const store = createStore(reducer)
 
 //Allows for hot (re)loading
 if (module.hot) {
