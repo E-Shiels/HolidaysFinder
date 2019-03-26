@@ -9,23 +9,6 @@ class Api::V1::HolidaysController < ApplicationController
     render json: @holidays
   end
 
-  # GET /holidays/1
-  # GET /holidays/1.json
-  def show
-  end
-
-  # # POST /holidays
-  # # POST /holidays.json
-  # def create
-  #   @holiday = Holiday.new(holiday_params)
-  #
-  #   if @holiday.save
-  #     render :show, status: :created, location: @holiday
-  #   else
-  #     render json: @holiday.errors, status: :unprocessable_entity
-  #   end
-  # end
-
   # PATCH/PUT /holidays/1
   # PATCH/PUT /holidays/1.json
   def update
@@ -35,12 +18,6 @@ class Api::V1::HolidaysController < ApplicationController
     #   render json: @holiday.errors, status: :unprocessable_entity
     # end
   end
-
-  # # DELETE /holidays/1
-  # # DELETE /holidays/1.json
-  # def destroy
-  #   @holiday.destroy
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
