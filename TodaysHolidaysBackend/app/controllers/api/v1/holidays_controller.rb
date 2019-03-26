@@ -4,6 +4,7 @@ class Api::V1::HolidaysController < ApplicationController
   # GET /holidays
   # GET /holidays.json
   def index
+    #Holiday.select{ |holiday| holiday.locations.include?("QC") || holiday.locations.include?("NB")}
     @holidays = Holiday.all
     render json: @holidays
   end
@@ -28,11 +29,11 @@ class Api::V1::HolidaysController < ApplicationController
   # PATCH/PUT /holidays/1
   # PATCH/PUT /holidays/1.json
   def update
-    if @holiday.update(holiday_params)
-      render :show, status: :ok, location: @holiday
-    else
-      render json: @holiday.errors, status: :unprocessable_entity
-    end
+    # if @holiday.update(holiday_params)
+    #   render :show, status: :ok, location: @holiday
+    # else
+    #   render json: @holiday.errors, status: :unprocessable_entity
+    # end
   end
 
   # # DELETE /holidays/1
