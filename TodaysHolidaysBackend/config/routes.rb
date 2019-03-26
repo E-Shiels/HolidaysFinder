@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     namespace :v1 do
 
-      resources :holidays
+      resources :holidays, only: [:index, :update]
 
     end
 
