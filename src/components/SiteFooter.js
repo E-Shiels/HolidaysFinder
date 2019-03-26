@@ -19,7 +19,7 @@ var phantom = {
   width: '100%',
 }
 
-export default function SiteFooter({ children }) {
+export default function SiteFooter() {
     return (
         <div>
             <div style={phantom} />
