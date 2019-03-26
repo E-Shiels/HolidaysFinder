@@ -9,33 +9,32 @@ renderHolidays = (props) => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
-            id: holiday.name,
             name: holiday.states[0].name
           })
         } else if (holiday.states === "All") {
           locationsList.push({
-            id: holiday.name,
             name: "Canada (All)"
           })
         } else {
-          holiday.states.forEach((state) => {
+          holiday.states.split(",").forEach((state) => {
             locationsList.push({
-              id: state.id,
               name: state.name
             })
           })
         }
         let observanceList = [];
-        if (holiday.type.length === 1) {
+        if (holiday.type.includes(",")) {
+          holiday.type.split(", ").forEach(type => {
+            observanceList.push(type.strip)
+          })
+        } else {
           observanceList.push(holiday.type)
-        } else {holiday.type.forEach((type) => {
-          observanceList.push(type)
-        })}
+        }
 
         return (
           <Holiday
               key={uuidv4()}
-              date={holiday.date.iso}
+              date={holiday.date}
               name={holiday.name}
               observance={observanceList}
               description={holiday.description}
