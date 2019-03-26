@@ -39,6 +39,10 @@ export default class LocationAndTimeInput extends React.Component {
     console.log(this.state.selectedLocation[0].label)
     console.log(this.state.date._d)
   }
+  temporaryHandleClick = (event) => {
+    event.preventDefault();
+    fetch()
+  }
 
 
   render() {
