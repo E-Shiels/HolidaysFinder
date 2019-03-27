@@ -23,6 +23,7 @@ export default class HolidaysContainer extends React.Component {
     });
     return holidaysArray;
   }
+  
 getListOfObservanceTypes = data => {
     let observanceList = [];
     if (this.state.holidaysData !== []) {
