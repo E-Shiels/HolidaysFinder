@@ -31,7 +31,6 @@ export default class LocationAndTimeInput extends React.Component {
 
   handleChange = (selectedLocation) => {
     this.setState({ selectedLocation });
-    console.log(`Option selected:`, selectedLocation);
   }
 
   handleSubmit = (event) => {
