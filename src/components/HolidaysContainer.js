@@ -1,6 +1,7 @@
 import React from 'react';
 import Holidays from './Holidays.js';
 import HolidaysFilters from './HolidaysFilters';
+import LocationAndDateInput from './LocationAndDateInput.js'
 
 export default class HolidaysContainer extends React.Component {
   state = {
@@ -23,7 +24,7 @@ export default class HolidaysContainer extends React.Component {
     });
     return holidaysArray;
   }
-  
+
 getListOfObservanceTypes = data => {
     let observanceList = [];
     if (this.state.holidaysData !== []) {
@@ -45,6 +46,17 @@ getListOfObservanceTypes = data => {
     return observanceList;
   }
 
+  applySearchAndGetData = searchTerms => {
+    let data = this.state.holidaysData;
+    let newHolidays = [];
+    data.forEach(holiday => {
+      if ((holiday.date === searchTerms.date || searchTerms.date === "All") && (holiday.locations === 'All'|| holiday.locations.includes(searchTerms.locations) || searchTerms.locations.includes('Canada (All)'))) {
+        newHolidays.push(holiday)
+      }
+    })
+    this.setState({filteredHolidays: newHolidays})
+  }
+
   componentDidMount() {
     fetch('http://localhost:3000/api/v1/holidays')
     .then(response => response.json())
@@ -59,8 +71,9 @@ getListOfObservanceTypes = data => {
   render() {
     return(
       <>
+      <LocationAndDateInput getData={this.applySearchAndGetData}/>
       <HolidaysFilters filters={this.getListOfObservanceTypes(this.state.holidaysData)}/>
-      <Holidays holidays={this.state.holidaysData} />
+      <Holidays holidays={this.state.filteredHolidays} />
       </>
     )
   }
