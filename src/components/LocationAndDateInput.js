@@ -35,6 +35,29 @@ export default class LocationAndTimeInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    let locations = [""];
+    if (this.state.selectedLocation === null) {
+      locations = ["Canada (All)"]
+    } else {locations = this.state.selectedLocation.map(location => {
+      return location.value
+    })}
+
+    let date = "";
+    if (this.state.date === null) {
+      date = "All"
+    } else {
+    date = new Date(this.state.date).toISOString().substr(0, 10) //remove time information
+  }
+
+    this.props.getData({
+      locations: locations,
+      date: date
+    })
+
+  this.setState({
+    focused: false,
+  })
   }
 
   render() {
@@ -61,6 +84,7 @@ export default class LocationAndTimeInput extends React.Component {
         showClearDate
         reopenPickerOnClearDate
         enableOutsideDays
+        isOutsideRange={() => false}
       />
         <br></br>
         <input type="submit"/>
