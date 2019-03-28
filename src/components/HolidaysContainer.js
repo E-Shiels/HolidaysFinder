@@ -6,9 +6,8 @@ import LocationAndDateInput from "./LocationAndDateInput.js";
 export default class HolidaysContainer extends React.Component {
   state = {
     holidaysData: [],
-    filteredHolidays: [],
-    observances: [],
-  }
+    filteredHolidays: []
+  };
 
   toHolidayObjectsFromJSON = data => {
     let holidaysArray = [];
@@ -23,28 +22,7 @@ export default class HolidaysContainer extends React.Component {
       });
     });
     return holidaysArray;
-  }
-
-getListOfObservanceTypes = data => {
-    let observanceList = [];
-    if (this.state.holidaysData !== []) {
-      this.state.holidaysData.forEach(holiday => {
-        if (holiday.type.includes(",")) {
-          holiday.type.split(',').forEach(type => {
-            let trimmedType = type.trim();
-            if (!observanceList.includes(trimmedType)) {
-              observanceList.push(trimmedType);
-            }
-          })
-        } else {
-          if (!observanceList.includes(holiday.type)) {
-            observanceList.push(holiday.type);
-          }
-        }
-      })
-    }
-    return observanceList;
-  }
+  };
 
   applySearchAndGetData = searchTerms => {
     this.setState({
