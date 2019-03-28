@@ -3,7 +3,13 @@ import Holiday from './Holiday.js'
 const uuidv4 = require('uuid/v4')
 export default class Holidays extends React.Component {
 renderHolidays = (props) => {
-
+      if (this.props.holidays[0] === "No results") {
+        return (
+          <div>
+          <p>There are no holidays matching those terms.</p>
+          </div>
+        )
+      } else {
       return this.props.holidays.map(holiday => {
 
         let locationsList = [""];
@@ -41,6 +47,7 @@ renderHolidays = (props) => {
               locations={locationsList} />
         )
       })
+    }
     }
 
 render() {
