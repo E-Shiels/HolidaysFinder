@@ -5,13 +5,14 @@ import equal from "fast-deep-equal";
 
 export default class HolidaysFilters extends React.Component {
   state = {
-    observances: []
+    observances: [],
+    arrayValue: []
   };
 
   getListOfObservanceTypes = data => {
     let observanceList = [];
     if (data[0] === "No results") {
-      
+
     } else {
       if (data !== []) {
         data.forEach(holiday => {
@@ -35,15 +36,27 @@ export default class HolidaysFilters extends React.Component {
     });
   };
 
+  selectMultipleOption = (value) => {
+    this.setState({ arrayValue: value })
+  }
+
   returnObservanceFilterPicker = data => {
-    //debugger
     if (!data.length) {
       return "";
     } else {
       return (
         <div>
           <h4>Filter by Observance Type</h4>
-          <Picky options={this.state.observances} />
+          <Picky
+          options={this.state.observances}
+          value={this.state.arrayValue}
+          onChange={this.selectMultipleOption}
+          placeholder={"All"}
+          numberDisplayed={5}
+          includeSelectAll={true}
+          includeFilter={true}
+          multiple={true}
+          />
         </div>
       );
     }
