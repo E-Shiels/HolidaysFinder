@@ -1,15 +1,16 @@
 import React from 'react'
 import Holiday from './Holiday.js'
 const uuidv4 = require('uuid/v4')
+
 export default class Holidays extends React.Component {
-renderHolidays = (props) => {
-      if (this.props.holidays[0] === "No results") {
-        return (
-          <div>
-          <p>There are no holidays matching those terms.</p>
-          </div>
-        )
-      } else {
+  renderHolidays = (props) => {
+    if (this.props.holidays[0] === "No results") {
+      return (
+        <div>
+        <p> There are no holidays matching those terms.</p>
+        </div>
+      )
+    } else {
       return this.props.holidays.map(holiday => {
 
         let locationsList = [""];
@@ -37,20 +38,20 @@ renderHolidays = (props) => {
           observanceList.push(holiday.type)
         }
 
-        return (
-          <Holiday
-              key={uuidv4()}
-              date={holiday.date}
-              name={holiday.name}
-              observance={observanceList}
-              description={holiday.description}
-              locations={locationsList} />
+        return ( <
+          Holiday key = { uuidv4() }
+          date = { holiday.date }
+          name = { holiday.name }
+          observance = { observanceList }
+          description = { holiday.description }
+          locations = { locationsList }
+          />
         )
       })
     }
-    }
+  }
 
-render() {
-  return(this.renderHolidays())
-}
+  render() {
+    return (this.renderHolidays())
+  }
 }
