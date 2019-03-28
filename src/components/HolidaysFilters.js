@@ -31,6 +31,19 @@ export default class HolidaysFilters extends React.Component {
     });
   };
 
+  returnObservanceFilterPicker = data => {
+    //debugger
+    if (!data.length) {
+      return "";
+    } else {
+      return (
+        <div>
+          <h4>Filter by Observance Type</h4>
+          <Picky options={this.state.observances} />
+        </div>
+      );
+    }
+  };
 
   componentDidUpdate(prevProps) {
     if (!equal(this.props.holidays, prevProps.holidays)) {
@@ -38,15 +51,7 @@ export default class HolidaysFilters extends React.Component {
     }
   }
 
-  returnObservanceFilterPicker() {
-    if () {<Picky
-      options={this.state.observances}
-    />}
-  }
-
   render() {
-    return(
-
-    )
+    return this.returnObservanceFilterPicker(this.props.holidays);
   }
 }
