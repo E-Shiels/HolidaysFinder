@@ -10,21 +10,25 @@ export default class HolidaysFilters extends React.Component {
 
   getListOfObservanceTypes = data => {
     let observanceList = [];
-    if (this.props.holidays !== []) {
-      this.props.holidays.forEach(holiday => {
-        if (holiday.type.includes(",")) {
-          holiday.type.split(",").forEach(type => {
-            let trimmedType = type.trim();
-            if (!observanceList.includes(trimmedType)) {
-              observanceList.push(trimmedType);
+    if (data[0] === "No results") {
+      
+    } else {
+      if (data !== []) {
+        data.forEach(holiday => {
+          if (holiday.type.includes(",")) {
+            holiday.type.split(",").forEach(type => {
+              let trimmedType = type.trim();
+              if (!observanceList.includes(trimmedType)) {
+                observanceList.push(trimmedType);
+              }
+            });
+          } else {
+            if (!observanceList.includes(holiday.type)) {
+              observanceList.push(holiday.type);
             }
-          });
-        } else {
-          if (!observanceList.includes(holiday.type)) {
-            observanceList.push(holiday.type);
           }
-        }
-      });
+        });
+      }
     }
     this.setState({
       observances: observanceList
@@ -47,11 +51,11 @@ export default class HolidaysFilters extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (!equal(this.props.holidays, prevProps.holidays)) {
-      this.getListOfObservanceTypes();
+      this.getListOfObservanceTypes(this.props.holidays);
     }
   }
 
   render() {
-    return this.returnObservanceFilterPicker(this.props.holidays);
+    return this.returnObservanceFilterPicker(this.state.observances);
   }
 }
