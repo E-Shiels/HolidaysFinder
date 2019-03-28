@@ -1,7 +1,7 @@
-import React from 'react';
-import Holidays from './Holidays.js';
-import HolidaysFilters from './HolidaysFilters';
-import LocationAndDateInput from './LocationAndDateInput.js'
+import React from "react";
+import Holidays from "./Holidays.js";
+import HolidaysFilters from "./HolidaysFilters.js";
+import LocationAndDateInput from "./LocationAndDateInput.js";
 
 export default class HolidaysContainer extends React.Component {
   state = {
@@ -49,51 +49,72 @@ getListOfObservanceTypes = data => {
   applySearchAndGetData = searchTerms => {
     this.setState({
       filteredHolidays: []
-    })
+    });
 
     let data = this.state.holidaysData;
     let newHolidays = [];
-    if (searchTerms.locations === "All" || searchTerms.locations === "ALL" ||  searchTerms.locations.includes('all') || !searchTerms.locations.length) {
+    if (
+      searchTerms.locations === "All" ||
+      searchTerms.locations === "ALL" ||
+      searchTerms.locations.includes("all") ||
+      !searchTerms.locations.length
+    ) {
       data.forEach(holiday => {
-        if ((holiday.date === searchTerms.date || searchTerms.date === "All")) {
-          newHolidays.push(holiday)
+        if (holiday.date === searchTerms.date || searchTerms.date === "All") {
+          newHolidays.push(holiday);
         }
-      })
+      });
     } else {
-    data.forEach(holiday => {
-      if ((holiday.date === searchTerms.date || searchTerms.date === "All") && (holiday.locations === 'All'|| [holiday.locations].some(location => searchTerms.locations.indexOf(location) >= 0))) {
-        newHolidays.push(holiday)
-      }
-    })}
+      data.forEach(holiday => {
+        if (
+          (holiday.date === searchTerms.date || searchTerms.date === "All") &&
+          (holiday.locations === "All" ||
+            [holiday.locations].some(
+              location => searchTerms.locations.indexOf(location) >= 0
+            ))
+        ) {
+          newHolidays.push(holiday);
+        }
+      });
+    }
 
     if (!Array.isArray(newHolidays) || !newHolidays.length) {
-      newHolidays.push("No results")
+      newHolidays.push("No results");
     }
-    if ((!searchTerms.locations || searchTerms.locations === "Canada (All)" || !searchTerms.locations.length) && (searchTerms.date === "All" || searchTerms.date === "ALL")) {
-      this.setState({filteredHolidays: this.state.holidaysData})
+    if (
+      (!searchTerms.locations ||
+        searchTerms.locations[0] === "Canada (All)" ||
+        !searchTerms.locations.length) &&
+      (searchTerms.date === "All" || searchTerms.date === "ALL")
+    ) {
+      this.setState({
+        filteredHolidays: this.state.holidaysData
+      });
     } else {
-    this.setState({filteredHolidays: newHolidays})
-  }
-  }
+      this.setState({
+        filteredHolidays: newHolidays
+      });
+    }
+  };
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/holidays')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      this.setState({
-        holidaysData: this.toHolidayObjectsFromJSON(data)
+    fetch("http://localhost:3000/api/v1/holidays")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.setState({
+          holidaysData: this.toHolidayObjectsFromJSON(data)
+        });
       });
-    });
   }
 
   render() {
-    return(
+    return (
       <>
-      <LocationAndDateInput getData={this.applySearchAndGetData}/>
-      <HolidaysFilters filters={this.getListOfObservanceTypes(this.state.holidaysData)}/>
-      <Holidays holidays={this.state.filteredHolidays} />
+        <LocationAndDateInput getData={this.applySearchAndGetData} />
+        <HolidaysFilters holidays={this.state.filteredHolidays} />
+        <Holidays holidays={this.state.filteredHolidays} />
       </>
-    )
+    );
   }
 }
