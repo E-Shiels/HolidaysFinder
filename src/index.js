@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import store from './modules/store'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import store from "./modules/store";
 
-import './index.css';
+import "./index.css";
 
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
 //Allows for hot (re)loading
 if (module.hot) {
@@ -15,8 +15,9 @@ if (module.hot) {
 
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+    <App />
   </Provider>,
-  document.getElementById('root'));
+  document.getElementById("root")
+);
 
 serviceWorker.register();
