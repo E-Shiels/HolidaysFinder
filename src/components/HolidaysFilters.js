@@ -56,6 +56,7 @@ export default class HolidaysFilters extends React.Component {
           includeSelectAll={true}
           includeFilter={true}
           multiple={true}
+          keepOpen={true}
           />
         </div>
       );
@@ -65,6 +66,9 @@ export default class HolidaysFilters extends React.Component {
   componentDidUpdate(prevProps) {
     if (!equal(this.props.holidays, prevProps.holidays)) {
       this.getListOfObservanceTypes(this.props.holidays);
+      this.setState({
+        arrayValue: []
+      })
     }
   }
 
