@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
-import { createStore } from "redux";
 
 import reducer from "./modules/reducers/reducer.js";
 //import other reducers
