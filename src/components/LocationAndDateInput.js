@@ -4,7 +4,6 @@ import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 
-
 const locationOptions = [
   { value: 'all', label:'Canada (All)'},
   { value: 'AB', label:'Alberta'},
