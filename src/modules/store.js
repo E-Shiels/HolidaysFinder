@@ -1,7 +1,13 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import reducer from './modules/reducers/reducer.js'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, combineReducers } from "redux";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import reducer from "./modules/reducers/reducer.js";
+import { createStore } from "redux";
 
-const store = createStore(reducer)
+const middleware = [thunk];
+
+export default createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSIONS__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(...middleware)
+);
