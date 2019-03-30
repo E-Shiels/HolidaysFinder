@@ -3,6 +3,7 @@ import "./App.css";
 import HolidaysContainer from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
 import EmailContainer from "./components/EmailContainer.js";
+import FavoriteButton from './components/FavoriteButton.js'; //temp
 
 import NotFound from "./components/NotFound.js";
 
@@ -15,6 +16,7 @@ class App extends Component {
       <Router>
         <div style={style}>
           <h1>Holidays</h1>
+          <FavoriteButton /> //temp
           <Switch>
             <Route path="/about" />
             <Route exact path="/" />

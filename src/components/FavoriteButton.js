@@ -11,7 +11,9 @@ export default class FavoriteButton extends React.Component {
 
   render() {
     return(
-      ""
+      <i class="material-icons">
+        star
+      </i>
     )
   }
 }
