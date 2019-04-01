@@ -36,15 +36,16 @@ export default class Holidays extends React.Component {
         } else {
           observanceList.push(holiday.type)
         }
-
+      //  debugger
         return ( <
           Holiday key = { holiday.id }
+          id = { holiday.id }
           date = { holiday.date }
           name = { holiday.name }
           observance = { observanceList }
           description = { holiday.description }
           locations = { locationsList }
-          favorite = {false}
+          favorite = {holiday.favorite}
           />
         )
       })

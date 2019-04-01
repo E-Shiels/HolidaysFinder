@@ -13,12 +13,14 @@ export default class HolidaysContainer extends React.Component {
     let holidaysArray = [];
     data.forEach(holiday => {
       holidaysArray.push({
+        id: holiday.id,
         name: holiday.name,
         description: holiday.description,
         date: holiday.date,
         type: holiday.holiday_type,
         locations: holiday.locations,
-        states: holiday.states
+        states: holiday.states,
+        favorite: holiday.favorite
       });
     });
     return holidaysArray;
@@ -84,7 +86,7 @@ export default class HolidaysContainer extends React.Component {
           holidaysData: this.toHolidayObjectsFromJSON(data)
         });
       });
-  }
+  };
 
   render() {
     return (

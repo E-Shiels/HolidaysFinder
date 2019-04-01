@@ -10,8 +10,10 @@ export default class FavoriteButton extends React.Component {
   }
 
   handleChange = () => {
-    this.setState({favorite: !this.state.favorite})
-    this.props.changeDatabase()
+    this.setState({favorite: !this.state.favorite}, function() {
+      this.props.updateHolidayFavoriteState(this.state.favorite)
+    })
+    //fix setState batching problem
   }
 
   render() {

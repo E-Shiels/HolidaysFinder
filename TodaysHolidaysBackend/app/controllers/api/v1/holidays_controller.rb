@@ -12,11 +12,13 @@ class Api::V1::HolidaysController < ApplicationController
   # PATCH/PUT /holidays/1
   # PATCH/PUT /holidays/1.json
   def update
-    # if @holiday.update(holiday_params)
-    #   render :show, status: :ok, location: @holiday
-    # else
-    #   render json: @holiday.errors, status: :unprocessable_entity
-    # end
+    #raise params.inspect
+    if @holiday.update_attribute(:favorite, params)
+      raise params.inspect
+       render json: @holiday, status: :ok
+     else
+       render json: @holiday.errors, status: :unprocessable_entity
+     end
   end
 
   private
@@ -27,6 +29,6 @@ class Api::V1::HolidaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def holiday_params
-      params.require(:holiday).permit(:name, :description, :date, :type, :locations, :states)
+      params.require(:holiday).permit(:name, :description, :date, :type, :locations, :states, :favorite)
     end
 end
