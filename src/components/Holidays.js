@@ -1,6 +1,5 @@
 import React from 'react'
 import Holiday from './Holiday.js'
-const uuidv4 = require('uuid/v4')
 
 export default class Holidays extends React.Component {
   renderHolidays = (props) => {
@@ -39,13 +38,13 @@ export default class Holidays extends React.Component {
         }
 
         return ( <
-          Holiday key = { uuidv4() }
+          Holiday key = { holiday.id }
           date = { holiday.date }
           name = { holiday.name }
           observance = { observanceList }
           description = { holiday.description }
           locations = { locationsList }
-          favorite = {false} 
+          favorite = {false}
           />
         )
       })
