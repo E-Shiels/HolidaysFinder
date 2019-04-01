@@ -17,11 +17,13 @@ class App extends Component {
           <h1>Holidays</h1>
           <Switch>
             <Route path="/about" />
-            <Route exact path="/" />
-
-            <HolidaysContainer />
-            <EmailContainer />
-
+            <Route exact path="/" render={props =>
+              <div>
+              <HolidaysContainer />
+              <EmailContainer />
+              </div>
+            }
+            />
             <Route component={NotFound} />
           </Switch>
           <SiteFooter />
