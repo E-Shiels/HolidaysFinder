@@ -3,16 +3,21 @@ import HolidayDescription from './HolidayDescription'
 import HolidayHeader from './HolidayHeader'
 import HolidayLocations from './HolidayLocations'
 import HolidayObservance from './HolidayObservance'
+import FavoriteButton from './FavoriteButton.js';
 
-const Holiday = props => {
+export default class Holiday extends React.Component {
+  updateHolidayFavoriteState = () => {
+    console.log("CHANGED")
+  }
+  render() {
   return (
     <>
-    <HolidayHeader date={props.date} name={props.name} />
-    <HolidayDescription description={props.description} />
-    <HolidayObservance observance={props.observance} />
-    <HolidayLocations locations={props.locations} />
+    <HolidayHeader date={this.props.date} name={this.props.name} />
+    <HolidayDescription description={this.props.description} />
+    <HolidayObservance observance={this.props.observance} />
+    <HolidayLocations locations={this.props.locations} />
+    <FavoriteButton favorite={this.props.favorite} changeDatabase={this.updateHolidayFavoriteState}/>
     </>
   )
 }
-
-export default Holiday
+}

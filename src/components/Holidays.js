@@ -45,6 +45,7 @@ export default class Holidays extends React.Component {
           observance = { observanceList }
           description = { holiday.description }
           locations = { locationsList }
+          favorite = {false} 
           />
         )
       })
