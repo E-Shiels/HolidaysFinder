@@ -12,9 +12,11 @@ export default class Holiday extends React.Component {
       method: "PUT",
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application-json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(favoriteStatus)
+      body: JSON.stringify({ holiday: {
+        favorite: (favoriteStatus === false ? 0 : 1)
+      }})
     }
   ).then(res => res.json())
   }

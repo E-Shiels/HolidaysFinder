@@ -12,9 +12,8 @@ class Api::V1::HolidaysController < ApplicationController
   # PATCH/PUT /holidays/1
   # PATCH/PUT /holidays/1.json
   def update
-    #raise params.inspect
-    if @holiday.update_attribute(:favorite, params)
-      raise params.inspect
+    if @holiday.update_attribute(:favorite, params[:holiday][:favorite])
+       #raise params.inspect
        render json: @holiday, status: :ok
      else
        render json: @holiday.errors, status: :unprocessable_entity
