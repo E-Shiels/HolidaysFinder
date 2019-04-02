@@ -1,5 +1,9 @@
-import React from 'react'
+import React from "react";
 
-const HolidayHeader = props => <h2>{props.date} - {props.name}</h2>
+const HolidayHeader = props => (
+  <h2>
+    {props.date} - {props.name}
+  </h2>
+);
 
 export default HolidayHeader;
