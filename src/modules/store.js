@@ -6,11 +6,15 @@ import reducer from "./reducers/reducer.js";
 //import other reducers
 
 //combine reducers
+const reducers = combineReducers({
+  reducer,
+  //import other reducers
+})
 
-const middleware = [thunk];
+const middleware = [thunk, logger];
 
 export default createStore(
-  reducer,
+  reducers,
   window.__REDUX_DEVTOOLS_EXTENSIONS__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(...middleware)
 );
