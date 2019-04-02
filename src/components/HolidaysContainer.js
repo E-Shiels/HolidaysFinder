@@ -30,7 +30,6 @@ export default class HolidaysContainer extends React.Component {
     this.setState({
       filteredHolidays: []
     });
-
     let data = this.state.holidaysData;
     let newHolidays = [];
     if (
@@ -49,8 +48,8 @@ export default class HolidaysContainer extends React.Component {
         if (
           (holiday.date === searchTerms.date || searchTerms.date === "All") &&
           (holiday.locations === "All" ||
-            [holiday.locations].some(
-              location => searchTerms.locations.indexOf(location) >= 0
+            holiday.locations.split(", ").some(
+              location => searchTerms.locations.includes(location)
             ))
         ) {
           newHolidays.push(holiday);
