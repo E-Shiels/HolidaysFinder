@@ -30,7 +30,7 @@ export default class Holidays extends React.Component {
         let observanceList = [];
         if (holiday.type.includes(",")) {
           holiday.type.split(", ").forEach(type => {
-            observanceList.push(type.strip);
+            observanceList.push(type.trim());
           });
         } else {
           observanceList.push(holiday.type);
