@@ -48,9 +48,9 @@ export default class HolidaysContainer extends React.Component {
         if (
           (holiday.date === searchTerms.date || searchTerms.date === "All") &&
           (holiday.locations === "All" ||
-            holiday.locations.split(", ").some(
-              location => searchTerms.locations.includes(location)
-            ))
+            holiday.locations
+              .split(", ")
+              .some(location => searchTerms.locations.includes(location)))
         ) {
           newHolidays.push(holiday);
         }
@@ -85,7 +85,7 @@ export default class HolidaysContainer extends React.Component {
           holidaysData: this.toHolidayObjectsFromJSON(data)
         });
       });
-  };
+  }
 
   render() {
     return (
