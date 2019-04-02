@@ -10,7 +10,7 @@ const Navbar = () => (
       to="/"
     >Home</NavLink>
     <NavLink
-      classname="navbarLink"
+      className="navbarLink"
       activeClassName="activeNavbarLink"
       exact
       to="/about"
