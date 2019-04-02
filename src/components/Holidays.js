@@ -11,6 +11,7 @@ export default class Holidays extends React.Component {
       );
     } else {
       return this.props.holidays.map(holiday => {
+        //debugger
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -23,7 +24,7 @@ export default class Holidays extends React.Component {
         } else {
           holiday.states.split(",").forEach(state => {
             locationsList.push({
-              name: state.name
+              name: state.trim()
             });
           });
         }
