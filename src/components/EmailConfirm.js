@@ -1,7 +1,6 @@
 import React from "react";
 
 export default class EmailConfirm extends React.Component {
-
   saveAndConfirm = event => {
     event.preventDefault();
     this.props.nextStep();
