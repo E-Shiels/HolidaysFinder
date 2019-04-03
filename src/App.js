@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import HolidaysContainer from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
-import EmailContainer from "./components/EmailContainer.js";
+import { ConnectedEmailContainer } from "./components/EmailContainer.js";
 import Navbar from "./components/Navbar.js";
 
 import NotFound from "./components/NotFound.js";
@@ -25,7 +25,7 @@ class App extends Component {
               <br/>
               <br/>
               <h4>Sign up for our totally real email list to get totally not-fake emails.</h4>
-              <EmailContainer />
+              <ConnectedEmailContainer />
               </div>
             }
             />

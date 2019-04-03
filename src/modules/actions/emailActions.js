@@ -1,4 +1,17 @@
+export const emailNextStep = (step) => {
+  return {
+    type: 'EMAIL_NEXT_STEP', step
+  }
+}
 
-//next step
+export const emailPrevStep = (step) => {
+  return {
+    type: 'EMAIL_PREV_STEP', step
+  }
+}
 
-//prev step
+export const emailChange = (email) => {
+  return {
+    type: 'EMAIL_CHANGE', email
+  }
+}

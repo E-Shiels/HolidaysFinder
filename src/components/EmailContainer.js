@@ -1,34 +1,32 @@
 import React from "react";
+import { connect } from 'react-redux';
 import EmailInput from "./EmailInput.js";
 import EmailSuccess from "./EmailSuccess.js";
 import EmailConfirm from "./EmailConfirm.js";
+import { emailNextStep, emailPrevStep, emailChange } from '../modules/actions/emailActions.js'
 
-export default class EmailContainer extends React.Component {
-  state = {
-    step: 1,
-    email: ""
-  };
+export class EmailContainer extends React.Component {
+  componentWillMount() {
+    console.log(this.props)
+  }
 
   nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1
-    });
+    console.log(this.props)
+    this.props.dispatch(emailNextStep(this.props.step))
   };
 
   prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1
-    });
+    console.log(this.props)
+    this.props.dispatch(emailPrevStep(this.props.step))
   };
+  
   handleChange = input => event => {
     this.setState({ [input]: event.target.value });
   };
 
   render() {
-    const { step } = this.state;
-    const { email } = this.state;
+    const { step } = this.props;
+    const { email } = this.props;
     const values = { email };
     switch (step) {
       default:
@@ -54,3 +52,12 @@ export default class EmailContainer extends React.Component {
     }
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    step: state.step,
+    email: state.email
+  }
+}
+
+export const ConnectedEmailContainer = connect(mapStateToProps)(EmailContainer)
