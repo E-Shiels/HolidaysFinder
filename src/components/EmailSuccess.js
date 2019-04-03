@@ -15,7 +15,7 @@ export default class EmailSuccess extends React.Component {
 
   render() {
     return(
-      <p>Email Successfully Saved. Thanks!</p>
+      <p>Your email was successfully saved. Thanks!</p>
     )
   }
 }
