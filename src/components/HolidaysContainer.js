@@ -59,6 +59,7 @@ export default class HolidaysContainer extends React.Component {
 
     if (!Array.isArray(newHolidays) || !newHolidays.length) {
       newHolidays.push("No results");
+      newHolidays.push(searchTerms.date);  
     }
     if (
       (!searchTerms.locations ||
