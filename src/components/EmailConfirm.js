@@ -1,9 +1,14 @@
 import React from "react";
+import { emailNextStep, emailPrevStep, emailChange } from '../modules/actions/emailActions.js'
 
 export default class EmailConfirm extends React.Component {
-  saveAndConfirm = event => {
+  nextStep = (email) => {
+    this.props.dispatch(emailNextStep(this.props.step))
+    this.props.dispatch(emailChange(email))
+  };
+
+  saveAndConfirm = (event) => {
     event.preventDefault();
-    this.props.nextStep();
   };
 
   back = event => {
@@ -12,11 +17,11 @@ export default class EmailConfirm extends React.Component {
   };
 
   render() {
-    const { values } = this.props;
+    const { email } = this.props;
     return (
       <>
       <h4>Sign up for our totally real email list to get totally not-fake emails.</h4>
-        <p>{values.email}</p>
+        <p>{email}</p>
         <button type="button" onClick={this.back}>
           Back
         </button>
