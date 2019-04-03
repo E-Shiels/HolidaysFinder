@@ -24,7 +24,6 @@ class App extends Component {
               <HolidaysContainer />
               <br/>
               <br/>
-              <h4>Sign up for our totally real email list to get totally not-fake emails.</h4>
               <ConnectedEmailContainer />
               </div>
             }

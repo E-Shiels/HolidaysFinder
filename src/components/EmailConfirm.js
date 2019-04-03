@@ -15,6 +15,7 @@ export default class EmailConfirm extends React.Component {
     const { values } = this.props;
     return (
       <>
+      <h4>Sign up for our totally real email list to get totally not-fake emails.</h4>
         <p>{values.email}</p>
         <button type="button" onClick={this.back}>
           Back
