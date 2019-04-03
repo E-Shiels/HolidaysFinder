@@ -4,20 +4,22 @@ export default class EmailInput extends React.Component {
 
   saveAndContinue = (event) => {
     event.preventDefault()
+    debugger
     this.props.nextStep()
   }
 
   render() {
-    const { values } = this.props;
+    const { email } = this.props;
     return(
       <form>
       <h4>Sign up for our totally real email list to get totally not-fake emails.</h4>
         <input
-        placeholder='Email'
+        placeholder='youremail@email.com'
         onChange={this.props.handleChange('email')}
-        defaultValue={values.email}
+        defaultValue={email}
+        id='email'
         />
-        <button type="button" onClick={this.saveAndContinue}>Save Email</button>
+        <input type="submit" onClick={this.saveAndContinue}/>
       </form>
     )
   }

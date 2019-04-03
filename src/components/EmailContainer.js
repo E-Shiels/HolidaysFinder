@@ -6,28 +6,24 @@ import EmailConfirm from "./EmailConfirm.js";
 import { emailNextStep, emailPrevStep, emailChange } from '../modules/actions/emailActions.js'
 
 export class EmailContainer extends React.Component {
-  componentWillMount() {
-    console.log(this.props)
-  }
-
-  nextStep = () => {
+  nextStep = (email) => {
     console.log(this.props)
     this.props.dispatch(emailNextStep(this.props.step))
+    this.props.dispatch(emailChange(email))
   };
 
   prevStep = () => {
     console.log(this.props)
     this.props.dispatch(emailPrevStep(this.props.step))
   };
-  
+
   handleChange = input => event => {
-    this.setState({ [input]: event.target.value });
-  };
+     this.setState({ [input]: event.target.value });
+   };
 
   render() {
     const { step } = this.props;
     const { email } = this.props;
-    const values = { email };
     switch (step) {
       default:
         return;
@@ -36,7 +32,7 @@ export class EmailContainer extends React.Component {
           <EmailInput
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            values={values}
+            email={email}
           />
         );
       case 2:
@@ -44,7 +40,7 @@ export class EmailContainer extends React.Component {
           <EmailConfirm
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            values={values}
+            values={email}
           />
         );
       case 3:
@@ -55,8 +51,8 @@ export class EmailContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    step: state.step,
-    email: state.email
+    step: state.email.step,
+    email: state.email.email
   }
 }
 

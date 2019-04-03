@@ -10,7 +10,7 @@ export default function email(state = initialState, action) {
     case "EMAIL_PREV_STEP":
       return {...state, step: action.step - 1};
     case "EMAIL_CHANGE":
-      return action.email;
+      return {...state, email: action.email};
     default:
       return state;
   }
