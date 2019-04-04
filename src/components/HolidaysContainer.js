@@ -2,6 +2,8 @@ import React from "react";
 import Holidays from "./Holidays.js";
 import HolidaysFilters from "./HolidaysFilters.js";
 import LocationAndDateInput from "./LocationAndDateInput.js";
+import { connect } from 'react-redux';
+import { fetchHolidaysBegin, fetchHolidaysSuccess, fetchHolidaysFailure } from '../modules/actions/holidayDataFetchingActions.js'
 
 export default class HolidaysContainer extends React.Component {
   state = {
@@ -97,3 +99,12 @@ export default class HolidaysContainer extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    holidays: state.holidays.holidays,
+    filteredHolidays: state.holidays.filteredHolidays
+  }
+}
+
+export const ConnectedHolidaysContainer = connect(mapStateToProps)(HolidaysContainer)
