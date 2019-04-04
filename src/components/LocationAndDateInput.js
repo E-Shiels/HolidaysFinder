@@ -23,7 +23,7 @@ const locationOptions = [
 
 export default class LocationAndTimeInput extends React.Component {
   state = {
-    selectedLocation: null, //location select
+    selectedLocation: [], //location select
     date: null,
     focused: false, //date picker
   }
