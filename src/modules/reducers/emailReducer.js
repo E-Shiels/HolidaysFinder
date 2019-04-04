@@ -4,7 +4,7 @@ const initialState = {
   message: 'Your email has been succesfully saved. Thanks!'
 };
 
-export default function email(state = initialState, action) {
+export default function emailReducer(state = initialState, action) {
   switch (action.type) {
     case "EMAIL_NEXT_STEP":
       return {...state, step: action.step + 1};
