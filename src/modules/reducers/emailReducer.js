@@ -1,6 +1,7 @@
 const initialState = {
   step: 1,
   email: "",
+  message: 'Your email has been succesfully saved. Thanks!'
 };
 
 export default function email(state = initialState, action) {
@@ -11,6 +12,8 @@ export default function email(state = initialState, action) {
       return {...state, step: action.step - 1};
     case "EMAIL_CHANGE":
       return {...state, email: action.email};
+      case "MESSAGE_CHANGE":
+        return {...state, message: action.message};
     default:
       return state;
   }

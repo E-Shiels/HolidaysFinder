@@ -15,3 +15,9 @@ export const emailChange = (email) => {
     type: 'EMAIL_CHANGE', email
   }
 }
+
+export const messageChange = (message) => {
+  return {
+    type: 'MESSAGE_CHANGE', message
+  }
+}
