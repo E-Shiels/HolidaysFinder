@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 
-import email from "./reducers/emailReducer.js";
+import email from "../reducers/emailReducer.js";
 //import other reducers
 
 //combine reducers
