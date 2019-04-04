@@ -5,8 +5,13 @@ import { emailNextStep, emailChange } from '../modules/actions/emailActions.js'
 export default class EmailInput extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.dispatch(emailNextStep(this.props.step))
-    this.props.dispatch(emailChange(event.target[0].value))
+    if (event.target[0].value.includes("@") && event.target[0].value.includes(".")){
+      this.props.dispatch(emailNextStep(this.props.step))
+      this.props.dispatch(emailChange(event.target[0].value))
+    } else {
+      alert("The email address you provided is invalid. Please try again.")
+    }
+
   }
 
   render() {
