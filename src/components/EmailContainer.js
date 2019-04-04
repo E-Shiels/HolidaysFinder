@@ -27,7 +27,6 @@ export class EmailContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     step: state.email.step,
-    email: state.email.email
   }
 }
 
