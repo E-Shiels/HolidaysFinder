@@ -5,7 +5,6 @@ import thunk from "redux-thunk";
 import emailReducer from "../reducers/emailReducer.js";
 //import other reducers
 
-//combine reducers
 const rootReducer = combineReducers({
   email: emailReducer,
   //import other reducers
