@@ -6,7 +6,7 @@ const initialState = {
   observances: [],
   loading: false,
   error: null,
-  date: '',
+  date: null,
 };
 
 export default function holidayReducer(state = initialState, action) {
