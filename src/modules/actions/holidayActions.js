@@ -27,3 +27,9 @@ export const setLocation = (location) => {
     type: 'SET_LOCATION', location
   }
 }
+
+export const setDate = (date) => {
+  return {
+    type: 'SET_DATE', date
+  }
+}
