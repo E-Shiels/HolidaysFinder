@@ -1,7 +1,7 @@
 import React from "react";
 import Holidays from "./Holidays.js";
 import HolidaysFilters from "./HolidaysFilters.js";
-import LocationAndDateInput from "./LocationAndDateInput.js";
+import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
 import { connect } from "react-redux";
 import {
   fetchHolidaysBegin,
@@ -43,7 +43,7 @@ export default class HolidaysContainer extends React.Component {
   render() {
     return (
       <>
-        <LocationAndDateInput />
+        <ConnectedLocationAndDateInput />
         <HolidaysFilters holidays={this.props.filteredHolidays} />
         <Holidays holidays={this.props.filteredHolidays} />
       </>
