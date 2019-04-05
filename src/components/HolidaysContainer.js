@@ -27,13 +27,6 @@ export default class HolidaysContainer extends React.Component {
     return holidaysArray;
   };
 
-  handleErrors = response => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response;
-  };
-
   componentDidMount() {
     this.props.dispatch(fetchHolidaysBegin());
     fetch("http://localhost:3000/api/v1/holidays")
