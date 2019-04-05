@@ -102,6 +102,14 @@ export default class LocationAndDateInput extends React.Component {
     }
   };
 
+    handleErrors = response => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    };
+
+
   render() {
     const { selectedLocation } = this.state; //destructuring
     return(
