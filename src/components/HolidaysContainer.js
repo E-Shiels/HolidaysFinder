@@ -28,54 +28,6 @@ export default class HolidaysContainer extends React.Component {
     return holidaysArray;
   };
 
-  applySearchAndGetData = searchTerms => {
-    this.setState({
-      filteredHolidays: []
-    });
-    let data = this.state.holidaysData;
-    let newHolidays = [];
-    if (
-      searchTerms.locations === "All" ||
-      searchTerms.locations === "ALL" ||
-      searchTerms.locations.includes("all") ||
-      !searchTerms.locations.length
-    ) {
-      data.forEach(holiday => {
-        if (holiday.date === searchTerms.date || searchTerms.date === "All") {
-          newHolidays.push(holiday);
-        }
-      });
-    } else {
-      data.forEach(holiday => {
-        if (
-          (holiday.date === searchTerms.date || searchTerms.date === "All") &&
-          (holiday.locations === "All" ||
-            holiday.locations
-              .split(", ")
-              .some(location => searchTerms.locations.includes(location)))
-        ) {
-          newHolidays.push(holiday);
-        }
-      });
-    }
-
-    if (!Array.isArray(newHolidays) || !newHolidays.length) {
-      newHolidays.push("No results");
-      newHolidays.push(searchTerms.date);
-    }
-    if (
-      (!searchTerms.locations ||
-        searchTerms.locations[0] === "Canada (All)" ||
-        !searchTerms.locations.length) &&
-      (searchTerms.date === "All" || searchTerms.date === "ALL")
-    ) {
-      this.setState({
-        filteredHolidays: this.state.holidaysData
-      });
-    } else {
-      this.setState({
-        filteredHolidays: newHolidays
-      });
     }
   };
 

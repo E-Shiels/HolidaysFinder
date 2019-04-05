@@ -59,6 +59,50 @@ export default class LocationAndTimeInput extends React.Component {
   })
   }
 
+  applySearchAndGetData = searchTerms => {
+    let data = this.props.holidays;
+    let newHolidays = [];
+    if (
+      this.props.selectedLocation === "All" ||
+      //this.props.selectedLocation === "ALL" ||
+      this.props.selectedLocation.includes("all") ||
+      !this.props.selectedLocation.length
+    ) {
+      data.forEach(holiday => {
+        if (holiday.date === this.props.date || this.props.date === "All") {
+          newHolidays.push(holiday);
+        }
+      });
+    } else {
+      data.forEach(holiday => {
+        if (
+          (holiday.date === this.props.date || this.props.date === "All") &&
+          (holiday.locations === "All" ||
+            holiday.locations
+              .split(", ")
+              .some(location => this.props.selectedLocation.includes(location)))
+        ) {
+          newHolidays.push(holiday);
+        }
+      });
+    }
+
+    if (!Array.isArray(newHolidays) || !newHolidays.length) {
+      newHolidays.push("No results");
+      newHolidays.push(this.props.date);
+    }
+    if (
+      (!this.props.selectedLocation ||
+        this.props.selectedLocation[0] === "Canada (All)" ||
+        !this.props.selectedLocation.length) &&
+      (this.props.date === "All" || this.props.date === "ALL")
+    ) {
+      this.props.dispatch(setFilteredHolidays(this.props.holidays));
+    } else {
+      this.props.dispatch(setFilteredHolidays(newHolidays));
+    }
+  };
+
   render() {
     const { selectedLocation } = this.state; //destructuring
     return(
