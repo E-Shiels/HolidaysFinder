@@ -3,6 +3,11 @@ import Select from 'react-select';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import { connect } from "react-redux";
+import {
+  setFilteredHolidays,
+  setLocation,
+} from "../modules/actions/holidayActions.js";
 
 const locationOptions = [
   { value: 'all', label:'Canada (All)'},
@@ -129,3 +134,16 @@ export default class LocationAndDateInput extends React.Component {
       </>
 )}
 }
+
+const mapStateToProps = state => {
+  return {
+    holidays: state.holidays.holidays,
+    filteredHolidays: state.holidays.filteredHolidays,
+    selectedLocation: state.holidays.selectedLocation,
+    date: state.holidays.date
+  };
+};
+
+export const ConnectedLocationAndDateInput = connect(mapStateToProps)(
+  LocationAndDateInput
+);
