@@ -16,7 +16,7 @@ export const fetchHolidaysFailure = (error) => {
   }
 }
 
-export const SET_FILTERED_HOLIDAYS = (filteredHolidays) => {
+export const setFilteredHolidays = (filteredHolidays) => {
   return {
     type: 'SET_FILTERED_HOLIDAYS', filteredHolidays
   }
