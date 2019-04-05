@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import HolidaysContainer from "./components/HolidaysContainer.js";
+import { ConnectedHolidaysContainer } from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
 import { ConnectedEmailContainer } from "./components/EmailContainer.js";
 import Navbar from "./components/Navbar.js";
@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/about" />
             <Route exact path="/" render={props =>
               <div>
-              <HolidaysContainer />
+              <ConnectedHolidaysContainer />
               <br/>
               <br/>
               <ConnectedEmailContainer />
