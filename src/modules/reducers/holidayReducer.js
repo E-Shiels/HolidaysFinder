@@ -17,10 +17,12 @@ export default function holidayReducer(state = initialState, action) {
       return {...state, loading: false, holidays: action.holidays}
     case "FETCH_HOLIDAYS_FAILURE":
       return {...state, loading: false, error: action.error, holidays: []}
-    case "APPLY_DATE_AND_LOCATION_FILTER":
+    case "SET_FILTERED_HOLIDAYS":
       return {...state, filteredHolidays: action.filteredHolidays}
     case "SET_LOCATION":
-    return {...state, selectedLocation: action.location}
+      return {...state, selectedLocation: action.location}
+    case "SET_DATE":
+      return {...state, date: action.date}
     default:
       return state;
   }
