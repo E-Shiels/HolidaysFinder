@@ -15,3 +15,15 @@ export const fetchHolidaysFailure = (error) => {
     type: 'FETCH_HOLIDAYS_FAILURE', error
   }
 }
+
+export const SET_FILTERED_HOLIDAYS = (filteredHolidays) => {
+  return {
+    type: 'SET_FILTERED_HOLIDAYS', filteredHolidays
+  }
+}
+
+export const setLocation = (location) => {
+  return {
+    type: 'SET_LOCATION', location
+  }
+}
