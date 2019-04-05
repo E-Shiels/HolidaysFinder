@@ -21,15 +21,9 @@ const locationOptions = [
   { value: 'YT', label:'Yukon'}
 ];
 
-export default class LocationAndTimeInput extends React.Component {
-  state = {
-    selectedLocation: [], //location select
-    date: null,
-    focused: false, //date picker
-  }
-
+export default class LocationAndDateInput extends React.Component {
   handleChange = (selectedLocation) => {
-    this.setState({ selectedLocation });
+    this.props.dispatch(setLocation(selectedLocation));
   }
 
   handleSubmit = (event) => {
