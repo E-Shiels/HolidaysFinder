@@ -11,7 +11,7 @@ const HolidayLocations = props => {
       props.locations.length === 1
     ) {
       return (
-        <HolidayLocation key={uuidv4()} location={{ name: props.locations }} />
+        <HolidayLocation location={{ name: props.locations }} />
       );
     } else {
       return props.locations.map(location => {
