@@ -42,7 +42,7 @@ export default class LocationAndDateInput extends React.Component {
     event.preventDefault();
 
     let formLocations = [""];
-    if (this.state.selectedLocation === null) {
+    if (this.state.selectedLocation === null || this.state.selectedLocation === "Canada (All)") {
       formLocations = ["Canada (All)"];
     } else {
       formLocations = this.state.selectedLocation.map(location => {
