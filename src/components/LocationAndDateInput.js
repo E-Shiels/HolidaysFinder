@@ -52,7 +52,7 @@ export default class LocationAndDateInput extends React.Component {
     this.props.dispatch(setLocation(locations))
 
     let date = "";
-    if (this.props.date === null) {
+    if (this.state.date === null) {
       date = "All";
     } else {
       date = new Date(this.state.date).toISOString().substr(0, 10); //remove time information
