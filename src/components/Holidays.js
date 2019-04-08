@@ -4,7 +4,9 @@ import Holiday from "./Holiday.js";
 export default class Holidays extends React.Component {
   renderHolidays = props => {
     if (this.props.holidays[0] === "No results") {
-      const readableDate = new Date(this.props.holidays[1]).toDateString()
+      const date = new Date(this.props.holidays[1])
+      const correctDate = new Date(date.setDate(date.getDate() + 1))
+      const readableDate = correctDate.toDateString()
       return (
         <div>
           <p> There are no holidays on {readableDate} in the specified location(s). </p>
