@@ -34,43 +34,40 @@ export default class LocationAndDateInput extends React.Component {
     selectedLocation: [],
   };
 
-  handleLocationChange = selectedLocation => {
+  handleLocationChange = (selectedLocation) => {
     this.setState({selectedLocation: selectedLocation});
   };
 
-  handleSubmit = event => {
+  setLocationAndDate = (event) => {
     event.preventDefault();
 
-    let locations = [""];
+    let formLocations = [""];
     if (this.state.selectedLocation === null) {
-      locations = ["Canada (All)"];
+      formLocations = ["Canada (All)"];
     } else {
-      locations = this.state.selectedLocation.map(location => {
+      formLocations = this.state.selectedLocation.map(location => {
         return location.value;
       });
     }
-    this.props.dispatch(setLocation(locations))
+    this.props.dispatch(setLocation(formLocations))
 
-    let date = "";
+    let formDate = "";
     if (this.state.date === null) {
-      date = "All";
+      formDate = "All";
     } else {
-      date = new Date(this.state.date).toISOString().substr(0, 10); //remove time information
+      formDate = new Date(this.state.date).toISOString().substr(0, 10); //remove time information
     }
-    this.props.dispatch(setDate(date))
+    this.props.dispatch(setDate(formDate))
 
     this.setState({
       focused: false
     });
 
-    let searchTerms = {selectedLocation: this.props.selectedLocation, date: this.props.date}
-    this.applySearchAndGetData(searchTerms)
   };
 
-  applySearchAndGetData = searchTerms => {
+  applySearchAndGetData = () => {
     let data = this.props.holidays;
     let newHolidays = [];
-    debugger
     if (
       this.props.selectedLocation === "All" ||
       //this.props.selectedLocation === "ALL" ||
@@ -111,6 +108,11 @@ export default class LocationAndDateInput extends React.Component {
       this.props.dispatch(setFilteredHolidays(newHolidays));
     }
   };
+
+  handleSubmit = (event) => {
+        this.setLocationAndDate(event)
+        setTimeout(() => {this.applySearchAndGetData()}, 0)
+  }
 
   handleErrors = response => {
     if (!response.ok) {
