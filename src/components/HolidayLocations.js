@@ -3,7 +3,6 @@ import HolidayLocation from "./HolidayLocation.js";
 const uuidv4 = require("uuid/v4");
 
 const HolidayLocations = props => {
-  return function createHolidayLocations() {
   function createHolidayLocations() {
     if (typeof props.locations === "undefined") {
       return "";
@@ -22,6 +21,7 @@ const HolidayLocations = props => {
       });
     }
   }
+  return createHolidayLocations()
 };
 
 export default HolidayLocations;
