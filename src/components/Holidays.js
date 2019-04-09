@@ -1,7 +1,9 @@
 import React from "react";
 import Holiday from "./Holiday.js";
+import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
+
   renderHolidays = props => {
     if (this.props.holidays[0] === "No results") {
       const date = new Date(this.props.holidays[1])
@@ -59,3 +61,13 @@ export default class Holidays extends React.Component {
     return this.renderHolidays();
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    selectedLocation: state.holidays.selectedLocation
+  };
+};
+
+export const ConnectedHolidays = connect(mapStateToProps)(
+  Holidays
+);

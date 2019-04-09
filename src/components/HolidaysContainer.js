@@ -1,5 +1,5 @@
 import React from "react";
-import Holidays from "./Holidays.js";
+import { ConnectedHolidays } from "./Holidays.js";
 import HolidaysFilters from "./HolidaysFilters.js";
 import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
 import { connect } from "react-redux";
@@ -45,7 +45,7 @@ export default class HolidaysContainer extends React.Component {
       <>
         <ConnectedLocationAndDateInput />
         <HolidaysFilters holidays={this.props.filteredHolidays} />
-        <Holidays holidays={this.props.filteredHolidays} />
+        <ConnectedHolidays holidays={this.props.filteredHolidays} />
       </>
     );
   }
