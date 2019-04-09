@@ -5,6 +5,11 @@ import HolidayLocations from './HolidayLocations'
 import HolidayObservance from './HolidayObservance'
 import FavoriteButton from './FavoriteButton.js';
 
+import { connect } from "react-redux";
+import {
+  changeFavorite
+} from "../modules/actions/holidayActions.js";
+
 export default class Holiday extends React.Component {
   updateHolidayFavoriteState = (favoriteStatus) => {
     fetch(`http://localhost:3000/api/v1/holidays/${this.props.id}.json`,
@@ -33,3 +38,12 @@ export default class Holiday extends React.Component {
   )
 }
 }
+
+
+const mapStateToProps = state => {
+  return {
+    holidays: state.holidays.holidays,
+    filteredHolidays: state.holidays.filteredHolidays,
+  };
+};
+export const ConnectedHoliday = connect(mapStateToProps)(Holiday);

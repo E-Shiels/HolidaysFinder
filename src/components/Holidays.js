@@ -1,5 +1,5 @@
 import React from "react";
-import Holiday from "./Holiday.js";
+import { ConnectedHoliday} from "./Holiday.js";
 import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
@@ -68,7 +68,7 @@ export default class Holidays extends React.Component {
         }
 
         return (
-          <Holiday
+          <ConnectedHoliday
             key={holiday.id}
             id={holiday.id}
             date={holiday.date}
