@@ -11,8 +11,9 @@ import {
 } from "../modules/actions/holidayActions.js";
 
 export default class Holiday extends React.Component {
-  updateHolidayFavoriteState = (favoriteStatus) => {
-    fetch(`http://localhost:3000/api/v1/holidays/${this.props.id}.json`,
+
+    updateHolidayFavoriteState = (favoriteStatus, id) => {
+    fetch(`http://localhost:3000/api/v1/holidays/${id}.json`,
     {
       method: "PUT",
       headers: {
@@ -24,6 +25,7 @@ export default class Holiday extends React.Component {
       }})
     }
   ).then(res => res.json())
+  .then(this.props.dispatch(changeFavorite(id, favoriteStatus)))
   }
 
   render() {
@@ -33,7 +35,7 @@ export default class Holiday extends React.Component {
     <HolidayDescription description={this.props.description} />
     <HolidayObservance observance={this.props.observance} />
     <HolidayLocations locations={this.props.locations} />
-    <FavoriteButton favorite={this.props.favorite} updateHolidayFavoriteState={this.updateHolidayFavoriteState}/>
+    <FavoriteButton favorite={this.props.favorite} id={this.props.id} updateHolidayFavoriteState={this.updateHolidayFavoriteState}/>
     </>
   )
 }
