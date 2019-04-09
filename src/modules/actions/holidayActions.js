@@ -33,3 +33,9 @@ export const setDate = (date) => {
     type: 'SET_DATE', date
   }
 }
+
+export const changeFavorite = (id, favoriteStatus) => {
+  return {
+    type: "CHANGE_FAVORITE", id, favoriteStatus
+  }
+}
