@@ -3,15 +3,14 @@ import Holiday from "./Holiday.js";
 import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
-
   renderHolidays = props => {
     if (this.props.holidays[0] === "No results") {
-      const date = new Date(this.props.holidays[1])
-      const correctDate = new Date(date.setDate(date.getDate() + 1))
-      const readableDate = correctDate.toDateString()
+      const date = new Date(this.props.holidays[1]);
+      const correctDate = new Date(date.setDate(date.getDate() + 1));
+      const readableDate = correctDate.toDateString();
       //debugger
       const locationsDictionary = {
-        all: "Canada (All)" ,
+        all: "Canada (All)",
         AB: "Alberta",
         BC: "British Columbia",
         MB: "Manitoba",
@@ -25,12 +24,20 @@ export default class Holidays extends React.Component {
         QC: "Quebec",
         SK: "Saskatchewan",
         YT: "Yukon"
-      }
+      };
+      
       return (
         <div>
-          <p> There are no holidays on {readableDate} in {this.props.selectedLocation.map(location => {
-            return locationsDictionary[location]
-          }).join(", ")}. </p>
+          <p>
+            {" "}
+            There are no holidays on {readableDate} in{" "}
+            {this.props.selectedLocation
+              .map(location => {
+                return locationsDictionary[location];
+              })
+              .join(", ")}
+            .{" "}
+          </p>
         </div>
       );
     } else {
@@ -87,6 +94,4 @@ const mapStateToProps = state => {
   };
 };
 
-export const ConnectedHolidays = connect(mapStateToProps)(
-  Holidays
-);
+export const ConnectedHolidays = connect(mapStateToProps)(Holidays);

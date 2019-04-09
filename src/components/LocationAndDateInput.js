@@ -31,25 +31,28 @@ export default class LocationAndDateInput extends React.Component {
   state = {
     focused: false,
     date: null,
-    selectedLocation: [],
+    selectedLocation: []
   };
 
-  handleLocationChange = (selectedLocation) => {
-    this.setState({selectedLocation: selectedLocation});
+  handleLocationChange = selectedLocation => {
+    this.setState({ selectedLocation: selectedLocation });
   };
 
-  setLocationAndDate = (event) => {
+  setLocationAndDate = event => {
     event.preventDefault();
 
     let formLocations = [null];
-    if (this.state.selectedLocation === null || this.state.selectedLocation === "Canada (All)") {
+    if (
+      this.state.selectedLocation === null ||
+      this.state.selectedLocation === "Canada (All)"
+    ) {
       formLocations = ["Canada (All)"];
     } else {
       formLocations = this.state.selectedLocation.map(location => {
         return location.value;
       });
     }
-    this.props.dispatch(setLocation(formLocations))
+    this.props.dispatch(setLocation(formLocations));
 
     let formDate = "";
     if (this.state.date === null) {
@@ -57,12 +60,11 @@ export default class LocationAndDateInput extends React.Component {
     } else {
       formDate = new Date(this.state.date).toISOString().substr(0, 10); //remove time information
     }
-    this.props.dispatch(setDate(formDate))
+    this.props.dispatch(setDate(formDate));
 
     this.setState({
       focused: false
     });
-
   };
 
   applySearchAndGetData = () => {
@@ -109,10 +111,12 @@ export default class LocationAndDateInput extends React.Component {
     }
   };
 
-  handleSubmit = (event) => {
-        this.setLocationAndDate(event)
-        setTimeout(() => {this.applySearchAndGetData()}, 0)
-  }
+  handleSubmit = event => {
+    this.setLocationAndDate(event);
+    setTimeout(() => {
+      this.applySearchAndGetData();
+    }, 0);
+  };
 
   handleErrors = response => {
     if (!response.ok) {
