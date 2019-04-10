@@ -1,7 +1,7 @@
 const initialState = {
   holidays: [],
   filteredHolidays: [],
-  observanceFilteredHolidays: [],
+  observanceFilteredHolidays: null,
   //favoriteHolidays: [],
   //favoriteFilter: false,
   selectedLocation: [], //location select
@@ -68,12 +68,13 @@ export default function holidayReducer(state = initialState, action) {
     case "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS":
       let observanceFilteredHolidays = [];
       let types = null;
-      state.filteredHolidays.each(holiday => {
+      //debugger
+      state.filteredHolidays.forEach(holiday => {
         if (holiday.type.includes("-")) {
           types = holiday.type.split(" - ");
         }
         if ((state.observanceFilters.indexOf(types || holiday.type) > 0) || state.observanceFilters.length === state.observances.length || !state.observanceFilters.length) {
-          if (observanceFilteredHolidays.indexof(holiday) === -1) {
+          if (observanceFilteredHolidays.indexOf(holiday) === -1) {
             observanceFilteredHolidays.push(holiday);
           }
         }

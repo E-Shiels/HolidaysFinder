@@ -46,6 +46,12 @@ export const updateObservanceFilters = (observanceFilters) => {
   }
 }
 
+export const updateObservanceFilteredHolidays = () => {
+  return {
+    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS", 
+  }
+}
+
 // export const changeFavoriteFilter = (favoriteFilterStatus) => {
 //   return {
 //     type: "CHANGE_FAVORITE_FILTER", favoriteFilterStatus
