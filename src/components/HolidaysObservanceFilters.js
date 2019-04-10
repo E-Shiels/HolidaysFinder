@@ -2,6 +2,9 @@ import React from "react";
 import Picky from "react-picky";
 import "react-picky/dist/picky.css";
 import equal from "fast-deep-equal";
+import { connect } from "react-redux";
+import {updateObservanceFilters,
+updateObservanceFilteredHolidays} from '../modules/actions/holidayActions.js'
 
 export default class HolidaysObservanceFilters extends React.Component {
   state = {
@@ -76,3 +79,16 @@ export default class HolidaysObservanceFilters extends React.Component {
     return this.returnObservanceFilterPicker(this.state.observances);
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    filteredHolidays: state.holidays.filteredHolidays,
+    observanceFilteredHolidays: state.holidays.observanceFilteredHolidays,
+    observances: state.holidays.observances,
+    observanceFilters: state.holidays.observanceFilters
+  };
+};
+
+export const ConnectedHolidaysObservanceFilters = connect(mapStateToProps)(
+  HolidaysObservanceFilters
+);
