@@ -14,9 +14,7 @@ export default class HolidaysObservanceFilters extends React.Component {
 
   getListOfObservanceTypes = data => {
     let observanceList = [];
-    if (data[0] === "No results") {
-
-    } else {
+    if (data[0] !== "No results") {
       if (data !== []) {
         data.forEach(holiday => {
           if (holiday.type.includes(",")) {
@@ -39,6 +37,15 @@ export default class HolidaysObservanceFilters extends React.Component {
     });
   };
 
+  handleSubmit = (event) => {
+    console.log(this.state.arrayValue)
+    event.preventDefault();
+    this.props.dispatch(updateObservanceFilters(this.state.arrayValue))
+    setTimeout(() => {
+      this.props.dispatch(updateObservanceFilteredHolidays(this.state.arrayValue))
+    })
+  }
+
   selectMultipleOption = (value) => {
     this.setState({ arrayValue: value })
   }
@@ -50,6 +57,7 @@ export default class HolidaysObservanceFilters extends React.Component {
       return (
         <div>
           <h4>Filter by Observance Type</h4>
+          <form onSubmit={this.handleSubmit}>
           <Picky
           options={this.state.observances}
           value={this.state.arrayValue}
@@ -61,6 +69,8 @@ export default class HolidaysObservanceFilters extends React.Component {
           multiple={true}
           keepOpen={true}
           />
+          <input type="submit" value="Apply Filters"/>
+          </form>
         </div>
       );
     }
