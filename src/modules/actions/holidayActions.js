@@ -40,6 +40,12 @@ export const changeFavorite = (id, favoriteStatus) => {
   }
 }
 
+export const updateObservanceFilters = (observanceFilters) => {
+  return {
+    type: "UPDATE_OBSERVANCE_FILTERS", observanceFilters
+  }
+}
+
 // export const changeFavoriteFilter = (favoriteFilterStatus) => {
 //   return {
 //     type: "CHANGE_FAVORITE_FILTER", favoriteFilterStatus
