@@ -2,7 +2,7 @@ import React from "react";
 import { ConnectedHolidays } from "./Holidays.js";
 import HolidaysObservanceFilters from "./HolidaysObservanceFilters.js";
 import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
-import { ConnectedHolidaysFavoriteFilter } from "./HolidaysFavoriteFilter.js";
+//import { ConnectedHolidaysFavoriteFilter } from "./HolidaysFavoriteFilter.js";
 import { connect } from "react-redux";
 import {
   fetchHolidaysBegin,

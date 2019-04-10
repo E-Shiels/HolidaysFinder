@@ -30,7 +30,7 @@ export default function holidayReducer(state = initialState, action) {
         if (holiday.id === action.id) {
           return {
             ...holiday,
-            favorite: action.favoriteStatus
+            favorite: !action.favoriteStatus
           }
         }
         return holiday;
@@ -38,7 +38,7 @@ export default function holidayReducer(state = initialState, action) {
         if (holiday.id === action.id) {
           return {
             ...holiday,
-            favorite: action.favoriteStatus
+            favorite: !action.favoriteStatus
           }
         }
         return holiday;
