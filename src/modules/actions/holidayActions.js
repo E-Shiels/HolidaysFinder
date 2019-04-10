@@ -40,14 +40,14 @@ export const changeFavorite = (id, favoriteStatus) => {
   }
 }
 
-export const changeFavoriteFilter = (favoriteFilterStatus) => {
-  return {
-    type: "CHANGE_FAVORITE_FILTER", favoriteFilterStatus
-  }
-}
-
-export const setFavoriteHolidays = (favoriteHolidays) => {
-  return {
-    type: 'SET_FAVORITE_HOLIDAYS', favoriteHolidays
-  }
-}
+// export const changeFavoriteFilter = (favoriteFilterStatus) => {
+//   return {
+//     type: "CHANGE_FAVORITE_FILTER", favoriteFilterStatus
+//   }
+// }
+//
+// export const setFavoriteHolidays = (favoriteHolidays) => {
+//   return {
+//     type: 'SET_FAVORITE_HOLIDAYS', favoriteHolidays
+//   }
+// }

@@ -30,7 +30,7 @@ export default function holidayReducer(state = initialState, action) {
         if (holiday.id === action.id) {
           return {
             ...holiday,
-            favorite: !action.favoriteStatus
+            favorite: action.favoriteStatus
           }
         }
         return holiday;
@@ -38,15 +38,15 @@ export default function holidayReducer(state = initialState, action) {
         if (holiday.id === action.id) {
           return {
             ...holiday,
-            favorite: !action.favoriteStatus
+            favorite: action.favoriteStatus
           }
         }
         return holiday;
       })}
-    case "CHANGE_FAVORITE_FILTER":
-      return {...state, favoriteFilter: !action.favoriteFilterStatus}
-    case "SET_FAVORITE_HOLIDAYS":
-      return {...state, favorteHolidays: action.favoriteHolidays}
+    // case "CHANGE_FAVORITE_FILTER":
+    //   return {...state, favoriteFilter: !action.favoriteFilterStatus}
+    // case "SET_FAVORITE_HOLIDAYS":
+    //   return {...state, favoriteHolidays: action.favoriteHolidays}
     default:
       return state;
   }
