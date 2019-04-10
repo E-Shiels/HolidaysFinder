@@ -8,23 +8,24 @@ import {
 
 export default class HolidaysFavoriteFilter extends React.Component {
   getListOfFavoriteHolidays = () => {
-    this.props.dispatch(setFavoriteHolidays(this.props.filteredHolidays.map((holiday => {
-      if (holiday.favorite === 1) {
-        return holiday
-      }
-    }))))
-  }
+    this.props.dispatch(
+      setFavoriteHolidays(
+        this.props.filteredHolidays.map(holiday => {
+          if (holiday.favorite === 1) {
+            return holiday;
+          }
+        })
+      )
+    );
+  };
 
   componentDidUpdate(prevProps) {
     if (!equal(this.props.filteredHolidays, prevProps.filteredHolidays)) {
-
     }
   }
 
   render() {
-    return (
-      ""
-    )
+    return "";
   }
 }
 
@@ -33,7 +34,7 @@ const mapStateToProps = state => {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,
     favoriteFilter: state.holidays.favoriteFilter,
-    favoriteHolidays: state.holidays.favoriteHolidays,
+    favoriteHolidays: state.holidays.favoriteHolidays
   };
 };
 
