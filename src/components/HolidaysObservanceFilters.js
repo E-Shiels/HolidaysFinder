@@ -3,7 +3,7 @@ import Picky from "react-picky";
 import "react-picky/dist/picky.css";
 import equal from "fast-deep-equal";
 
-export default class HolidaysFilters extends React.Component {
+export default class HolidaysObservanceFilters extends React.Component {
   state = {
     observances: [],
     arrayValue: []
