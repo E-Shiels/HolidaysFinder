@@ -47,7 +47,7 @@ export default class HolidaysContainer extends React.Component {
         <ConnectedLocationAndDateInput />
         <ConnectedHolidaysObservanceFilters holidays={this.props.filteredHolidays} />
         {/* <ConnectedHolidaysFavoriteFilter holidays={this.props.filteredHolidays} /> */}
-        <ConnectedHolidays holidays={this.props.filteredHolidays} />
+        <ConnectedHolidays holidays={this.props.observanceFilteredHolidays || this.props.filteredHolidays} />
       </>
     );
   }
@@ -57,6 +57,7 @@ const mapStateToProps = state => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,
+    observanceFilteredHolidays: state.holidays.observanceFilteredHolidays,
     selectedLocation: state.holidays.selectedLocation,
     date: state.holidays.date
   };
