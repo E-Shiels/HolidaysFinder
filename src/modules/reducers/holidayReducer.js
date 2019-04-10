@@ -1,6 +1,8 @@
 const initialState = {
   holidays: [],
   filteredHolidays: [],
+  favoriteHolidays: [],
+  favoriteFilter: false,
   selectedLocation: [], //location select
   focused: false, //date picker
   observances: [],
@@ -41,6 +43,10 @@ export default function holidayReducer(state = initialState, action) {
         }
         return holiday;
       })}
+    case "CHANGE_FAVORITE_FILTER":
+      return {...state, favoriteFilter: !action.favoriteFilterStatus}
+    case "SET_FAVORITE_HOLIDAYS":
+      return {...state, favorteHolidays: action.favoriteHolidays}
     default:
       return state;
   }
