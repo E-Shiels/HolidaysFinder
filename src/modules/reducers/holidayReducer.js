@@ -2,7 +2,7 @@ const initialState = {
   holidays: [],
   filteredHolidays: [],
   observanceFilteredHolidays: null,
-  //favoriteHolidays: [],
+  favoriteHolidays: [],
   //favoriteFilter: false,
   selectedLocation: [], //location select
   focused: false, //date picker
@@ -19,6 +19,8 @@ export default function holidayReducer(state = initialState, action) {
       return { ...state, loading: true, error: null };
     case "FETCH_HOLIDAYS_SUCCESS":
       return { ...state, loading: false, holidays: action.holidays };
+    case "FETCH_FAVORITE_HOLIDAYS_SUCCESS":
+      return { ...state, loading: false, favoriteHolidays: action.holidays };
     case "FETCH_HOLIDAYS_FAILURE":
       return { ...state, loading: false, error: action.error, holidays: [] };
     case "SET_FILTERED_HOLIDAYS":

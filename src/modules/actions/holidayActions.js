@@ -10,6 +10,12 @@ export const fetchHolidaysSuccess = (holidays) => {
   }
 }
 
+export const fetchFavoriteHolidaysSuccess = (holidays) => {
+  return {
+    type: 'FETCH_FAVORITE_HOLIDAYS_SUCCESS', holidays
+  }
+}
+
 export const fetchHolidaysFailure = (error) => {
   return {
     type: 'FETCH_HOLIDAYS_FAILURE', error
@@ -48,7 +54,7 @@ export const updateObservanceFilters = (observanceFilters) => {
 
 export const updateObservanceFilteredHolidays = () => {
   return {
-    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS", 
+    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS",
   }
 }
 
