@@ -1,13 +1,15 @@
 import React from "react";
+
 import { ConnectedHolidays } from "./Holidays.js";
 import { ConnectedHolidaysObservanceFilters } from "./HolidaysObservanceFilters.js";
 import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
 //import { ConnectedHolidaysFavoriteFilter } from "./HolidaysFavoriteFilter.js";
+
 import { connect } from "react-redux";
 import {
   fetchHolidaysBegin,
   fetchHolidaysSuccess,
-  fetchHolidaysFailure,
+  fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
 export default class HolidaysContainer extends React.Component {
@@ -45,9 +47,15 @@ export default class HolidaysContainer extends React.Component {
     return (
       <>
         <ConnectedLocationAndDateInput />
-        <ConnectedHolidaysObservanceFilters holidays={this.props.filteredHolidays} />
+        <ConnectedHolidaysObservanceFilters
+          holidays={this.props.filteredHolidays}
+        />
         {/* <ConnectedHolidaysFavoriteFilter holidays={this.props.filteredHolidays} /> */}
-        <ConnectedHolidays holidays={this.props.observanceFilteredHolidays || this.props.filteredHolidays} />
+        <ConnectedHolidays
+          holidays={
+            this.props.observanceFilteredHolidays || this.props.filteredHolidays
+          }
+        />
       </>
     );
   }
