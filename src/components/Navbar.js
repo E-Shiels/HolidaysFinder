@@ -21,7 +21,7 @@ const Navbar = () => (
       className="navbarLink"
       activeClassName="activeNavbarLink"
       exact
-      to="/about"
+      to="/favorites"
     >View Favorites</NavLink>
   </div>
 );
