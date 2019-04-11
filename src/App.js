@@ -4,6 +4,7 @@ import { ConnectedHolidaysContainer } from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
 import { ConnectedEmailContainer } from "./components/EmailContainer.js";
 import Navbar from "./components/Navbar.js";
+import { ConnectedFavoriteHolidays } from './components/FavoriteHolidays.js'
 
 import NotFound from "./components/NotFound.js";
 
@@ -19,6 +20,7 @@ class App extends Component {
           <h1>Holidays</h1>
           <Switch>
             <Route path="/about" />
+            <Route path="/favorites" component={ConnectedFavoriteHolidays}/>
             <Route exact path="/" render={props =>
               <div>
               <ConnectedHolidaysContainer />
