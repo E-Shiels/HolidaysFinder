@@ -1,10 +1,14 @@
 import React from "react";
+
 import Picky from "react-picky";
 import "react-picky/dist/picky.css";
 import equal from "fast-deep-equal";
+
 import { connect } from "react-redux";
-import {updateObservanceFilters,
-updateObservanceFilteredHolidays} from '../modules/actions/holidayActions.js'
+import {
+  updateObservanceFilters,
+  updateObservanceFilteredHolidays
+} from "../modules/actions/holidayActions.js";
 
 export default class HolidaysObservanceFilters extends React.Component {
   state = {
@@ -37,18 +41,20 @@ export default class HolidaysObservanceFilters extends React.Component {
     });
   };
 
-  handleSubmit = (event) => {
-    console.log(this.state.arrayValue)
+  handleSubmit = event => {
+    console.log(this.state.arrayValue);
     event.preventDefault();
-    this.props.dispatch(updateObservanceFilters(this.state.arrayValue))
+    this.props.dispatch(updateObservanceFilters(this.state.arrayValue));
     setTimeout(() => {
-      this.props.dispatch(updateObservanceFilteredHolidays(this.state.arrayValue))
-    })
-  }
+      this.props.dispatch(
+        updateObservanceFilteredHolidays(this.state.arrayValue)
+      );
+    });
+  };
 
-  selectMultipleOption = (value) => {
-    this.setState({ arrayValue: value })
-  }
+  selectMultipleOption = value => {
+    this.setState({ arrayValue: value });
+  };
 
   returnObservanceFilterPicker = data => {
     if (!data.length) {
@@ -58,18 +64,18 @@ export default class HolidaysObservanceFilters extends React.Component {
         <div>
           <h4>Filter by Observance Type</h4>
           <form onSubmit={this.handleSubmit}>
-          <Picky
-          options={this.state.observances}
-          value={this.state.arrayValue}
-          onChange={this.selectMultipleOption}
-          placeholder={"All"}
-          numberDisplayed={5}
-          includeSelectAll={true}
-          includeFilter={true}
-          multiple={true}
-          keepOpen={true}
-          />
-          <input type="submit" value="Apply Filters"/>
+            <Picky
+              options={this.state.observances}
+              value={this.state.arrayValue}
+              onChange={this.selectMultipleOption}
+              placeholder={"All"}
+              numberDisplayed={5}
+              includeSelectAll={true}
+              includeFilter={true}
+              multiple={true}
+              keepOpen={true}
+            />
+            <input type="submit" value="Apply Filters" />
           </form>
         </div>
       );
@@ -81,7 +87,7 @@ export default class HolidaysObservanceFilters extends React.Component {
       this.getListOfObservanceTypes(this.props.holidays);
       this.setState({
         arrayValue: []
-      })
+      });
     }
   }
 
