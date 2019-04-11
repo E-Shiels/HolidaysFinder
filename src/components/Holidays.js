@@ -1,5 +1,5 @@
 import React from "react";
-import { ConnectedHoliday} from "./Holiday.js";
+import { ConnectedHoliday } from "./Holiday.js";
 import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
