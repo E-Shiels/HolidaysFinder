@@ -1,5 +1,7 @@
 import React from "react";
+
 import { ConnectedHoliday } from "./Holiday.js";
+
 import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
@@ -8,7 +10,6 @@ export default class Holidays extends React.Component {
       const date = new Date(this.props.holidays[1]);
       const correctDate = new Date(date.setDate(date.getDate() + 1));
       const readableDate = correctDate.toDateString();
-      //debugger
       const locationsDictionary = {
         all: "Canada (All)",
         AB: "Alberta",
@@ -27,9 +28,16 @@ export default class Holidays extends React.Component {
       };
       return (
         <div>
-          <p> There are no holidays on {readableDate} in {this.props.selectedLocation.map(location => {
-            return locationsDictionary[location]
-          }).join(", ") || "Canada (All)"}. </p>
+          <p>
+            {" "}
+            There are no holidays on {readableDate} in{" "}
+            {this.props.selectedLocation
+              .map(location => {
+                return locationsDictionary[location];
+              })
+              .join(", ") || "Canada (All)"}
+            .{" "}
+          </p>
         </div>
       );
     } else {
