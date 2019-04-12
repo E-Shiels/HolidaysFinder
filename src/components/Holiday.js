@@ -18,7 +18,7 @@ export default class Holiday extends React.Component {
       },
       body: JSON.stringify({
         holiday: {
-          favorite: favoriteStatus === false ? 0 : 1
+          favorite: favoriteStatus 
         }
       })
     })
