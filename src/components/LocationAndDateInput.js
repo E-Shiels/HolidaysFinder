@@ -73,7 +73,6 @@ export default class LocationAndDateInput extends React.Component {
     let data = this.props.holidays;
     let newHolidays = [];
     if (
-      this.props.selectedLocation === "All" ||
       this.props.selectedLocation.includes("all") ||
       !this.props.selectedLocation.length
     ) {
@@ -104,7 +103,7 @@ export default class LocationAndDateInput extends React.Component {
       (!this.props.selectedLocation ||
         this.props.selectedLocation[0] === "Canada (All)" ||
         !this.props.selectedLocation.length) &&
-      (this.props.date === "All" || this.props.date === "ALL")
+      this.props.date === "All"
     ) {
       this.props.dispatch(setFilteredHolidays(this.props.holidays));
     } else {
