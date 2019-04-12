@@ -43,7 +43,7 @@ export default class LocationAndDateInput extends React.Component {
   setLocationAndDate = event => {
     event.preventDefault();
 
-    let formLocations = [null];
+    let formLocations = [];
     if (
       this.state.selectedLocation === null ||
       this.state.selectedLocation === "Canada (All)"
