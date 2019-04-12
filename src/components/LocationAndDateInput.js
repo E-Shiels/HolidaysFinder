@@ -56,12 +56,11 @@ export default class LocationAndDateInput extends React.Component {
     }
     this.props.dispatch(setLocation(formLocations));
 
-    let formDate = "";
-    if (this.state.date === null) {
-      formDate = "All";
-    } else {
-      formDate = new Date(this.state.date).toISOString().substr(0, 10); //remove time information
-    }
+    let formDate =
+      this.state.date === null
+        ? "All"
+        : new Date(this.state.date).toISOString().substr(0, 10); //remove time information
+
     this.props.dispatch(setDate(formDate));
 
     this.setState({
