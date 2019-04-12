@@ -72,6 +72,7 @@ export default class LocationAndDateInput extends React.Component {
   applySearchAndGetData = () => {
     let data = this.props.holidays;
     let newHolidays = [];
+
     if (
       this.props.selectedLocation.includes("all") ||
       !this.props.selectedLocation.length
