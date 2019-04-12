@@ -134,7 +134,6 @@ export default class LocationAndDateInput extends React.Component {
             value={this.state.selectedLocation}
             onChange={this.handleLocationChange}
             options={locationOptions}
-            defaultValue={{ value: "all", label: "Canada (All)" }}
             isMulti
           />
 
