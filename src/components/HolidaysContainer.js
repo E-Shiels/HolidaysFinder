@@ -3,7 +3,6 @@ import React from "react";
 import { ConnectedHolidays } from "./Holidays.js";
 import { ConnectedHolidaysObservanceFilters } from "./HolidaysObservanceFilters.js";
 import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
-//import { ConnectedHolidaysFavoriteFilter } from "./HolidaysFavoriteFilter.js";
 
 import { connect } from "react-redux";
 import {
@@ -50,7 +49,6 @@ export default class HolidaysContainer extends React.Component {
         <ConnectedHolidaysObservanceFilters
           holidays={this.props.filteredHolidays}
         />
-        {/* <ConnectedHolidaysFavoriteFilter holidays={this.props.filteredHolidays} /> */}
         <ConnectedHolidays
           holidays={
             this.props.observanceFilteredHolidays || this.props.filteredHolidays

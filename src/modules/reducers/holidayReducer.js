@@ -85,11 +85,6 @@ export default function holidayReducer(state = initialState, action) {
         ...state,
         observanceFilteredHolidays: observanceFilteredHolidays
       };
-
-    // case "CHANGE_FAVORITE_FILTER":
-    //   return {...state, favoriteFilter: !action.favoriteFilterStatus}
-    // case "SET_FAVORITE_HOLIDAYS":
-    //   return {...state, favoriteHolidays: action.favoriteHolidays}
     default:
       return state;
   }
