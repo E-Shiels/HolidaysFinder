@@ -42,12 +42,11 @@ export default class HolidaysObservanceFilters extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(this.state.arrayValue);
     event.preventDefault();
     this.props.dispatch(updateObservanceFilters(this.state.arrayValue));
     setTimeout(() => {
       this.props.dispatch(
-        updateObservanceFilteredHolidays(this.state.arrayValue)
+        updateObservanceFilteredHolidays(this.props.observances.length)
       );
     });
   };
