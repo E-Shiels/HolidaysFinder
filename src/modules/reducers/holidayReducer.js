@@ -67,6 +67,9 @@ export default function holidayReducer(state = initialState, action) {
     case "UPDATE_OBSERVANCE_FILTERS":
       return {...state, observanceFilters: action.observanceFilters}
 
+    case "EMPTY_OBSERVANCE_FILTERED_HOLIDAYS":
+    return {...state, observanceFilteredHolidays: []}
+
     case "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS":
       let observanceFilteredHolidays = [];
       state.filteredHolidays.forEach(holiday => {

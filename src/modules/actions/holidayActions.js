@@ -52,9 +52,15 @@ export const updateObservanceFilters = (observanceFilters) => {
   }
 }
 
-export const updateObservanceFilteredHolidays = () => {
+export const emptyObservanceFilteredHolidays = () => {
   return {
-    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS",
+    type: "EMPTY_OBSERVANCE_FILTERED_HOLIDAYS"
+  }
+}
+
+export const updateObservanceFilteredHolidays = (observanceListLength) => {
+  return {
+    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS", observanceListLength
   }
 }
 
