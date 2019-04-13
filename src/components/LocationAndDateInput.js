@@ -9,7 +9,8 @@ import { connect } from "react-redux";
 import {
   setFilteredHolidays,
   setLocation,
-  setDate
+  setDate,
+  emptyObservanceFilteredHolidays
 } from "../modules/actions/holidayActions.js";
 
 const locationOptions = [
@@ -109,6 +110,7 @@ export default class LocationAndDateInput extends React.Component {
     } else {
       this.props.dispatch(setFilteredHolidays(newHolidays));
     }
+    this.props.dispatch(emptyObservanceFilteredHolidays)
   };
 
   handleSubmit = event => {
