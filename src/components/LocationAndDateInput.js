@@ -117,7 +117,7 @@ export default class LocationAndDateInput extends React.Component {
     this.props.dispatch(emptyObservanceFilteredHolidays);
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     this.setLocationAndDate(event);
     setTimeout(() => {
       this.applySearchAndGetData();

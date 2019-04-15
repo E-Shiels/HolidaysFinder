@@ -8,7 +8,7 @@ import {
   fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
-import { buildHolidayObject } from './HolidaysContainer.js'
+import { buildHolidayObject } from "./HolidaysContainer.js";
 
 export default class FavoriteHolidays extends React.Component {
   state = {
