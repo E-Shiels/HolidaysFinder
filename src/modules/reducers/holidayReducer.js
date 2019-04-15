@@ -52,23 +52,11 @@ export default function holidayReducer(state = initialState, action) {
         })
       };
 
-    // case "ADD_OBSERVANCE_FILTER":
-    //   return {
-    //     ...state,
-    //     observanceFilters: Object.assign({}, state, action.observance)
-    //   };
-    //
-    // case "REMOVE_OBSERVANCE_FILTER":
-    //   const newObservanceFilter = state.observanceFilters.filter(
-    //     filter => filter !== action.filter
-    //   );
-    //   return { ...state, observanceFilters: newObservanceFilter };
-
     case "UPDATE_OBSERVANCE_FILTERS":
-      return {...state, observanceFilters: action.observanceFilters}
+      return { ...state, observanceFilters: action.observanceFilters };
 
     case "EMPTY_OBSERVANCE_FILTERED_HOLIDAYS":
-    return {...state, observanceFilteredHolidays: []}
+      return { ...state, observanceFilteredHolidays: [] };
 
     case "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS":
       let observanceFilteredHolidays = [];
@@ -78,15 +66,21 @@ export default function holidayReducer(state = initialState, action) {
           types = holiday.type.split(" - ");
         }
         if (types.length > 0) {
-          types.forEach((type) => {
-            if (state.observanceFilters.indexOf(type) > -1 || !state.observanceFilters.length) {
-            if (observanceFilteredHolidays.indexOf(holiday) === -1) {
-              observanceFilteredHolidays.push(holiday);
+          types.forEach(type => {
+            if (
+              state.observanceFilters.indexOf(type) > -1 ||
+              !state.observanceFilters.length
+            ) {
+              if (observanceFilteredHolidays.indexOf(holiday) === -1) {
+                observanceFilteredHolidays.push(holiday);
+              }
             }
-          }
+          });
         }
-      )}
-        if (state.observanceFilters.indexOf(holiday.type) > -1 || !state.observanceFilters.length) {
+        if (
+          state.observanceFilters.indexOf(holiday.type) > -1 ||
+          !state.observanceFilters.length
+        ) {
           if (observanceFilteredHolidays.indexOf(holiday) === -1) {
             observanceFilteredHolidays.push(holiday);
           }
