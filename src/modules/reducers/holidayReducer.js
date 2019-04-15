@@ -32,7 +32,7 @@ export default function holidayReducer(state = initialState, action) {
     case "CHANGE_FAVORITE":
       return {
         ...state,
-        filteredHolidays: state.filteredHolidays.map(holiday => {
+        filteredHolidays: state.filteredHolidays.map((holiday) => {
           if (holiday.id === action.id) {
             return {
               ...holiday,
@@ -41,7 +41,7 @@ export default function holidayReducer(state = initialState, action) {
           }
           return holiday;
         }),
-        holidays: state.holidays.map(holiday => {
+        holidays: state.holidays.map((holiday) => {
           if (holiday.id === action.id) {
             return {
               ...holiday,

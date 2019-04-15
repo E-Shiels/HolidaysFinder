@@ -25,9 +25,9 @@ export function buildHolidayObject(holiday) {
 }
 
 export default class HolidaysContainer extends React.Component {
-  toHolidayObjectsFromJSON = (data) => {
+  toHolidayObjectsFromJSON = data => {
     let holidaysArray = [];
-    data.forEach((holiday) => {
+    data.forEach(holiday => {
       holidaysArray.push(buildHolidayObject(holiday));
     });
     return holidaysArray;
@@ -37,13 +37,13 @@ export default class HolidaysContainer extends React.Component {
     this.props.dispatch(fetchHolidaysBegin());
     fetch("http://localhost:3000/api/v1/holidays")
       .then(this.handleErrors)
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         this.props.dispatch(
           fetchHolidaysSuccess(this.toHolidayObjectsFromJSON(json))
         );
       })
-      .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
+      .catch(error => this.props.dispatch(fetchHolidaysFailure(error)));
   }
 
   render() {
@@ -63,7 +63,7 @@ export default class HolidaysContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,
