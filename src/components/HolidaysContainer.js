@@ -11,20 +11,24 @@ import {
   fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
+export function buildHolidayObject(holiday) {
+  return {
+    id: holiday.id,
+    name: holiday.name,
+    description: holiday.description,
+    date: holiday.date,
+    type: holiday.holiday_type,
+    locations: holiday.locations,
+    states: holiday.states,
+    favorite: holiday.favorite
+  }
+}
+
 export default class HolidaysContainer extends React.Component {
   toHolidayObjectsFromJSON = (data) => {
     let holidaysArray = [];
     data.forEach((holiday) => {
-      holidaysArray.push({
-        id: holiday.id,
-        name: holiday.name,
-        description: holiday.description,
-        date: holiday.date,
-        type: holiday.holiday_type,
-        locations: holiday.locations,
-        states: holiday.states,
-        favorite: holiday.favorite
-      });
+      holidaysArray.push(buildHolidayObject(holiday));
     });
     return holidaysArray;
   };

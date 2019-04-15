@@ -8,6 +8,8 @@ import {
   fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
+import { buildHolidayObject } from './HolidaysContainer.js'
+
 export default class FavoriteHolidays extends React.Component {
   state = {
     favoriteHolidays: []
@@ -63,16 +65,7 @@ export default class FavoriteHolidays extends React.Component {
     let holidaysArray = [];
     data.forEach((holiday) => {
       if (holiday.favorite === true) {
-        holidaysArray.push({
-          id: holiday.id,
-          name: holiday.name,
-          description: holiday.description,
-          date: holiday.date,
-          type: holiday.holiday_type,
-          locations: holiday.locations,
-          states: holiday.states,
-          favorite: holiday.favorite
-        });
+        holidaysArray.push(buildHolidayObject(holiday));
       }
     });
     return holidaysArray;
