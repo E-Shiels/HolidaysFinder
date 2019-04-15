@@ -88,7 +88,7 @@ export default class Holidays extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     selectedLocation: state.holidays.selectedLocation
   };

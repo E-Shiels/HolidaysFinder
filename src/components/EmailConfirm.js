@@ -12,7 +12,7 @@ export default class EmailConfirm extends React.Component {
     this.props.dispatch(emailNextStep(this.props.step));
   };
 
-  handleBack = event => {
+  handleBack = (event) => {
     event.preventDefault();
     this.props.dispatch(emailPrevStep(this.props.step));
   };
@@ -37,7 +37,7 @@ export default class EmailConfirm extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     step: state.email.step,
     email: state.email.email

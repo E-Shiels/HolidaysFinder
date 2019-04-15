@@ -59,7 +59,7 @@ export default class HolidaysContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,

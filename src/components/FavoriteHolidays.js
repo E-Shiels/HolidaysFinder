@@ -100,7 +100,7 @@ export default class FavoriteHolidays extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     holidays: state.holidays.holidays,
     loading: state.holidays.loading,

@@ -95,7 +95,7 @@ export default class HolidaysObservanceFilters extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     filteredHolidays: state.holidays.filteredHolidays,
     observanceFilteredHolidays: state.holidays.observanceFilteredHolidays,

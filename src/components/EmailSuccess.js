@@ -8,7 +8,7 @@ export default class EmailSuccess extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     message: state.email.message
   };
