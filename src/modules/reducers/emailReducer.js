@@ -1,7 +1,7 @@
 const initialState = {
   step: 1,
   email: "",
-  message: 'Your email has been succesfully saved. Thanks!'
+  message: "Your email has been succesfully saved. Thanks!"
 };
 
 export default function emailReducer(state = initialState, action) {

@@ -60,13 +60,13 @@ export default function holidayReducer(state = initialState, action) {
 
     case "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS":
       let observanceFilteredHolidays = [];
-      state.filteredHolidays.forEach(holiday => {
+      state.filteredHolidays.forEach((holiday) => {
         let types = "";
         if (holiday.type.includes("-")) {
           types = holiday.type.split(" - ");
         }
         if (types.length > 0) {
-          types.forEach(type => {
+          types.forEach((type) => {
             if (
               state.observanceFilters.indexOf(type) > -1 ||
               !state.observanceFilters.length
