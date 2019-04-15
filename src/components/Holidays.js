@@ -33,7 +33,7 @@ export default class Holidays extends React.Component {
             There are no holidays on {readableDate} in{" "}
             {this.props.selectedLocation
               .map(location => {
-                return locationsDictionary[location];
+                return locationsDictionary.location;
               })
               .join(", ") || "Canada (All)"}
             .{" "}
