@@ -17,6 +17,8 @@ $ npm install
 $ rake start
 ```
 
+While using the app, you can find Canadian holidays (2019 only) by filtering by date and location, and filter them by observance type.
+
 ## Contributing ##
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/E-Shiels/TodaysHolidays>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
