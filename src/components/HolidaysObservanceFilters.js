@@ -18,8 +18,7 @@ export default class HolidaysObservanceFilters extends React.Component {
 
   getListOfObservanceTypes = (data) => {
     let observanceList = [];
-    if (data[0] !== "No results") {
-      if (data !== []) {
+    if (data[0] !== "No results" && data[0] !== []) {
         data.forEach((holiday) => {
           if (holiday.type.includes(",")) {
             holiday.type.split(",").forEach((type) => {
@@ -34,7 +33,6 @@ export default class HolidaysObservanceFilters extends React.Component {
             }
           }
         });
-      }
     }
     this.setState({
       observances: observanceList
