@@ -2,13 +2,20 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a66a0ecb300477ebd99f59dd2e9257b)](https://www.codacy.com/app/E-Shiels/TodaysHolidays?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=E-Shiels/TodaysHolidays&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8bb6c17f568cdf94c1a2/maintainability)](https://codeclimate.com/github/E-Shiels/TodaysHolidays/maintainability)
 
-# TodaysHolidays
+# TodaysHolidays #
 
 TodaysHolidays is a Flatiron school portfolio project. It allows you to view holidays in Canada and favorite and filter them. It was built using React, Create React App, and Redux, as well as assorted middleware and npm packages. The data is sent from a Rails API backend with archived data from <https://calendarific.com/>.
 
 ## Installation ##
 
-First, click on the green *Clone or download button*, ensure that it says Clone with SSH, and press the copy icon next to the displayed URL. Then, type `git clone` and paste the copied URL into your terminal and hit enter. [REST OF INSTRUCTIONS NEEDED FOR HERE]
+Clone down this repository and navigate into the program folder. Then execute the following commands:
+```
+$ cd TodaysHolidaysBackend
+$ bundle install
+$ cd ..
+$ npm install
+$ rake start
+```
 
 ## Contributing ##
 
