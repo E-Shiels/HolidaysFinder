@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
 
 export default class EmailInput extends React.Component {
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (
       event.target[0].value.includes("@") &&

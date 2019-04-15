@@ -4,7 +4,7 @@ import HolidayLocation from "./HolidayLocation.js";
 
 const uuidv4 = require("uuid/v4");
 
-const HolidayLocations = props => {
+const HolidayLocations = (props) => {
   function createHolidayLocations() {
     if (typeof props.locations === "undefined") {
       return "";
@@ -14,7 +14,7 @@ const HolidayLocations = props => {
     ) {
       return <HolidayLocation location={{ name: props.locations }} />;
     } else {
-      return props.locations.map(location => {
+      return props.locations.map((location) => {
         return (
           <HolidayLocation key={ uuidv4() } location={{ name: location.name }} />
         );

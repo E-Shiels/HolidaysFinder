@@ -17,7 +17,7 @@ export default class FavoriteHolidays extends React.Component {
     if (!this.props.favoriteHolidays.length) {
       return "You have no favorites.";
     } else {
-      return this.props.favoriteHolidays.map(holiday => {
+      return this.props.favoriteHolidays.map((holiday) => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -28,7 +28,7 @@ export default class FavoriteHolidays extends React.Component {
             name: "Canada (All)"
           });
         } else {
-          holiday.states.split(",").forEach(state => {
+          holiday.states.split(",").forEach((state) => {
             locationsList.push({
               name: state.trim()
             });
@@ -36,7 +36,7 @@ export default class FavoriteHolidays extends React.Component {
         }
         let observanceList = [];
         if (holiday.type.includes(",")) {
-          holiday.type.split(", ").forEach(type => {
+          holiday.type.split(", ").forEach((type) => {
             observanceList.push(type.trim());
           });
         } else {
@@ -59,9 +59,9 @@ export default class FavoriteHolidays extends React.Component {
     }
   }
 
-  toHolidayObjectsFromJSON = data => {
+  toHolidayObjectsFromJSON = (data) => {
     let holidaysArray = [];
-    data.forEach(holiday => {
+    data.forEach((holiday) => {
       if (holiday.favorite === true) {
         holidaysArray.push({
           id: holiday.id,
@@ -82,13 +82,13 @@ export default class FavoriteHolidays extends React.Component {
     this.props.dispatch(fetchHolidaysBegin());
     fetch("http://localhost:3000/api/v1/holidays")
       .then(this.handleErrors)
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         this.props.dispatch(
           fetchFavoriteHolidaysSuccess(this.toHolidayObjectsFromJSON(json))
         );
       })
-      .catch(error => this.props.dispatch(fetchHolidaysFailure(error)));
+      .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
   }
 
   render() {
