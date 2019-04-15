@@ -1,15 +1,13 @@
 import React from "react";
-
 import { connect } from "react-redux";
 import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
 
+const validator = require("email-validator");
+
 export default class EmailInput extends React.Component {
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-    if (
-      event.target[0].value.includes("@") &&
-      event.target[0].value.includes(".")
-    ) {
+    if (validator.validate(event.target[0].value)) {
       this.props.dispatch(emailNextStep(this.props.step));
       this.props.dispatch(emailChange(event.target[0].value));
     } else {
