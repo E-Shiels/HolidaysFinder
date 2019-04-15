@@ -1,77 +1,75 @@
 export const fetchHolidaysBegin = () => {
   return {
-    type: 'FETCH_HOLIDAYS_BEGIN'
-  }
-}
+    type: "FETCH_HOLIDAYS_BEGIN"
+  };
+};
 
-export const fetchHolidaysSuccess = (holidays) => {
+export const fetchHolidaysSuccess = holidays => {
   return {
-    type: 'FETCH_HOLIDAYS_SUCCESS', holidays
-  }
-}
+    type: "FETCH_HOLIDAYS_SUCCESS",
+    holidays
+  };
+};
 
-export const fetchFavoriteHolidaysSuccess = (holidays) => {
+export const fetchFavoriteHolidaysSuccess = holidays => {
   return {
-    type: 'FETCH_FAVORITE_HOLIDAYS_SUCCESS', holidays
-  }
-}
+    type: "FETCH_FAVORITE_HOLIDAYS_SUCCESS",
+    holidays
+  };
+};
 
-export const fetchHolidaysFailure = (error) => {
+export const fetchHolidaysFailure = error => {
   return {
-    type: 'FETCH_HOLIDAYS_FAILURE', error
-  }
-}
+    type: "FETCH_HOLIDAYS_FAILURE",
+    error
+  };
+};
 
-export const setFilteredHolidays = (filteredHolidays) => {
+export const setFilteredHolidays = filteredHolidays => {
   return {
-    type: 'SET_FILTERED_HOLIDAYS', filteredHolidays
-  }
-}
+    type: "SET_FILTERED_HOLIDAYS",
+    filteredHolidays
+  };
+};
 
-export const setLocation = (location) => {
+export const setLocation = location => {
   return {
-    type: 'SET_LOCATION', location
-  }
-}
+    type: "SET_LOCATION",
+    location
+  };
+};
 
-export const setDate = (date) => {
+export const setDate = date => {
   return {
-    type: 'SET_DATE', date
-  }
-}
+    type: "SET_DATE",
+    date
+  };
+};
 
 export const changeFavorite = (id, favoriteStatus) => {
   return {
-    type: "CHANGE_FAVORITE", id, favoriteStatus
-  }
-}
+    type: "CHANGE_FAVORITE",
+    id,
+    favoriteStatus
+  };
+};
 
-export const updateObservanceFilters = (observanceFilters) => {
+export const updateObservanceFilters = observanceFilters => {
   return {
-    type: "UPDATE_OBSERVANCE_FILTERS", observanceFilters
-  }
-}
+    type: "UPDATE_OBSERVANCE_FILTERS",
+    observanceFilters
+  };
+};
 
 export const emptyObservanceFilteredHolidays = () => {
   return {
     type: "EMPTY_OBSERVANCE_FILTERED_HOLIDAYS"
-  }
-}
+  };
+};
 
-export const updateObservanceFilteredHolidays = (observanceListLength) => {
+export const updateObservanceFilteredHolidays = observanceListLength => {
   return {
-    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS", observanceListLength
-  }
-}
-
-// export const changeFavoriteFilter = (favoriteFilterStatus) => {
-//   return {
-//     type: "CHANGE_FAVORITE_FILTER", favoriteFilterStatus
-//   }
-// }
-//
-// export const setFavoriteHolidays = (favoriteHolidays) => {
-//   return {
-//     type: 'SET_FAVORITE_HOLIDAYS', favoriteHolidays
-//   }
-// }
+    type: "UPDATE_OBSERVANCE_FILTERED_HOLIDAYS",
+    observanceListLength
+  };
+};

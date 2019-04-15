@@ -70,7 +70,7 @@ export default class LocationAndDateInput extends React.Component {
   };
 
   dateIsPropsDateOrAll = (holidayDate, propsDate) => {
-    return (holidayDate === propsDate || propsDate ==="All")
+    return (holidayDate === propsDate || propsDate ==="All");
   }
 
   applySearchAndGetData = () => {

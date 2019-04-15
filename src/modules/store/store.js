@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   email: emailReducer,
   holidays: holidayReducer
   //import other reducers
-})
+});
 
 const middleware = [thunk, logger];
 

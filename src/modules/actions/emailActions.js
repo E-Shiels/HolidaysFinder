@@ -20,4 +20,4 @@ export const messageChange = (message) => {
   return {
     type: 'MESSAGE_CHANGE', message
   }
-}
+};

@@ -4,7 +4,7 @@ import { ConnectedHolidaysContainer } from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
 import { ConnectedEmailContainer } from "./components/EmailContainer.js";
 import Navbar from "./components/Navbar.js";
-import { ConnectedFavoriteHolidays } from './components/FavoriteHolidays.js'
+import { ConnectedFavoriteHolidays } from './components/FavoriteHolidays.js';
 
 import NotFound from "./components/NotFound.js";
 
