@@ -17,4 +17,4 @@ export default function emailReducer(state = initialState, action) {
     default:
       return state;
   }
-};
+}
