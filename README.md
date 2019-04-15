@@ -1,3 +1,6 @@
+[![codebeat badge](https://codebeat.co/badges/218717a5-1ebb-4776-a3b8-bb247ca7916f)](https://codebeat.co/projects/github-com-e-shiels-todaysholidays-master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a66a0ecb300477ebd99f59dd2e9257b)](https://www.codacy.com/app/E-Shiels/TodaysHolidays?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=E-Shiels/TodaysHolidays&amp;utm_campaign=Badge_Grade)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8bb6c17f568cdf94c1a2/maintainability)](https://codeclimate.com/github/E-Shiels/TodaysHolidays/maintainability)
 
 # TodaysHolidays
 
