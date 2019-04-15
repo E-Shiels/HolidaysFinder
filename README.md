@@ -9,6 +9,7 @@ TodaysHolidays is a Flatiron school portfolio project. It allows you to view hol
 ## Installation ##
 
 Clone down this repository and navigate into the program folder. Then execute the following commands:
+
 ```
 $ cd TodaysHolidaysBackend
 $ bundle install
