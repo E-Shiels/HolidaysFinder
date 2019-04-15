@@ -88,7 +88,7 @@ export default function holidayReducer(state = initialState, action) {
       });
       return {
         ...state,
-        observanceFilteredHolidays: observanceFilteredHolidays
+        observanceFilteredHolidays
       };
     default:
       return state;

@@ -38,7 +38,7 @@ export default class LocationAndDateInput extends React.Component {
   };
 
   handleLocationChange = (selectedLocation) => {
-    this.setState({ selectedLocation: selectedLocation });
+    this.setState({ selectedLocation });
   };
 
   setLocationAndDate = (event) => {
