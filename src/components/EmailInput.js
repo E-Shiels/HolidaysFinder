@@ -5,7 +5,7 @@ import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
 const validator = require("email-validator");
 
 export default class EmailInput extends React.Component {
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (validator.validate(event.target[0].value)) {
       this.props.dispatch(emailNextStep(this.props.step));
@@ -34,7 +34,7 @@ export default class EmailInput extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     step: state.email.step,
     email: state.email.email
