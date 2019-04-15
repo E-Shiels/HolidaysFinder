@@ -22,7 +22,7 @@ export default class Holiday extends React.Component {
         }
       })
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(this.props.dispatch(changeFavorite(id, favoriteStatus)));
   };
 
@@ -43,7 +43,7 @@ export default class Holiday extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays

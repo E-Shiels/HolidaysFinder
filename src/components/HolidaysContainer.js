@@ -21,7 +21,7 @@ export function buildHolidayObject(holiday) {
     locations: holiday.locations,
     states: holiday.states,
     favorite: holiday.favorite
-  }
+  };
 }
 
 export default class HolidaysContainer extends React.Component {
