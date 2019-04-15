@@ -69,6 +69,10 @@ export default class LocationAndDateInput extends React.Component {
     });
   };
 
+  dateIsPropsDateOrAll = (holidayDate, propsDate) => {
+    return (holidayDate === propsDate || propsDate ==="All")
+  }
+
   applySearchAndGetData = () => {
     let data = this.props.holidays;
     let newHolidays = [];
@@ -77,15 +81,15 @@ export default class LocationAndDateInput extends React.Component {
       this.props.selectedLocation.includes("all") ||
       !this.props.selectedLocation.length
     ) {
-      data.forEach(holiday => {
-        if (holiday.date === this.props.date || this.props.date === "All") {
+      data.forEach((holiday) => {
+        if (this.dateIsPropsDateOrAll(holiday.date, this.props.date)) {
           newHolidays.push(holiday);
         }
       });
     } else {
-      data.forEach(9 => {
+      data.forEach((holiday) => {
         if (
-          (holiday.date === this.props.date || this.props.date === "All") &&
+          (this.dateIsPropsDateOrAll(holiday.date, this.props.date)) &&
           (holiday.locations === "All" ||
             holiday.locations
               .split(", ")
