@@ -5,7 +5,7 @@ import { ConnectedHoliday } from "./Holiday.js";
 import { connect } from "react-redux";
 
 export default class Holidays extends React.Component {
-  renderHolidays = props => {
+  renderHolidays = () => {
     if (this.props.holidays[0] === "No results") {
       const date = new Date(this.props.holidays[1]);
       const correctDate = new Date(date.setDate(date.getDate() + 1));
