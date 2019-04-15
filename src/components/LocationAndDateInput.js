@@ -37,11 +37,11 @@ export default class LocationAndDateInput extends React.Component {
     selectedLocation: []
   };
 
-  handleLocationChange = selectedLocation => {
+  handleLocationChange = (selectedLocation) => {
     this.setState({ selectedLocation: selectedLocation });
   };
 
-  setLocationAndDate = event => {
+  setLocationAndDate = (event) => {
     event.preventDefault();
 
     let formLocations = [];
@@ -51,7 +51,7 @@ export default class LocationAndDateInput extends React.Component {
     ) {
       formLocations = ["Canada (All)"];
     } else {
-      formLocations = this.state.selectedLocation.map(location => {
+      formLocations = this.state.selectedLocation.map((location) => {
         return location.value;
       });
     }
@@ -83,13 +83,13 @@ export default class LocationAndDateInput extends React.Component {
         }
       });
     } else {
-      data.forEach(holiday => {
+      data.forEach(9 => {
         if (
           (holiday.date === this.props.date || this.props.date === "All") &&
           (holiday.locations === "All" ||
             holiday.locations
               .split(", ")
-              .some(location => this.props.selectedLocation.includes(location)))
+              .some((location) => this.props.selectedLocation.includes(location)))
         ) {
           newHolidays.push(holiday);
         }
@@ -110,7 +110,7 @@ export default class LocationAndDateInput extends React.Component {
     } else {
       this.props.dispatch(setFilteredHolidays(newHolidays));
     }
-    this.props.dispatch(emptyObservanceFilteredHolidays)
+    this.props.dispatch(emptyObservanceFilteredHolidays);
   };
 
   handleSubmit = event => {
@@ -120,7 +120,7 @@ export default class LocationAndDateInput extends React.Component {
     }, 0);
   };
 
-  handleErrors = response => {
+  handleErrors = (response) => {
     if (!response.ok) {
       throw Error(response.statusText);
     }
@@ -142,7 +142,7 @@ export default class LocationAndDateInput extends React.Component {
           <h3>On</h3>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
-            onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
+            onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
             focused={this.state.focused} // PropTypes.bool
             onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
             id="date_input" // PropTypes.string.isRequired,
