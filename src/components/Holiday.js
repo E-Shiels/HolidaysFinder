@@ -18,7 +18,7 @@ export default class Holiday extends React.Component {
       },
       body: JSON.stringify({
         holiday: {
-          favorite: favoriteStatus 
+          favorite: favoriteStatus
         }
       })
     })
@@ -28,7 +28,7 @@ export default class Holiday extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <HolidayHeader date={this.props.date} name={this.props.name} />
         <HolidayDescription description={this.props.description} />
         <HolidayObservance observance={this.props.observance} />
@@ -38,7 +38,7 @@ export default class Holiday extends React.Component {
           id={this.props.id}
           updateHolidayFavoriteState={this.updateHolidayFavoriteState}
         />
-      </>
+      </React.Fragment>
     );
   }
 }

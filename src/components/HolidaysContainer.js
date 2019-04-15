@@ -44,7 +44,7 @@ export default class HolidaysContainer extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <ConnectedLocationAndDateInput />
         <ConnectedHolidaysObservanceFilters
           holidays={this.props.filteredHolidays}
@@ -54,7 +54,7 @@ export default class HolidaysContainer extends React.Component {
             this.props.observanceFilteredHolidays || this.props.filteredHolidays
           }
         />
-      </>
+      </React.Fragment>
     );
   }
 }

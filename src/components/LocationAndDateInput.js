@@ -129,7 +129,7 @@ export default class LocationAndDateInput extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <h2>Find holidays in </h2>
         <form onSubmit={this.handleSubmit}>
           <Select
@@ -154,7 +154,7 @@ export default class LocationAndDateInput extends React.Component {
           <br />
           <input type="submit" />
         </form>
-      </>
+      </React.Fragment>
     );
   }
 }

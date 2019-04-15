@@ -13,7 +13,7 @@ export default class FavoriteButton extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <label htmlFor="favorite">Favorite</label>
         <input
           type="checkbox"
@@ -23,7 +23,7 @@ export default class FavoriteButton extends React.Component {
           value={this.props.favorite}
           defaultChecked={this.props.favorite}
         />
-      </>
+      </React.Fragment>
     );
   }
 }

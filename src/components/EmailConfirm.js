@@ -20,7 +20,7 @@ export default class EmailConfirm extends React.Component {
   render() {
     const { email } = this.props;
     return (
-      <>
+      <React.Fragment>
         <h4>
           Sign up for our totally real email list to get totally not-fake
           emails.
@@ -32,7 +32,7 @@ export default class EmailConfirm extends React.Component {
         <button type="button" onClick={this.handleNext}>
           Confirm Email
         </button>
-      </>
+      </React.Fragment>
     );
   }
 }
