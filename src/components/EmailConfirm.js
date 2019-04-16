@@ -7,9 +7,28 @@ import {
 } from "../modules/actions/emailActions.js";
 
 export default class EmailConfirm extends React.Component {
+
+  addEmailToMailingList = (email) => {
+    fetch(`http://localhost:3000/emails`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: {
+          email: email
+        }
+      })
+    })
+  };
+
+
   handleNext = (event, email) => {
     event.preventDefault();
     this.props.dispatch(emailNextStep(this.props.step));
+    this.addEmailToMailingList(email)
+
   };
 
   handleBack = (event) => {
@@ -29,7 +48,7 @@ export default class EmailConfirm extends React.Component {
         <button type="button" onClick={this.handleBack}>
           Back
         </button>
-        <button type="button" onClick={this.handleNext}>
+        <button type="button" onClick={(event) => this.handleNext(event, email)}>
           Confirm Email
         </button>
       </React.Fragment>
