@@ -78,7 +78,7 @@ export default class FavoriteHolidays extends React.Component {
       .then((response) => response.json())
       .then((json) => {
         this.props.dispatch(
-          fetchSuccess('favoriteHolidays', this.toHolidayObjectsFromJSON(json))
+          fetchSuccess("favoriteHolidays", this.toHolidayObjectsFromJSON(json))
         );
       })
       .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
