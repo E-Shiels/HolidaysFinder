@@ -385,9 +385,9 @@
             },
             {
                 "name": "Daylight Saving Time starts",
-                "description": null,
+                "description": "T02:00:00-05:00",
                 "date": {
-                    "iso": "2019-03-10T02:00:00-05:00",
+                    "iso": "2019-03-10",
                     "datetime": {
                         "year": 2019,
                         "month": 3,
@@ -471,9 +471,9 @@
             },
             {
                 "name": "March Equinox",
-                "description": null,
+                "description": "T17:58:32-04:00",
                 "date": {
-                    "iso": "2019-03-20T17:58:32-04:00",
+                    "iso": "2019-03-20",
                     "datetime": {
                         "year": 2019,
                         "month": 3,
@@ -2145,9 +2145,9 @@
             },
             {
                 "name": "Daylight Saving Time ends",
-                "description": null,
+                "description": "T02:00:00-04:00",
                 "date": {
-                    "iso": "2019-11-03T02:00:00-04:00",
+                    "iso": "2019-11-03",
                     "datetime": {
                         "year": 2019,
                         "month": 11,
@@ -2360,9 +2360,9 @@
             },
             {
                 "name": "December Solstice",
-                "description": null,
+                "description": "T23:19:26-05:00",
                 "date": {
-                    "iso": "2019-12-21T23:19:26-05:00",
+                    "iso": "2019-12-21",
                     "datetime": {
                         "year": 2019,
                         "month": 12,
