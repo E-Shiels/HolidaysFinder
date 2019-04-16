@@ -9,7 +9,7 @@ import {
 export default class EmailConfirm extends React.Component {
 
   addEmailToMailingList = (email) => {
-    fetch(`http://localhost:3000/emails`, {
+    fetch("http://localhost:3000/emails", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -17,17 +17,17 @@ export default class EmailConfirm extends React.Component {
       },
       body: JSON.stringify({
         email: {
-          email: email
+          email
         }
       })
-    })
+    });
   };
 
 
   handleNext = (event, email) => {
     event.preventDefault();
     this.props.dispatch(emailNextStep(this.props.step));
-    this.addEmailToMailingList(email)
+    this.addEmailToMailingList(email);
 
   };
 

@@ -40,7 +40,7 @@ export default class HolidaysContainer extends React.Component {
       .then((response) => response.json())
       .then((json) => {
         this.props.dispatch(
-          fetchSuccess('holidays', this.toHolidayObjectsFromJSON(json))
+          fetchSuccess("holidays", this.toHolidayObjectsFromJSON(json))
         );
       })
       .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
