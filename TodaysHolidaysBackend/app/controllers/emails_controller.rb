@@ -3,10 +3,10 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
-    @email = Email.new(email_params)
+    @email = Email.find_or_create_by(email_params)
 
     if @email.save
-      render :show, status: :created, location: @email
+      render json: @email, status: :created
     else
       render json: @email.errors, status: :unprocessable_entity
     end
