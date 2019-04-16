@@ -4,16 +4,10 @@ export const fetchHolidaysBegin = () => {
   };
 };
 
-export const fetchHolidaysSuccess = (holidays) => {
+export const fetchSuccess = (fetchType, holidays) => {
   return {
-    type: "FETCH_HOLIDAYS_SUCCESS",
-    holidays
-  };
-};
-
-export const fetchFavoriteHolidaysSuccess = (holidays) => {
-  return {
-    type: "FETCH_FAVORITE_HOLIDAYS_SUCCESS",
+    type: "FETCH_SUCCESS",
+    fetchType,
     holidays
   };
 };

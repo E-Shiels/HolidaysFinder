@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { ConnectedHoliday } from "./Holiday.js";
 import {
   fetchHolidaysBegin,
-  fetchFavoriteHolidaysSuccess,
+  fetchSuccess,
   fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
@@ -78,7 +78,7 @@ export default class FavoriteHolidays extends React.Component {
       .then((response) => response.json())
       .then((json) => {
         this.props.dispatch(
-          fetchFavoriteHolidaysSuccess(this.toHolidayObjectsFromJSON(json))
+          fetchSuccess('favoriteHolidays', this.toHolidayObjectsFromJSON(json))
         );
       })
       .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));

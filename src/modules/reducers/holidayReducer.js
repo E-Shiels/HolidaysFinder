@@ -17,10 +17,8 @@ export default function holidayReducer(state = initialState, action) {
   switch (action.type) {
     case "FETCH_HOLIDAYS_BEGIN":
       return { ...state, loading: true, error: null };
-    case "FETCH_HOLIDAYS_SUCCESS":
-      return { ...state, loading: false, holidays: action.holidays };
-    case "FETCH_FAVORITE_HOLIDAYS_SUCCESS":
-      return { ...state, loading: false, favoriteHolidays: action.holidays };
+    case "FETCH_SUCCESS":
+      return { ...state, loading: false, [action.fetchType]: action.holidays };
     case "FETCH_HOLIDAYS_FAILURE":
       return { ...state, loading: false, error: action.error, holidays: [] };
     case "SET_FILTERED_HOLIDAYS":

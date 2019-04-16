@@ -7,7 +7,7 @@ import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
 import { connect } from "react-redux";
 import {
   fetchHolidaysBegin,
-  fetchHolidaysSuccess,
+  fetchSuccess,
   fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
@@ -40,7 +40,7 @@ export default class HolidaysContainer extends React.Component {
       .then((response) => response.json())
       .then((json) => {
         this.props.dispatch(
-          fetchHolidaysSuccess(this.toHolidayObjectsFromJSON(json))
+          fetchSuccess('holidays', this.toHolidayObjectsFromJSON(json))
         );
       })
       .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
