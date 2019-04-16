@@ -10,10 +10,12 @@ export default function emailReducer(state = initialState, action) {
       return {...state, step: action.step + 1};
     case "EMAIL_PREV_STEP":
       return {...state, step: action.step - 1};
+    case "EMAIL_RESET_STEP":
+      return {...state, step: 1}
     case "EMAIL_CHANGE":
       return {...state, email: action.email};
-      case "MESSAGE_CHANGE":
-        return {...state, message: action.message};
+    case "MESSAGE_CHANGE":
+      return {...state, message: action.message};
     default:
       return state;
   }

@@ -12,6 +12,12 @@ export const emailPrevStep = (step) => {
   };
 };
 
+export const emailResetStep = () => {
+  return {
+    type: "EMAIL_RESET_STEP"
+  };
+};
+
 export const emailChange = (email) => {
   return {
     type: "EMAIL_CHANGE",
