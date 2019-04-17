@@ -1,15 +1,21 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import "typeface-roboto";
+import Home from "@material-ui/icons/Home"
+
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton
+} from "@material-ui/core"
 
 const Navbar = () => (
   <div>
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="primary">
     <Toolbar>
     <Button href="/">
+    <IconButton>
+    <Home />
+    </IconButton>
       Home
     </Button>
       <Button href="/about">
@@ -18,9 +24,6 @@ const Navbar = () => (
       <Button href="/favorites">
       View Favorites
       </Button>
-      <Typography variant="h3" align="center" gutterBottom>
-      HOLIDAYS
-      </Typography>
       </Toolbar>
     </AppBar>
   </div>
