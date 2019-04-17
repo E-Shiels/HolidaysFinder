@@ -6,18 +6,15 @@ import { ConnectedEmailContainer } from "./components/EmailContainer.js";
 import Navbar from "./components/Navbar.js";
 import { ConnectedFavoriteHolidays } from "./components/FavoriteHolidays.js";
 import About from "./components/About.js";
-
-import CssBaseline from '@material-ui/core/CssBaseline';
-
 import NotFound from "./components/NotFound.js";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <CssBaseline />
       <Router>
           <Navbar />
           <h1>Holidays</h1>
