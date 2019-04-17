@@ -7,16 +7,18 @@ import Navbar from "./components/Navbar.js";
 import { ConnectedFavoriteHolidays } from "./components/FavoriteHolidays.js";
 import About from "./components/About.js";
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import NotFound from "./components/NotFound.js";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
-    let style = { width: "90%" };
     return (
+      <React.Fragment>
+      <CssBaseline />
       <Router>
-        <div style={style}>
           <Navbar />
           <h1>Holidays</h1>
           <Switch>
@@ -37,8 +39,8 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
           <SiteFooter />
-        </div>
       </Router>
+      </React.Fragment>
     );
   }
 }
