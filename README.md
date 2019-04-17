@@ -5,7 +5,7 @@
 # TodaysHolidays #
 
 TodaysHolidays is a Flatiron school portfolio project. It allows you to view holidays in Canada and favorite and filter them.
-It was built using React, Create React App, and Redux, as well as assorted middleware and npm packages. The data is sent from a Rails API backend with archived data from <https://calendarific.com/>.
+It was built using React, Create React App, and Redux, as well as assorted middleware and packages. The data is sent from a Rails API backend with archived data from <https://calendarific.com/>.
 
 ## Installation ##
 
@@ -20,6 +20,22 @@ $ rake start
 ```
 
 While using the app, you can find Canadian holidays (2019 only) by filtering by date and location, and filter them by observance type.
+
+## Libraries/Tools Used ##
+
+It uses:
+* [React](https://github.com/facebook/react) as its UI framework.
+* [Redux](https://github.com/reduxjs/redux) as a state container.
+* [React-Router](https://github.com/ReactTraining/react-router) for declarative routing.
+* [Redux Thunk](https://github.com/reduxjs/redux-thunk) for asynchronous fetch requests.
+* [Material UI](https://github.com/mui-org/material-ui) for styling my React components.
+* [Email Validator](https://github.com/manishsaraan/email-validator) to validate email addresses.
+* [Fast Deep Equal](https://github.com/epoberezkin/fast-deep-equal) for comparisons inside componentDidUpdate.
+* [React Dates](https://github.com/airbnb/react-dates) for the single-date picker
+* [React Picky](https://github.com/Aidurber/react-picky) for the observance/type filter.
+* [React Select](https://github.com/JedWatson/react-select) for the location selection.
+* [uuid](https://github.com/kelektiv/node-uuid) to generate completely random keys for objects without IDs.
+
 
 ## Contributing ##
 
