@@ -1,29 +1,24 @@
 import React from "react";
-
-import { NavLink } from "react-router-dom";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const Navbar = () => (
   <div>
-    <NavLink
-      className="navbarLink"
-      activeClassName="activeNavbarLink"
-      exact
-      to="/"
-    >Home</NavLink>
-    <br/>
-    <NavLink
-      className="navbarLink"
-      activeClassName="activeNavbarLink"
-      exact
-      to="/about"
-    >About</NavLink>
-    <br/>
-    <NavLink
-      className="navbarLink"
-      activeClassName="activeNavbarLink"
-      exact
-      to="/favorites"
-    >View Favorites</NavLink>
+    <AppBar>
+    <Toolbar>
+    <Button href="/">
+      Home
+    </Button>
+      <Button href="/about">
+      About
+      </Button>
+      <Button href="/favorites">
+      View Favorites
+      </Button>
+      </Toolbar>
+    </AppBar>
   </div>
 );
 
