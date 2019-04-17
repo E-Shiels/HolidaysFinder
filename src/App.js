@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import { ConnectedHolidaysContainer } from "./components/HolidaysContainer.js";
 import SiteFooter from "./components/SiteFooter.js";
 import { ConnectedEmailContainer } from "./components/EmailContainer.js";
