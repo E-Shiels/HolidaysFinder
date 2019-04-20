@@ -16,7 +16,6 @@ class App extends Component {
       <React.Fragment>
       <Router>
           <Navbar />
-          <h1>Holidays</h1>
           <Switch>
             <Route path="/about" component={About}/>
             <Route path="/favorites" component={ConnectedFavoriteHolidays} />
