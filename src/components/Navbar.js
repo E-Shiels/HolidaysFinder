@@ -1,7 +1,7 @@
 import React from "react";
 import HomeIcon from "@material-ui/icons/Home";
 
-import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
@@ -16,22 +16,16 @@ const styles = theme => ({
     boxShadow: 'none',
     marginTop: '6px',
   },
-  appHeader: {
-    
-  }
 });
 
 function Navbar(props) {
   const { classes } = props;
   return (
     <div>
-    <AppBar className={classes.invisibleAppBar}>
-    <Typography variant="h3"  align="center" color="inherit" mt='2'>
-    HolidaysFinder
-    </Typography>
-    </AppBar>
+
       <AppBar position="static" color="primary">
-        <Toolbar >
+        <Toolbar>
+
           <Button
             href="/"
             color="inherit"
@@ -44,7 +38,7 @@ function Navbar(props) {
               className={classes.leftIcon}
               vertical-align="text-top"
             />
-            Home
+            Holidays Finder
           </Button>
           <Button
             href="/about"
