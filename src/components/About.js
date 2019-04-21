@@ -8,7 +8,7 @@ const styles = theme => ({
     marginRight: "auto",
     width: "95%"
   },
-  aboutBody: {
+  body: {
     marginTop: theme.spacing.unit
   },
   header: {
@@ -19,14 +19,14 @@ const styles = theme => ({
   }
 });
 
-const About = props => {
+const About = (props) => {
   const { classes } = props;
   return (
     <div className={classes.centeredDiv}>
       <Typography className={classes.header} variant="h3">
         About
       </Typography>
-      <Typography className={classes.aboutBody} variant="body1">
+      <Typography className={classes.body} variant="body1">
         HolidaysFinder is a Flatiron school portfolio project. It allows you to
         view holidays in Canada and favorite and filter them. It was built using
         React, Create React App, and Redux, as well as assorted middleware and
