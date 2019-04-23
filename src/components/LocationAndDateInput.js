@@ -1,4 +1,5 @@
 import React from "react";
+import { Typography, Button, Paper, Divider } from "@material-ui/core";
 
 import Select from "react-select";
 import "react-dates/initialize";
@@ -133,8 +134,8 @@ export default class LocationAndDateInput extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h2>Find holidays in </h2>
+      <Paper>
+        <Typography variant="h4">Find holidays in </Typography>
         <form onSubmit={this.handleSubmit}>
           <Select
             value={this.state.selectedLocation}
@@ -142,8 +143,7 @@ export default class LocationAndDateInput extends React.Component {
             options={locationOptions}
             isMulti
           />
-
-          <h3>On</h3>
+          <Typography variant="h4">On</Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
             onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
@@ -156,9 +156,10 @@ export default class LocationAndDateInput extends React.Component {
             isOutsideRange={() => false}
           />
           <br />
-          <input type="submit" />
+          <Button variant="contained" type="submit">Submit
+          </Button>
         </form>
-      </React.Fragment>
+      </Paper>
     );
   }
 }
