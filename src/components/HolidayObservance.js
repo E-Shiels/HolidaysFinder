@@ -1,10 +1,11 @@
 import React from "react";
+import { Typography } from "@material-ui/core"
 
 const HolidayObservance = (props) => {
   if (props.observance.length > 1) {
-    return <p>{props.observance.join(" - ")}</p>;
+    return <Typography variant="body1">{props.observance.join(" - ")}</Typography>;
   } else {
-    return <p>{props.observance}</p>;
+    return <Typography variant="body1">{props.observance}</Typography>;
   }
 };
 
