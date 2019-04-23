@@ -19,6 +19,19 @@ export const fetchHolidaysFailure = (error) => {
   };
 };
 
+export const fetchFavoriteHolidays = () => {
+  return dispatch => {
+    dispatch(fetchHolidaysBegin());
+    return fetch("http://localhost:3000/api/v1/holidays")
+      .then((response) => handleErrors(response))
+      .then((response) => response.json())
+      .then((json) => {
+        return json
+      })
+      .catch((error) => dispatch(fetchHolidaysFailure(error)));
+  }
+}
+
 const handleErrors = (response) => {
   if (!response.ok) {
     throw Error(response.statusText);
