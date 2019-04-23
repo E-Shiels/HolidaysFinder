@@ -9,26 +9,10 @@ import {
 
 export default class EmailConfirm extends React.Component {
 
-  addEmailToMailingList = (email) => {
-    fetch("http://localhost:3000/emails", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: {
-          email
-        }
-      })
-    });
-  };
-
   handleNext = (event, email) => {
     event.preventDefault();
     this.props.dispatch(emailNextStep(this.props.step));
-    this.addEmailToMailingList(email);
-
+    this.props.dispatch(postEmail(email))
   };
 
   handleBack = (event) => {
