@@ -11,7 +11,7 @@ import {
   setFilteredHolidays,
   setLocation,
   setDate,
-  emptyObservanceFilteredHolidays
+  resetObservanceFilteredHolidaysAndFilters
 } from "../modules/actions/holidayActions.js";
 
 const locationOptions = [
@@ -115,7 +115,7 @@ export default class LocationAndDateInput extends React.Component {
     } else {
       this.props.dispatch(setFilteredHolidays(newHolidays));
     }
-    this.props.dispatch(emptyObservanceFilteredHolidays);
+    this.props.dispatch(resetObservanceFilteredHolidaysAndFilters());
   };
 
   handleSubmit = (event) => {
