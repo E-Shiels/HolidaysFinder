@@ -156,7 +156,7 @@ export default class LocationAndDateInput extends React.Component {
             isOutsideRange={() => false}
           />
           <br />
-          <Button variant="contained" type="submit">Submit
+          <Button variant="contained" type="submit">SEARCH
           </Button>
         </form>
       </Paper>
