@@ -43,8 +43,6 @@ export default class LocationAndDateInput extends React.Component {
   };
 
   setLocationAndDate = (event) => {
-    event.preventDefault();
-
     let formLocations = [];
     if (
       this.state.selectedLocation === null ||
@@ -119,10 +117,12 @@ export default class LocationAndDateInput extends React.Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     this.setLocationAndDate(event);
     setTimeout(() => {
       this.applySearchAndGetData();
     }, 100);
+    //I have to use this method because setLocationAndDate dispatches 2 actions, so I can't return a Promise from the action,and no other method I can find has worked
   };
 
   handleErrors = (response) => {

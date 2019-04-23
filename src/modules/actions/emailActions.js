@@ -31,3 +31,20 @@ export const messageChange = (message) => {
     message
   };
 };
+
+export const postEmail = (email) => {
+  return dispatch => {
+    fetch("http://localhost:3000/emails", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: {
+          email
+        }
+      })
+    });
+  }
+}

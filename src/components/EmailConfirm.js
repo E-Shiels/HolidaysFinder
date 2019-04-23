@@ -3,7 +3,8 @@ import { Typography, Paper, Button } from "@material-ui/core"
 import { connect } from "react-redux";
 import {
   emailNextStep,
-  emailPrevStep
+  emailPrevStep,
+  postEmail
 } from "../modules/actions/emailActions.js";
 
 export default class EmailConfirm extends React.Component {
