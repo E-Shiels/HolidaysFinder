@@ -2,17 +2,20 @@ import React from "react";
 import { Typography, Paper, TextField, Button } from "@material-ui/core"
 import { connect } from "react-redux";
 import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
+import Notifier, { openSnackbar } from './AlertSnackbar.js';
 
 const validator = require("email-validator");
 
 export default class EmailInput extends React.Component {
+
+
   handleSubmit = (event) => {
     event.preventDefault();
     if (validator.validate(event.target[0].value)) {
       this.props.dispatch(emailNextStep(this.props.step));
       this.props.dispatch(emailChange(event.target[0].value));
     } else {
-      alert("The email address you provided is invalid. Please try again.");
+      openSnackbar({message: 'The email address provided is invalid.' })
     }
   };
 
@@ -20,6 +23,7 @@ export default class EmailInput extends React.Component {
     const { email } = this.props;
     return (
       <Paper>
+      <Notifier />
       <form onSubmit={this.handleSubmit}>
         <Typography variant="h5" gutterBottom>
           Sign up for our totally real email list to get totally not-fake
