@@ -122,7 +122,7 @@ export default class LocationAndDateInput extends React.Component {
     this.setLocationAndDate(event);
     setTimeout(() => {
       this.applySearchAndGetData();
-    }, 0);
+    }, 100);
   };
 
   handleErrors = (response) => {
