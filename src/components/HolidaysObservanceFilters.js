@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Typography, Button, Paper } from "@material-ui/core"
+
 import Picky from "react-picky";
 import "react-picky/dist/picky.css";
 import equal from "fast-deep-equal";
@@ -58,8 +60,8 @@ export default class HolidaysObservanceFilters extends React.Component {
       return "";
     } else {
       return (
-        <div>
-          <h4>Filter by Observance Type</h4>
+        <Paper>
+          <Typography variant="h6">Filter by Observance Type</Typography>
           <form onSubmit={this.handleSubmit}>
             <Picky
               options={this.state.observances}
@@ -72,9 +74,9 @@ export default class HolidaysObservanceFilters extends React.Component {
               multiple={true}
               keepOpen={true}
             />
-            <input type="submit" value="Apply Filters" />
+            <Button type="submit" value="Apply Filters" variant="contained"> Apply Filters </Button>
           </form>
-        </div>
+        </Paper>
       );
     }
   };
