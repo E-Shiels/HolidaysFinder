@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Divider } from "@material-ui/core"
 import { connect } from "react-redux";
 import { ConnectedHoliday } from "./Holiday.js";
 import {
@@ -46,6 +46,7 @@ export default class FavoriteHolidays extends React.Component {
         }
 
         return (
+          <React.Fragment>
           <ConnectedHoliday
             key={holiday.id}
             id={holiday.id}
@@ -56,6 +57,8 @@ export default class FavoriteHolidays extends React.Component {
             locations={locationsList}
             favorite={holiday.favorite}
           />
+          <Divider />
+          </React.Fragment>
         );
       });
     }
