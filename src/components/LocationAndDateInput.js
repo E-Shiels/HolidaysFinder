@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Paper, Divider } from "@material-ui/core";
+import { Typography, Button, Paper } from "@material-ui/core";
 
 import Select from "react-select";
 import "react-dates/initialize";
