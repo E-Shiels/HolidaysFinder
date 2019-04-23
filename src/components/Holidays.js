@@ -4,6 +4,8 @@ import { ConnectedHoliday } from "./Holiday.js";
 
 import { connect } from "react-redux";
 
+import { Divider } from "@material-ui/core"
+
 export default class Holidays extends React.Component {
   renderHolidays = () => {
     if (this.props.holidays[0] === "No results") {
@@ -68,6 +70,8 @@ export default class Holidays extends React.Component {
         }
 
         return (
+          <>
+          <Divider />
           <ConnectedHoliday
             key={holiday.id}
             id={holiday.id}
@@ -78,6 +82,7 @@ export default class Holidays extends React.Component {
             locations={locationsList}
             favorite={holiday.favorite}
           />
+          </>
         );
       });
     }
