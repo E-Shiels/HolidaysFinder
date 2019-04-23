@@ -1,9 +1,10 @@
 import React from "react";
+import { Typography } from "@material-ui/core"
 
 const HolidayHeader = (props) => (
-  <h2>
+  <Typography variant="h4">
     {props.date} - {props.name}
-  </h2>
+  </Typography>
 );
 
 export default HolidayHeader;
