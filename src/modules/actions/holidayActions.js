@@ -55,9 +55,9 @@ export const updateObservanceFilters = (observanceFilters) => {
   };
 };
 
-export const emptyObservanceFilteredHolidays = () => {
+export const resetObservanceFilteredHolidaysAndFilters = () => {
   return {
-    type: "EMPTY_OBSERVANCE_FILTERED_HOLIDAYS"
+    type: "RESET_OBSERVANCE_FILTERED_HOLIDAYS_AND_FILTERS"
   };
 };
 
