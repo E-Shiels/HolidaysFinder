@@ -31,8 +31,8 @@ const notFound = props => {
         Error - 404
       </Typography>
       <Typography className={classes.body} variant="body1">
-        The page you were looking for could not be found. Try pressing one of
-        the buttons in the navigation bar.
+        The page you were looking for could not be found. Try using
+        a button in the navigation bar.
       </Typography>
     </div>
   );
