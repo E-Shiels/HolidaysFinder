@@ -65,7 +65,7 @@ export default class HolidaysObservanceFilters extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <Picky
               options={this.state.observances}
-              value={this.state.arrayValue}
+              value={this.state.arrayValue || this.props.observanceFilters}
               onChange={this.selectMultipleOption}
               placeholder={"All"}
               numberDisplayed={5}
