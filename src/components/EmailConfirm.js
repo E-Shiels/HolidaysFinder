@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Typography, Paper, Button } from "@material-ui/core"
 import { connect } from "react-redux";
 import {
   emailNextStep,
@@ -23,7 +23,6 @@ export default class EmailConfirm extends React.Component {
     });
   };
 
-
   handleNext = (event, email) => {
     event.preventDefault();
     this.props.dispatch(emailNextStep(this.props.step));
@@ -39,19 +38,19 @@ export default class EmailConfirm extends React.Component {
   render() {
     const { email } = this.props;
     return (
-      <React.Fragment>
-        <h4>
-          Sign up for our totally real email list to get totally not-fake
-          emails.
-        </h4>
-        <p>{email}</p>
-        <button type="button" onClick={this.handleBack}>
+      <Paper>
+      <Typography variant="h5" gutterBottom>
+        Sign up for our totally real email list to get totally not-fake
+        emails.
+      </Typography>
+        <Typography variant="body1">{email}</Typography>
+        <Button variant="contained" type="button" onClick={this.handleBack}>
           Back
-        </button>
-        <button type="button" onClick={(event) => this.handleNext(event, email)}>
+        </Button>
+        <Button variant="contained" color="primary" type="button" onClick={(event) => this.handleNext(event, email)}>
           Confirm Email
-        </button>
-      </React.Fragment>
+        </Button>
+      </Paper>
     );
   }
 }

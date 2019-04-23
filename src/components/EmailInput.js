@@ -1,4 +1,5 @@
 import React from "react";
+import { Typography, Paper, TextField, Button } from "@material-ui/core"
 import { connect } from "react-redux";
 import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
 
@@ -18,18 +19,21 @@ export default class EmailInput extends React.Component {
   render() {
     const { email } = this.props;
     return (
+      <Paper>
       <form onSubmit={this.handleSubmit}>
-        <h4>
+        <Typography variant="h5" gutterBottom>
           Sign up for our totally real email list to get totally not-fake
           emails.
-        </h4>
-        <input
-          placeholder="yourEmail@email.com"
+        </Typography>
+        <TextField
+          label="Email"
           defaultValue={email}
           id="email"
-        />
-        <button type="submit">Submit Email</button>
+          placeholder="yourEmail@email.com"
+          />
+        <Button variant="contained" type="submit">Submit Email</Button>
       </form>
+      </Paper>
     );
   }
 }
