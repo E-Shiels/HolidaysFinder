@@ -135,7 +135,7 @@ export default class LocationAndDateInput extends React.Component {
   render() {
     return (
       <Paper>
-        <Typography variant="h4">Find holidays in </Typography>
+        <Typography variant="h4" gutterBottom>Find holidays in </Typography>
         <form onSubmit={this.handleSubmit}>
           <Select
             value={this.state.selectedLocation}
@@ -143,7 +143,7 @@ export default class LocationAndDateInput extends React.Component {
             options={locationOptions}
             isMulti
           />
-          <Typography variant="h4">On</Typography>
+          <Typography variant="h4" gutterBottom>On</Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
             onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
