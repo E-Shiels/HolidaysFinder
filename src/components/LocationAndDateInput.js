@@ -125,13 +125,6 @@ export default class LocationAndDateInput extends React.Component {
     //I have to use this method because setLocationAndDate dispatches 2 actions, so I can't return a Promise from the action,and no other method I can find has worked
   };
 
-  handleErrors = (response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response;
-  };
-
   render() {
     return (
       <Paper>

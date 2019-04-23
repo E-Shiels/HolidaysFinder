@@ -19,6 +19,13 @@ export const fetchHolidaysFailure = (error) => {
   };
 };
 
+const handleErrors = (response) => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+};
+
 export const setFilteredHolidays = (filteredHolidays) => {
   return {
     type: "SET_FILTERED_HOLIDAYS",
