@@ -30,13 +30,12 @@ export class EmailContainer extends React.Component {
       setTimeout(() => {
         this.props.dispatch(emailChange(""));
         this.props.dispatch(emailResetStep());
-
       }, 15000);
     }
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     step: state.email.step
   };

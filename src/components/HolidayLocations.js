@@ -16,7 +16,7 @@ const HolidayLocations = (props) => {
     } else {
       return props.locations.map((location) => {
         return (
-          <HolidayLocation key={ uuidv4() } location={{ name: location.name }} />
+          <HolidayLocation key={uuidv4()} location={{ name: location.name }} />
         );
       });
     }

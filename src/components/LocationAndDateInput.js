@@ -38,11 +38,11 @@ export default class LocationAndDateInput extends React.Component {
     selectedLocation: []
   };
 
-  handleLocationChange = (selectedLocation) => {
+  handleLocationChange = selectedLocation => {
     this.setState({ selectedLocation });
   };
 
-  setLocationAndDate = (event) => {
+  setLocationAndDate = event => {
     let formLocations = [];
     if (
       this.state.selectedLocation === null ||
@@ -50,7 +50,7 @@ export default class LocationAndDateInput extends React.Component {
     ) {
       formLocations = ["Canada (All)"];
     } else {
-      formLocations = this.state.selectedLocation.map((location) => {
+      formLocations = this.state.selectedLocation.map(location => {
         return location.value;
       });
     }
@@ -69,8 +69,8 @@ export default class LocationAndDateInput extends React.Component {
   };
 
   dateIsPropsDateOrAll = (holidayDate, propsDate) => {
-    return (holidayDate === propsDate || propsDate ==="All");
-  }
+    return holidayDate === propsDate || propsDate === "All";
+  };
 
   applySearchAndGetData = () => {
     let data = this.props.holidays;
@@ -80,19 +80,19 @@ export default class LocationAndDateInput extends React.Component {
       this.props.selectedLocation.includes("all") ||
       !this.props.selectedLocation.length
     ) {
-      data.forEach((holiday) => {
+      data.forEach(holiday => {
         if (this.dateIsPropsDateOrAll(holiday.date, this.props.date)) {
           newHolidays.push(holiday);
         }
       });
     } else {
-      data.forEach((holiday) => {
+      data.forEach(holiday => {
         if (
-          (this.dateIsPropsDateOrAll(holiday.date, this.props.date)) &&
+          this.dateIsPropsDateOrAll(holiday.date, this.props.date) &&
           (holiday.locations === "All" ||
             holiday.locations
               .split(", ")
-              .some((location) => this.props.selectedLocation.includes(location)))
+              .some(location => this.props.selectedLocation.includes(location)))
         ) {
           newHolidays.push(holiday);
         }
@@ -116,7 +116,7 @@ export default class LocationAndDateInput extends React.Component {
     this.props.dispatch(resetObservanceFilteredHolidaysAndFilters());
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     this.setLocationAndDate(event);
     setTimeout(() => {
@@ -128,7 +128,9 @@ export default class LocationAndDateInput extends React.Component {
   render() {
     return (
       <Paper>
-        <Typography variant="h4" gutterBottom>Find holidays in </Typography>
+        <Typography variant="h4" gutterBottom>
+          Find holidays in{" "}
+        </Typography>
         <form onSubmit={this.handleSubmit}>
           <Select
             value={this.state.selectedLocation}
@@ -136,10 +138,12 @@ export default class LocationAndDateInput extends React.Component {
             options={locationOptions}
             isMulti
           />
-          <Typography variant="h4" gutterBottom>On</Typography>
+          <Typography variant="h4" gutterBottom>
+            On
+          </Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
-            onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
+            onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
             focused={this.state.focused} // PropTypes.bool
             onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
             id="date_input" // PropTypes.string.isRequired,
@@ -149,7 +153,8 @@ export default class LocationAndDateInput extends React.Component {
             isOutsideRange={() => false}
           />
           <br />
-          <Button variant="contained" type="submit">SEARCH
+          <Button variant="contained" type="submit">
+            SEARCH
           </Button>
         </form>
       </Paper>
@@ -157,7 +162,7 @@ export default class LocationAndDateInput extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,

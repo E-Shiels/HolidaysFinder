@@ -11,21 +11,19 @@ const styles = theme => ({
   leftIcon: {
     marginRight: theme.spacing.unit
   },
-  invisibleAppBar:{
+  invisibleAppBar: {
     backgroundColor: "transparent",
-    boxShadow: 'none',
-    marginTop: '6px',
-  },
+    boxShadow: "none",
+    marginTop: "6px"
+  }
 });
 
 function Navbar(props) {
   const { classes } = props;
   return (
     <div>
-
       <AppBar position="static" color="primary">
         <Toolbar>
-
           <Button
             href="/"
             color="inherit"

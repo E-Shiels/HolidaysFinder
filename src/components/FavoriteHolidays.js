@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider } from "@material-ui/core"
+import { Divider } from "@material-ui/core";
 import { connect } from "react-redux";
 import { ConnectedHoliday } from "./Holiday.js";
 import {
@@ -18,7 +18,7 @@ export default class FavoriteHolidays extends React.Component {
     if (!this.props.favoriteHolidays.length) {
       return "You have no favorites.";
     } else {
-      return this.props.favoriteHolidays.map((holiday) => {
+      return this.props.favoriteHolidays.map(holiday => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -29,7 +29,7 @@ export default class FavoriteHolidays extends React.Component {
             name: "Canada (All)"
           });
         } else {
-          holiday.states.split(",").forEach((state) => {
+          holiday.states.split(",").forEach(state => {
             locationsList.push({
               name: state.trim()
             });
@@ -37,7 +37,7 @@ export default class FavoriteHolidays extends React.Component {
         }
         let observanceList = [];
         if (holiday.type.includes(",")) {
-          holiday.type.split(", ").forEach((type) => {
+          holiday.type.split(", ").forEach(type => {
             observanceList.push(type.trim());
           });
         } else {
@@ -46,26 +46,26 @@ export default class FavoriteHolidays extends React.Component {
 
         return (
           <React.Fragment>
-          <ConnectedHoliday
-            key={holiday.id}
-            id={holiday.id}
-            date={holiday.date}
-            name={holiday.name}
-            observance={observanceList}
-            description={holiday.description}
-            locations={locationsList}
-            favorite={holiday.favorite}
-          />
-          <Divider />
+            <ConnectedHoliday
+              key={holiday.id}
+              id={holiday.id}
+              date={holiday.date}
+              name={holiday.name}
+              observance={observanceList}
+              description={holiday.description}
+              locations={locationsList}
+              favorite={holiday.favorite}
+            />
+            <Divider />
           </React.Fragment>
         );
       });
     }
-  }
+  };
 
-  toHolidayObjectsFromJSON = (data) => {
+  toHolidayObjectsFromJSON = data => {
     let holidaysArray = [];
-    data.forEach((holiday) => {
+    data.forEach(holiday => {
       if (holiday.favorite === true) {
         holidaysArray.push(buildHolidayObject(holiday));
       }
@@ -75,9 +75,10 @@ export default class FavoriteHolidays extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchHolidays()).then(resp => {
-      this.props.dispatch(fetchSuccess("favoriteHolidays",
-      this.toHolidayObjectsFromJSON(resp)));
-    })
+      this.props.dispatch(
+        fetchSuccess("favoriteHolidays", this.toHolidayObjectsFromJSON(resp))
+      );
+    });
   }
 
   render() {
@@ -89,7 +90,7 @@ export default class FavoriteHolidays extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     holidays: state.holidays.holidays,
     loading: state.holidays.loading,

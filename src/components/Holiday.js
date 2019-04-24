@@ -10,7 +10,7 @@ import { changeFavorite } from "../modules/actions/holidayActions.js";
 
 export default class Holiday extends React.Component {
   updateHolidayFavoriteState = (favoriteStatus, id) => {
-    this.props.dispatch(changeFavorite(favoriteStatus, id))
+    this.props.dispatch(changeFavorite(favoriteStatus, id));
   };
 
   render() {

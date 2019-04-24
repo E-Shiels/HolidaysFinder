@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography, Button, Paper } from "@material-ui/core"
+import { Typography, Button, Paper } from "@material-ui/core";
 
 import Picky from "react-picky";
 import "react-picky/dist/picky.css";
@@ -18,30 +18,30 @@ export default class HolidaysObservanceFilters extends React.Component {
     arrayValue: []
   };
 
-  getListOfObservanceTypes = (data) => {
+  getListOfObservanceTypes = data => {
     let observanceList = [];
     if (data[0] !== "No results" && data[0] !== []) {
-        data.forEach((holiday) => {
-          if (holiday.type.includes(",")) {
-            holiday.type.split(",").forEach((type) => {
-              let trimmedType = type.trim();
-              if (!observanceList.includes(trimmedType)) {
-                observanceList.push(trimmedType);
-              }
-            });
-          } else {
-            if (!observanceList.includes(holiday.type)) {
-              observanceList.push(holiday.type);
+      data.forEach(holiday => {
+        if (holiday.type.includes(",")) {
+          holiday.type.split(",").forEach(type => {
+            let trimmedType = type.trim();
+            if (!observanceList.includes(trimmedType)) {
+              observanceList.push(trimmedType);
             }
+          });
+        } else {
+          if (!observanceList.includes(holiday.type)) {
+            observanceList.push(holiday.type);
           }
-        });
+        }
+      });
     }
     this.setState({
       observances: observanceList
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.dispatch(updateObservanceFilters(this.state.arrayValue));
     setTimeout(() => {
@@ -51,11 +51,11 @@ export default class HolidaysObservanceFilters extends React.Component {
     });
   };
 
-  selectMultipleOption = (value) => {
+  selectMultipleOption = value => {
     this.setState({ arrayValue: value });
   };
 
-  returnObservanceFilterPicker = (data) => {
+  returnObservanceFilterPicker = data => {
     if (!data.length) {
       return "";
     } else {
@@ -74,7 +74,10 @@ export default class HolidaysObservanceFilters extends React.Component {
               multiple={true}
               keepOpen={true}
             />
-            <Button type="submit" value="Apply Filters" variant="contained"> Apply Filters </Button>
+            <Button type="submit" value="Apply Filters" variant="contained">
+              {" "}
+              Apply Filters{" "}
+            </Button>
           </form>
         </Paper>
       );
@@ -95,7 +98,7 @@ export default class HolidaysObservanceFilters extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     filteredHolidays: state.holidays.filteredHolidays,
     observanceFilteredHolidays: state.holidays.observanceFilteredHolidays,

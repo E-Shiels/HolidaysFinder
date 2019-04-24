@@ -4,7 +4,7 @@ import { ConnectedHoliday } from "./Holiday.js";
 
 import { connect } from "react-redux";
 
-import { Divider } from "@material-ui/core"
+import { Divider } from "@material-ui/core";
 
 export default class Holidays extends React.Component {
   renderHolidays = () => {
@@ -34,7 +34,7 @@ export default class Holidays extends React.Component {
             {" "}
             There are no holidays on {readableDate} in{" "}
             {this.props.selectedLocation
-              .map((location) => {
+              .map(location => {
                 return locationsDictionary.location;
               })
               .join(", ") || "Canada (All)"}
@@ -43,7 +43,7 @@ export default class Holidays extends React.Component {
         </div>
       );
     } else {
-      return this.props.holidays.map((holiday) => {
+      return this.props.holidays.map(holiday => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -54,7 +54,7 @@ export default class Holidays extends React.Component {
             name: "Canada (All)"
           });
         } else {
-          holiday.states.split(",").forEach((state) => {
+          holiday.states.split(",").forEach(state => {
             locationsList.push({
               name: state.trim()
             });
@@ -62,7 +62,7 @@ export default class Holidays extends React.Component {
         }
         let observanceList = [];
         if (holiday.type.includes(",")) {
-          holiday.type.split(", ").forEach((type) => {
+          holiday.type.split(", ").forEach(type => {
             observanceList.push(type.trim());
           });
         } else {
@@ -71,17 +71,17 @@ export default class Holidays extends React.Component {
 
         return (
           <>
-          <Divider />
-          <ConnectedHoliday
-            key={holiday.id}
-            id={holiday.id}
-            date={holiday.date}
-            name={holiday.name}
-            observance={observanceList}
-            description={holiday.description}
-            locations={locationsList}
-            favorite={holiday.favorite}
-          />
+            <Divider />
+            <ConnectedHoliday
+              key={holiday.id}
+              id={holiday.id}
+              date={holiday.date}
+              name={holiday.name}
+              observance={observanceList}
+              description={holiday.description}
+              locations={locationsList}
+              favorite={holiday.favorite}
+            />
           </>
         );
       });
@@ -93,7 +93,7 @@ export default class Holidays extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     selectedLocation: state.holidays.selectedLocation
   };
