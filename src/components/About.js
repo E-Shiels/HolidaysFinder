@@ -19,7 +19,7 @@ const styles = (theme) => ({
   }
 });
 
-const About = props => {
+const About = (props) => {
   const { classes } = props;
   return (
     <div className={classes.centeredDiv}>

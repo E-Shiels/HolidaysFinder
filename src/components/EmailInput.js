@@ -15,7 +15,7 @@ export default class EmailInput extends React.Component {
       this.props.dispatch(emailNextStep(this.props.step));
       this.props.dispatch(emailChange(event.target[0].value));
     } else {
-      openSnackbar({message: 'The email address provided is invalid.'});
+      openSnackbar({message: "The email address provided is invalid."});
     }
   };
 
