@@ -12,6 +12,7 @@ export default class Holidays extends React.Component {
       const date = new Date(this.props.holidays[1]);
       const correctDate = new Date(date.setDate(date.getDate() + 1));
       const readableDate = correctDate.toDateString();
+
       const locationsDictionary = {
         all: "Canada (All)",
         AB: "Alberta",
@@ -28,6 +29,7 @@ export default class Holidays extends React.Component {
         SK: "Saskatchewan",
         YT: "Yukon"
       };
+      
       return (
         <div>
           <p>
