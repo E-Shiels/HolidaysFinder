@@ -19,7 +19,7 @@ export const fetchHolidaysFailure = (error) => {
   };
 };
 
-export const fetchFavoriteHolidays = () => {
+export const fetchHolidays = () => {
   return dispatch => {
     dispatch(fetchHolidaysBegin());
     return fetch("http://localhost:3000/api/v1/holidays")
@@ -61,12 +61,36 @@ export const setDate = (date) => {
 };
 
 export const changeFavorite = (id, favoriteStatus) => {
+  return dispatch => {
+    dispatch(putFavoriteStatus(id, favoriteStatus))
+    dispatch(changeFavoriteStatus(id, favoriteStatus))
+  }
+}
+
+export const changeFavoriteStatus = (id, favoriteStatus) => {
   return {
-    type: "CHANGE_FAVORITE",
+    type: "CHANGE_FAVORITE_STATUS",
     id,
     favoriteStatus
   };
 };
+
+export const putFavoriteStatus = (id, favoriteStatus) => {
+  return dispatch => {
+    fetch(`http://localhost:3000/api/v1/holidays/${id}.json`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        holiday: {
+          favorite: favoriteStatus
+        }
+      })
+    })
+  }
+}
 
 export const updateObservanceFilters = (observanceFilters) => {
   return {

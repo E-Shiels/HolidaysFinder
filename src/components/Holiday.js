@@ -10,20 +10,7 @@ import { changeFavorite } from "../modules/actions/holidayActions.js";
 
 export default class Holiday extends React.Component {
   updateHolidayFavoriteState = (favoriteStatus, id) => {
-    fetch(`http://localhost:3000/api/v1/holidays/${id}.json`, {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        holiday: {
-          favorite: favoriteStatus
-        }
-      })
-    })
-      .then((res) => res.json())
-      .then(this.props.dispatch(changeFavorite(id, favoriteStatus)));
+    this.props.dispatch(changeFavorite(favoriteStatus, id))
   };
 
   render() {

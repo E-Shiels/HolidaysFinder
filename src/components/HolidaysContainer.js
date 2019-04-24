@@ -6,9 +6,8 @@ import { ConnectedLocationAndDateInput } from "./LocationAndDateInput.js";
 
 import { connect } from "react-redux";
 import {
-  fetchHolidaysBegin,
+  fetchHolidays,
   fetchSuccess,
-  fetchHolidaysFailure
 } from "../modules/actions/holidayActions.js";
 
 export function buildHolidayObject(holiday) {
@@ -34,16 +33,10 @@ export default class HolidaysContainer extends React.Component {
   };
 
   componentDidMount() {
-    this.props.dispatch(fetchHolidaysBegin());
-    fetch("http://localhost:3000/api/v1/holidays")
-      .then(this.handleErrors)
-      .then((response) => response.json())
-      .then((json) => {
-        this.props.dispatch(
-          fetchSuccess("holidays", this.toHolidayObjectsFromJSON(json))
-        );
-      })
-      .catch((error) => this.props.dispatch(fetchHolidaysFailure(error)));
+    this.props.dispatch(fetchHolidays()).then(resp => {
+      this.props.dispatch(fetchSuccess("holidays",
+      this.toHolidayObjectsFromJSON(resp)));
+    })
   }
 
   render() {
