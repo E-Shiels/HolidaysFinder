@@ -7,7 +7,7 @@ export default class FavoriteButton extends React.Component {
 
   handleChange = () => {
     this.setState({ favorite: !this.state.favorite }, function() {
-      this.props.updateHolidayFavoriteState(this.state.favorite, this.props.id);
+      this.props.updateHolidayFavoriteState(this.props.id, this.state.favorite);
     });
   };
 
