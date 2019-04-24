@@ -62,8 +62,8 @@ export const setDate = (date) => {
 
 export const changeFavorite = (id, favoriteStatus) => {
   return dispatch => {
-    dispatch(putFavoriteStatus(id, favoriteStatus))
-    dispatch(changeFavoriteStatus(id, favoriteStatus))
+    dispatch(putFavoriteStatus(id, favoriteStatus));
+    dispatch(changeFavoriteStatus(id, favoriteStatus));
   }
 }
 

@@ -65,7 +65,7 @@ export default class FavoriteHolidays extends React.Component {
 
   toHolidayObjectsFromJSON = (data) => {
     let holidaysArray = [];
-    data.forEach(holiday => {
+    data.forEach((holiday) => {
       if (holiday.favorite === true) {
         holidaysArray.push(buildHolidayObject(holiday));
       }
@@ -74,7 +74,7 @@ export default class FavoriteHolidays extends React.Component {
   };
 
   componentDidMount() {
-    this.props.dispatch(fetchHolidays()).then(resp => {
+    this.props.dispatch(fetchHolidays()).then((resp) => {
       this.props.dispatch(
         fetchSuccess("favoriteHolidays", this.toHolidayObjectsFromJSON(resp))
       );

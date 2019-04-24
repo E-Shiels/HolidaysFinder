@@ -22,7 +22,7 @@ const styles = (theme) => ({
   }
 });
 
-const notFound = props => {
+const notFound = (props) => {
   const { classes } = props;
   return (
     <div className={classes.centeredDiv}>

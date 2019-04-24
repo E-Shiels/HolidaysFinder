@@ -19,14 +19,14 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: grey[700],
-      contrastText: 'rgb(250, 250, 250)'
+      contrastText: "rgb(250, 250, 250)"
     },
     secondary: {
-      main: '#ebe9e9',
-      contrastText: 'rgb(0, 0, 0)'
+      main: "#ebe9e9",
+      contrastText: "rgb(0, 0, 0)"
     },
   }
-})
+});
 
 //Allows for hot (re)loading
 if (module.hot) {
