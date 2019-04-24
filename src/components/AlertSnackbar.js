@@ -47,9 +47,9 @@ class Notifier extends React.Component {
     return (
       <div>
         <Snackbar
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          anchorOrigin={{ vertical: "top", horizontal: "left" }}
           message={message}
-          autoHideDuration={5000}
+          autoHideDuration={6000}
           onClose={this.handleSnackbarClose}
           open={this.state.open}
           ContentProps={{"aria-describedby": "message-id"}}
