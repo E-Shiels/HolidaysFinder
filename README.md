@@ -12,10 +12,9 @@ It was built using React, Create React App, and Redux, as well as assorted middl
 Clone down this repository and navigate into the program folder. Then execute the following commands:
 
 ```
+$ npm install
 $ cd HolidaysFinderBackend
 $ bundle install
-$ cd ..
-$ npm install
 $ rake start
 ```
 
