@@ -1,13 +1,13 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 
 const styles = theme => ({
   close: {
-    padding: theme.spacing.unit / 2,
-  },
+    padding: theme.spacing.unit / 2
+  }
 });
 
 let openSnackbarFn;
@@ -15,7 +15,7 @@ let openSnackbarFn;
 class Notifier extends React.Component {
   state = {
     open: false,
-    message: ''
+    message: ""
   };
 
   componentDidMount() {
@@ -25,14 +25,14 @@ class Notifier extends React.Component {
   openSnackbar = ({ message }) => {
     this.setState({
       open: true,
-      message,
+      message
     });
   };
 
   handleSnackbarClose = () => {
     this.setState({
       open: false,
-      message: '',
+      message: ""
     });
   };
 
@@ -47,13 +47,13 @@ class Notifier extends React.Component {
     return (
       <div>
         <Snackbar
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        message={message}
-        autoHideDuration={5000}
-        onClose={this.handleSnackbarClose}
-        open={this.state.open}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          message={message}
+          autoHideDuration={5000}
+          onClose={this.handleSnackbarClose}
+          open={this.state.open}
           ContentProps={{
-            'aria-describedby': 'message-id',
+            "aria-describedby": "message-id"
           }}
           action={[
             <IconButton
@@ -64,7 +64,7 @@ class Notifier extends React.Component {
               onClick={this.handleSnackbarClose}
             >
               <CloseIcon />
-            </IconButton>,
+            </IconButton>
           ]}
         />
       </div>
@@ -72,7 +72,7 @@ class Notifier extends React.Component {
   }
 }
 export function openSnackbar({ message }) {
-  openSnackbarFn({ message })
+  openSnackbarFn({ message });
 }
 
 export default withStyles(styles)(Notifier);

@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   centeredDiv: {
     marginLeft: "auto",
     marginRight: "auto",
@@ -19,7 +19,7 @@ const styles = theme => ({
   }
 });
 
-const About = (props) => {
+const About = props => {
   const { classes } = props;
   return (
     <div className={classes.centeredDiv}>
@@ -35,7 +35,6 @@ const About = (props) => {
         <Link href="https://calendarific.com/" className={classes.link}>
           https://calendarific.com/
         </Link>
-        .
       </Typography>
     </div>
   );
