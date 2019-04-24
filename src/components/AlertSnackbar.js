@@ -52,9 +52,7 @@ class Notifier extends React.Component {
           autoHideDuration={5000}
           onClose={this.handleSnackbarClose}
           open={this.state.open}
-          ContentProps={{
-            "aria-describedby": "message-id"
-          }}
+          ContentProps={{"aria-describedby": "message-id"}}
           action={[
             <IconButton
               key="close"

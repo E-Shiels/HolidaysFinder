@@ -70,7 +70,7 @@ export default class Holidays extends React.Component {
         }
 
         return (
-          <>
+          <React.Fragment>
             <Divider />
             <ConnectedHoliday
               key={holiday.id}
@@ -82,7 +82,7 @@ export default class Holidays extends React.Component {
               locations={locationsList}
               favorite={holiday.favorite}
             />
-          </>
+          </React.Fragment>
         );
       });
     }

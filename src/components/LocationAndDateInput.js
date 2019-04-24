@@ -128,9 +128,7 @@ export default class LocationAndDateInput extends React.Component {
   render() {
     return (
       <Paper>
-        <Typography variant="h4" gutterBottom>
-          Find holidays in{" "}
-        </Typography>
+        <Typography variant="h4" gutterBottom>Find holidays in</Typography>
         <form onSubmit={this.handleSubmit}>
           <Select
             value={this.state.selectedLocation}
@@ -138,9 +136,7 @@ export default class LocationAndDateInput extends React.Component {
             options={locationOptions}
             isMulti
           />
-          <Typography variant="h4" gutterBottom>
-            On
-          </Typography>
+          <Typography variant="h4" gutterBottom>On</Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
             onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
@@ -153,9 +149,7 @@ export default class LocationAndDateInput extends React.Component {
             isOutsideRange={() => false}
           />
           <br />
-          <Button variant="contained" type="submit">
-            SEARCH
-          </Button>
+          <Button variant="contained" type="submit">SEARCH</Button>
         </form>
       </Paper>
     );
