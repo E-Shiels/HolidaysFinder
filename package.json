@@ -17,7 +17,7 @@
     "react-dom": "^16.8.6",
     "react-filters": "^0.3.1",
     "react-hot-loader": "^4.8.4",
-    "react-picky": "^4.2.1",
+    "react-picky": "^4.4.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
