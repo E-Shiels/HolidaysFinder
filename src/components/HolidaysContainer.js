@@ -24,9 +24,9 @@ export function buildHolidayObject(holiday) {
 }
 
 export default class HolidaysContainer extends React.Component {
-  toHolidayObjectsFromJSON = data => {
+  toHolidayObjectsFromJSON = (data) => {
     let holidaysArray = [];
-    data.forEach(holiday => {
+    data.forEach((holiday) => {
       holidaysArray.push(buildHolidayObject(holiday));
     });
     return holidaysArray;
@@ -57,7 +57,7 @@ export default class HolidaysContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,

@@ -18,7 +18,7 @@ export default class FavoriteHolidays extends React.Component {
     if (!this.props.favoriteHolidays.length) {
       return "You have no favorites.";
     } else {
-      return this.props.favoriteHolidays.map(holiday => {
+      return this.props.favoriteHolidays.map((holiday) => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -63,7 +63,7 @@ export default class FavoriteHolidays extends React.Component {
     }
   };
 
-  toHolidayObjectsFromJSON = data => {
+  toHolidayObjectsFromJSON = (data) => {
     let holidaysArray = [];
     data.forEach(holiday => {
       if (holiday.favorite === true) {

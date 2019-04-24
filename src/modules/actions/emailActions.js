@@ -47,9 +47,9 @@ export const postEmail = (email) => {
       })
     }).then(resp => {
       if (resp.ok) {
-        dispatch(messageChange("Your email has been succesfully saved. Thanks!"))
+        dispatch(messageChange("Your email has been succesfully saved. Thanks!"));
       } else {
-        dispatch(messageChange("Your email couldn't be saved. Please try again."))
+        dispatch(messageChange("Your email couldn't be saved. Please try again."));
       }
     })
   }

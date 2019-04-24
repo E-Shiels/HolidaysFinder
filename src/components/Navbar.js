@@ -4,7 +4,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   button: {
     margin: theme.spacing.unit
   },

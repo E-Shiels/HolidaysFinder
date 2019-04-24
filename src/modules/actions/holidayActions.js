@@ -90,7 +90,7 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
       })
     })
   }
-}
+};
 
 export const updateObservanceFilters = (observanceFilters) => {
   return {

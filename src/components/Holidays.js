@@ -43,7 +43,7 @@ export default class Holidays extends React.Component {
         </div>
       );
     } else {
-      return this.props.holidays.map(holiday => {
+      return this.props.holidays.map((holiday) => {
         let locationsList = [""];
         if (holiday.states.length === 1) {
           locationsList.push({
@@ -62,7 +62,7 @@ export default class Holidays extends React.Component {
         }
         let observanceList = [];
         if (holiday.type.includes(",")) {
-          holiday.type.split(", ").forEach(type => {
+          holiday.type.split(", ").forEach((type) => {
             observanceList.push(type.trim());
           });
         } else {
@@ -93,7 +93,7 @@ export default class Holidays extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     selectedLocation: state.holidays.selectedLocation
   };

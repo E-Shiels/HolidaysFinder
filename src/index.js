@@ -8,11 +8,10 @@ import "./index.css";
 
 import { Provider } from "react-redux";
 
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import grey from "@material-ui/core/colors/grey";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
-import grey from "@material-ui/core/colors/grey"
-
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,

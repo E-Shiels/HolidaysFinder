@@ -18,7 +18,7 @@ export default class HolidaysObservanceFilters extends React.Component {
     arrayValue: []
   };
 
-  getListOfObservanceTypes = data => {
+  getListOfObservanceTypes = (data) => {
     let observanceList = [];
     if (data[0] !== "No results" && data[0] !== []) {
       data.forEach(holiday => {
@@ -41,7 +41,7 @@ export default class HolidaysObservanceFilters extends React.Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch(updateObservanceFilters(this.state.arrayValue));
     setTimeout(() => {
@@ -51,11 +51,11 @@ export default class HolidaysObservanceFilters extends React.Component {
     });
   };
 
-  selectMultipleOption = value => {
+  selectMultipleOption = (value) => {
     this.setState({ arrayValue: value });
   };
 
-  returnObservanceFilterPicker = data => {
+  returnObservanceFilterPicker = (data) => {
     if (!data.length) {
       return "";
     } else {
@@ -98,7 +98,7 @@ export default class HolidaysObservanceFilters extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     filteredHolidays: state.holidays.filteredHolidays,
     observanceFilteredHolidays: state.holidays.observanceFilteredHolidays,

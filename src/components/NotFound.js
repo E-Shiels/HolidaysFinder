@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import ErrorIcon from "@material-ui/icons/Error";
 
-const styles = theme => ({
+const styles = (theme) => ({
   centeredDiv: {
     marginLeft: "auto",
     marginRight: "auto",

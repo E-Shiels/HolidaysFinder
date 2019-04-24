@@ -38,11 +38,11 @@ export default class LocationAndDateInput extends React.Component {
     selectedLocation: []
   };
 
-  handleLocationChange = selectedLocation => {
+  handleLocationChange = (selectedLocation) => {
     this.setState({ selectedLocation });
   };
 
-  setLocationAndDate = event => {
+  setLocationAndDate = (event) => {
     let formLocations = [];
     if (
       this.state.selectedLocation === null ||
@@ -50,7 +50,7 @@ export default class LocationAndDateInput extends React.Component {
     ) {
       formLocations = ["Canada (All)"];
     } else {
-      formLocations = this.state.selectedLocation.map(location => {
+      formLocations = this.state.selectedLocation.map((location) => {
         return location.value;
       });
     }
