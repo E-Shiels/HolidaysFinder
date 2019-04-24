@@ -1,4 +1,4 @@
-//Error handling method because fetch doesn't handle errors properly
+//Error handling method because fetch doesn't fail with errors propery - https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
 const handleErrors = (response) => {
   if (!response.ok) {
     throw Error(response.statusText);
