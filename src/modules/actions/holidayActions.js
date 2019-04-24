@@ -1,3 +1,11 @@
+//Error handling method because fetch doesn't handle errors properly
+const handleErrors = (response) => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+};
+
 export const fetchHolidaysBegin = () => {
   return {
     type: "FETCH_HOLIDAYS_BEGIN"
@@ -32,13 +40,6 @@ export const fetchHolidays = () => {
   }
 }
 
-const handleErrors = (response) => {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-};
-
 export const setFilteredHolidays = (filteredHolidays) => {
   return {
     type: "SET_FILTERED_HOLIDAYS",
@@ -59,13 +60,6 @@ export const setDate = (date) => {
     date
   };
 };
-
-export const changeFavorite = (id, favoriteStatus) => {
-  return dispatch => {
-    dispatch(putFavoriteStatus(id, favoriteStatus));
-    dispatch(changeFavoriteStatus(id, favoriteStatus));
-  }
-}
 
 export const changeFavoriteStatus = (id, favoriteStatus) => {
   return {
@@ -91,6 +85,13 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
     })
   }
 };
+
+export const changeFavorite = (id, favoriteStatus) => {
+  return dispatch => {
+    dispatch(putFavoriteStatus(id, favoriteStatus));
+    dispatch(changeFavoriteStatus(id, favoriteStatus));
+  }
+}
 
 export const updateObservanceFilters = (observanceFilters) => {
   return {
