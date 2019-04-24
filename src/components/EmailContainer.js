@@ -26,6 +26,7 @@ export class EmailContainer extends React.Component {
   }
 
   componentDidUpdate() {
+    //resets email signup element to the beginning after a set length of time
     if (this.props.step === 3) {
       setTimeout(() => {
         this.props.dispatch(emailChange(""));
