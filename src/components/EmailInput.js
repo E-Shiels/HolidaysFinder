@@ -1,8 +1,8 @@
 import React from "react";
-import { Typography, Paper, TextField, Button } from "@material-ui/core"
+import { Typography, Paper, TextField, Button } from "@material-ui/core";
 import { connect } from "react-redux";
 import { emailNextStep, emailChange } from "../modules/actions/emailActions.js";
-import Notifier, { openSnackbar } from './AlertSnackbar.js';
+import Notifier, { openSnackbar } from "./AlertSnackbar.js";
 
 const validator = require("email-validator");
 
@@ -15,7 +15,7 @@ export default class EmailInput extends React.Component {
       this.props.dispatch(emailNextStep(this.props.step));
       this.props.dispatch(emailChange(event.target[0].value));
     } else {
-      openSnackbar({message: 'The email address provided is invalid.' })
+      openSnackbar({message: 'The email address provided is invalid.'});
     }
   };
 
