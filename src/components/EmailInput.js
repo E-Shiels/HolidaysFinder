@@ -26,8 +26,7 @@ export default class EmailInput extends React.Component {
       <Notifier />
       <form onSubmit={this.handleSubmit}>
         <Typography variant="h5" gutterBottom>
-          Sign up for our totally real email list to get totally not-fake
-          emails.
+          Sign up for our totally real email list to get totally real emails.
         </Typography>
         <TextField
           label="Email"

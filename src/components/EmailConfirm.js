@@ -24,8 +24,7 @@ export default class EmailConfirm extends React.Component {
     return (
       <Paper>
         <Typography variant="h5" gutterBottom>
-          Sign up for our totally real email list to get totally not-fake
-          emails.
+          Sign up for our totally real email list to get totally real emails.
         </Typography>
         <Typography variant="body1">{email}</Typography>
         <Button variant="contained" type="button" onClick={this.handleBack}>
