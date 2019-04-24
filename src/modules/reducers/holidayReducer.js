@@ -27,7 +27,7 @@ export default function holidayReducer(state = initialState, action) {
       return { ...state, selectedLocation: action.location };
     case "SET_DATE":
       return { ...state, date: action.date };
-    case "CHANGE_FAVORITE":
+    case "CHANGE_FAVORITE_STATUS":
       return {
         ...state,
         filteredHolidays: state.filteredHolidays.map((holiday) => {
