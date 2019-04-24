@@ -1,4 +1,4 @@
-**Requirements**
+# Requirements
 
 The code should be written in ES6 as much as possible - **Done**
 
