@@ -3,7 +3,7 @@ import { Divider } from "@material-ui/core"
 import { connect } from "react-redux";
 import { ConnectedHoliday } from "./Holiday.js";
 import {
-  fetchFavoriteHolidays,
+  fetchHolidays,
   fetchSuccess
 } from "../modules/actions/holidayActions.js";
 
@@ -74,7 +74,7 @@ export default class FavoriteHolidays extends React.Component {
   };
 
   componentDidMount() {
-    this.props.dispatch(fetchFavoriteHolidays()).then(resp => {
+    this.props.dispatch(fetchHolidays()).then(resp => {
       this.props.dispatch(fetchSuccess("favoriteHolidays",
       this.toHolidayObjectsFromJSON(resp)));
     })
