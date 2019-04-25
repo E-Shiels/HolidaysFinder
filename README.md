@@ -34,6 +34,7 @@ It uses:
 * [React Picky](https://github.com/Aidurber/react-picky) for the observance/type filter.
 * [React Select](https://github.com/JedWatson/react-select) for the location selection.
 * [uuid](https://github.com/kelektiv/node-uuid) to generate completely random keys for objects without IDs.
+* [humanize-list](https://github.com/johno/humanize-list#readme) to make an array human-readable
 
 
 ## Contributing ##
