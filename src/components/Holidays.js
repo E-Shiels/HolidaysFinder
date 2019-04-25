@@ -29,14 +29,14 @@ export default class Holidays extends React.Component {
         SK: "Saskatchewan",
         YT: "Yukon"
       };
-      
+
       return (
         <div>
           <p>
             {" "}
             There are no holidays on {readableDate} in{" "}
             {this.props.selectedLocation
-              .map(location => {
+              .map((location) => {
                 return locationsDictionary.location;
               })
               .join(", ") || "Canada (All)"}
@@ -56,7 +56,7 @@ export default class Holidays extends React.Component {
             name: "Canada (All)"
           });
         } else {
-          holiday.states.split(",").forEach(state => {
+          holiday.states.split(",").forEach((state) => {
             locationsList.push({
               name: state.trim()
             });

@@ -29,7 +29,7 @@ export default class FavoriteHolidays extends React.Component {
             name: "Canada (All)"
           });
         } else {
-          holiday.states.split(",").forEach(state => {
+          holiday.states.split(",").forEach((state) => {
             locationsList.push({
               name: state.trim()
             });
@@ -37,7 +37,7 @@ export default class FavoriteHolidays extends React.Component {
         }
         let observanceList = [];
         if (holiday.type.includes(",")) {
-          holiday.type.split(", ").forEach(type => {
+          holiday.type.split(", ").forEach((type) => {
             observanceList.push(type.trim());
           });
         } else {
@@ -90,7 +90,7 @@ export default class FavoriteHolidays extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     holidays: state.holidays.holidays,
     loading: state.holidays.loading,

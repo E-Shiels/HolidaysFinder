@@ -86,13 +86,13 @@ export default class LocationAndDateInput extends React.Component {
         }
       });
     } else {
-      data.forEach(holiday => {
+      data.forEach((holiday) => {
         if (
           this.dateIsPropsDateOrAll(holiday.date, this.props.date) &&
           (holiday.locations === "All" ||
             holiday.locations
               .split(", ")
-              .some(location => this.props.selectedLocation.includes(location)))
+              .some((location) => this.props.selectedLocation.includes(location)))
         ) {
           newHolidays.push(holiday);
         }
@@ -116,7 +116,7 @@ export default class LocationAndDateInput extends React.Component {
     this.props.dispatch(resetObservanceFilteredHolidaysAndFilters());
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.setLocationAndDate(event);
     setTimeout(() => {
@@ -139,7 +139,7 @@ export default class LocationAndDateInput extends React.Component {
           <Typography variant="h4" gutterBottom>On</Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
-            onDateChange={date => this.setState({ date })} // PropTypes.func.isRequired
+            onDateChange={(date) => this.setState({ date })} // PropTypes.func.isRequired
             focused={this.state.focused} // PropTypes.bool
             onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
             id="date_input" // PropTypes.string.isRequired,
@@ -156,7 +156,7 @@ export default class LocationAndDateInput extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     holidays: state.holidays.holidays,
     filteredHolidays: state.holidays.filteredHolidays,

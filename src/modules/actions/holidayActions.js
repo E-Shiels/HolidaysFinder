@@ -34,7 +34,7 @@ export const fetchHolidays = () => {
       .then((response) => handleErrors(response))
       .then((response) => response.json())
       .then((json) => {
-        return json
+        return json;
       })
       .catch((error) => dispatch(fetchHolidaysFailure(error)));
   }
@@ -82,16 +82,16 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
           favorite: favoriteStatus
         }
       })
-    })
+    });
   }
 };
 
 export const changeFavorite = (id, favoriteStatus) => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(putFavoriteStatus(id, favoriteStatus));
     dispatch(changeFavoriteStatus(id, favoriteStatus));
-  }
-}
+  };
+};
 
 export const updateObservanceFilters = (observanceFilters) => {
   return {
