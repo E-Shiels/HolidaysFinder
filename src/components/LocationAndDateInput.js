@@ -134,8 +134,7 @@ export default class LocationAndDateInput extends React.Component {
             value={this.state.selectedLocation}
             onChange={this.handleLocationChange}
             options={locationOptions}
-            isMulti
-          />
+            isMulti/>
           <Typography variant="h4" gutterBottom>On</Typography>
           <SingleDatePicker
             date={this.state.date} // momentPropTypes.momentObj or null
@@ -146,8 +145,7 @@ export default class LocationAndDateInput extends React.Component {
             showClearDate
             reopenPickerOnClearDate
             enableOutsideDays
-            isOutsideRange={() => false}
-          />
+            isOutsideRange={() => false}/>
           <br />
           <Button variant="contained" type="submit">SEARCH</Button>
         </form>
