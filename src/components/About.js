@@ -27,7 +27,7 @@ const About = (props) => {
         About
       </Typography>
       <Typography className={classes.body} variant="body1">
-      HolidaysFinder allows you to search holidays in Canada by date and province and favorite and filter them.
+      HolidaysFinder allows you to search holidays in Canada by date and province, and favorite and filter them.
       It was built using React, Create React App, and Redux, as well as assorted middleware and packages. The data is sent from a Rails API backend with archived data from{" "}
         <Link href="https://calendarific.com/" className={classes.link}>
           https://calendarific.com/
