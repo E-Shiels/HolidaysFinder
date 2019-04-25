@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 
 import { Divider } from "@material-ui/core";
 
+var humanizeList = require('humanize-list')
+
 export default class Holidays extends React.Component {
   renderHolidays = () => {
     if (this.props.holidays[0] === "No results") {
@@ -29,17 +31,19 @@ export default class Holidays extends React.Component {
         SK: "Saskatchewan",
         YT: "Yukon"
       };
-
+      //debugger
       return (
         <div>
           <p>
             {" "}
             There are no holidays on {readableDate} in{" "}
-            {this.props.selectedLocation
+
+            {humanizeList(this.props.selectedLocation
               .map((location) => {
-                return locationsDictionary.location;
-              })
-              .join(", ") || "Canada (All)"}
+                return locationsDictionary[location];
+              }), {oxfordComma: true, conjunction: "or"}
+            )
+                || "Canada (All)"}
             .{" "}
           </p>
         </div>
