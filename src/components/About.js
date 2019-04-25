@@ -27,14 +27,12 @@ const About = (props) => {
         About
       </Typography>
       <Typography className={classes.body} variant="body1">
-        HolidaysFinder is a Flatiron school portfolio project. It allows you to
-        view holidays in Canada and favorite and filter them. It was built using
-        React, Create React App, and Redux, as well as assorted middleware and
-        npm packages. The data is sent from a Rails API backend with archived
-        data from{" "}
+      HolidaysFinder allows you to search holidays in Canada by date and province and favorite and filter them.
+      It was built using React, Create React App, and Redux, as well as assorted middleware and packages. The data is sent from a Rails API backend with archived data from{" "}
         <Link href="https://calendarific.com/" className={classes.link}>
           https://calendarific.com/
-        </Link>
+        </Link>.
+
       </Typography>
     </div>
   );
