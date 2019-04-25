@@ -52,5 +52,5 @@ export const postEmail = (email) => {
         dispatch(messageChange("Your email couldn't be saved. Please try again."));
       }
     });
-  }
+  };
 };

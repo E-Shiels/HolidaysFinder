@@ -70,7 +70,7 @@ export const changeFavoriteStatus = (id, favoriteStatus) => {
 };
 
 export const putFavoriteStatus = (id, favoriteStatus) => {
-  return dispatch => {
+  return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/holidays/${id}.json`, {
       method: "PUT",
       headers: {
@@ -83,7 +83,7 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
         }
       })
     });
-  }
+  };
 };
 
 export const changeFavorite = (id, favoriteStatus) => {

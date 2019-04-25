@@ -80,7 +80,7 @@ export default class LocationAndDateInput extends React.Component {
       this.props.selectedLocation.includes("all") ||
       !this.props.selectedLocation.length
     ) {
-      data.forEach(holiday => {
+      data.forEach((holiday) => {
         if (this.dateIsPropsDateOrAll(holiday.date, this.props.date)) {
           newHolidays.push(holiday);
         }
