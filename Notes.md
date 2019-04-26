@@ -24,4 +24,4 @@ Your client-side application should handle the display of data with minimal data
 
 Your application should have some minimal styling: feel free to stick to a framework (like react-bootstrap), but if you want to write (additional) CSS yourself, go for it! - Material UI - **Done**
 
-Once your app is complete, fill out the spec checklist. -
+Once your app is complete, fill out the spec checklist. - **Done**
