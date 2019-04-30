@@ -30,7 +30,12 @@ export const fetchHolidaysFailure = (error) => {
 export const fetchHolidays = () => {
   return dispatch => {
     dispatch(fetchHolidaysBegin());
-    return fetch("http://localhost:3000/api/v1/holidays")
+    return fetch("http://localhost:3000/api/v1/holidays", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }})
       .then((response) => handleErrors(response))
       .then((response) => response.json())
       .then((json) => {
