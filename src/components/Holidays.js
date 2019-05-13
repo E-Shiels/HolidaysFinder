@@ -95,13 +95,18 @@ export default class Holidays extends React.Component {
   };
 
   render() {
-    return this.renderHolidays();
+    if (this.props.loading) {
+      return "LOADING";
+    } else {
+      return this.renderHolidays();
+    }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    selectedLocation: state.holidays.selectedLocation
+    selectedLocation: state.holidays.selectedLocation,
+    loading: state.holidays.loading
   };
 };
 
