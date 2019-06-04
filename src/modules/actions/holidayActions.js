@@ -33,7 +33,7 @@ export const fetchHolidays = () => {
     return fetch("http://localhost:3000/api/v1/holidays", {
       method: "GET",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json"
       }})
       .then((response) => handleErrors(response))
