@@ -31,7 +31,7 @@ export default class Holidays extends React.Component {
         SK: "Saskatchewan",
         YT: "Yukon"
       };
-      //debugger
+
       return (
         <div>
           <p>
