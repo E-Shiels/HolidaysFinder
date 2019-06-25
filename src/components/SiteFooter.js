@@ -25,7 +25,7 @@ var text = {
 
 export default function SiteFooter() {
   return (
-    <div>
+    <footer>
       <div style={phantom} />
       <div style={style}>
         <p style={text}>
@@ -39,6 +39,6 @@ export default function SiteFooter() {
           </a>
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
