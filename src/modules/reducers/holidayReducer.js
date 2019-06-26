@@ -3,7 +3,6 @@ const initialState = {
   filteredHolidays: [],
   observanceFilteredHolidays: null,
   favoriteHolidays: [],
-  //favoriteFilter: false,
   selectedLocation: [], //location select
   focused: false, //date picker
   observances: [],
