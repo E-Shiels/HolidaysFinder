@@ -3,11 +3,6 @@ import { Typography, Link } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = (theme) => ({
-  centeredDiv: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "95%"
-  },
   body: {
     marginTop: theme.spacing.unit
   },
