@@ -6,7 +6,7 @@ Use the create-react-app generator to start your project. - **Done**
 
 Your app should have one HTML page to render your react-redux application - **Done**
 
-There should be 2 container components - EmailContainer.js, Holidays.js, possibly more depending on definition of container component - **Done**
+There should be 2 container components - EmailContainer.js, HolidaysContainer.js - **Done**
 
 There should be 5 stateless components - HolidayDescription.js, HoldayHeader.js, HolidayObservance.js, HolidayLocation.js, SiteFooter.js, more - **Done**
 
