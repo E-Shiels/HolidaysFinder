@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 import { Divider } from "@material-ui/core";
 
-var humanizeList = require('humanize-list')
+let humanizeList = require('humanize-list')
 
 export default class Holidays extends React.Component {
   renderHolidays = () => {

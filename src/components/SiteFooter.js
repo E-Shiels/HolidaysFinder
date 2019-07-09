@@ -1,6 +1,6 @@
 import React from "react";
 
-var style = {
+let style = {
   backgroundColor: "#616161",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
@@ -12,14 +12,14 @@ var style = {
   width: "100%"
 };
 
-var phantom = {
+let phantom = {
   display: "block",
   padding: "20px",
   height: "50px",
   width: "100%"
 };
 
-var text = {
+let text = {
   color: "rgb(250, 250, 250)"
 };
 
