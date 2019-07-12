@@ -42,8 +42,8 @@ export const fetchHolidays = () => {
         return json;
       })
       .catch((error) => dispatch(fetchHolidaysFailure(error)));
-  }
-}
+  };
+};
 
 export const setFilteredHolidays = (filteredHolidays) => {
   return {

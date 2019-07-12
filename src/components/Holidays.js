@@ -6,11 +6,9 @@ import { connect } from "react-redux";
 
 import { Divider } from "@material-ui/core";
 
-let humanizeList = require('humanize-list')
+let humanizeList = require("humanize-list");
 
 export default class Holidays extends React.Component {
-
-  
 
   renderHolidays = () => {
     if (this.props.holidays[0] === "No results") {
@@ -34,7 +32,7 @@ export default class Holidays extends React.Component {
         SK: "Saskatchewan",
         YT: "Yukon"
       };
-      
+
       return (
         <div>
           <p>
