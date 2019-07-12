@@ -10,28 +10,28 @@ let humanizeList = require('humanize-list')
 
 export default class Holidays extends React.Component {
 
+  const locationsDictionary = {
+    all: "Canada (All)",
+    AB: "Alberta",
+    BC: "British Columbia",
+    MB: "Manitoba",
+    NB: "New Brunswick",
+    NL: "Newfoundland and Labrador",
+    NS: "Nova Scotia",
+    NT: "Northwest Territories",
+    NU: "Nunavut",
+    ON: "Ontario",
+    PE: "Prince Edward Island",
+    QC: "Quebec",
+    SK: "Saskatchewan",
+    YT: "Yukon"
+  };
+
   renderHolidays = () => {
     if (this.props.holidays[0] === "No results") {
       const date = new Date(this.props.holidays[1]);
       const correctDate = new Date(date.setDate(date.getDate() + 1));
       const readableDate = correctDate.toDateString();
-
-      const locationsDictionary = {
-        all: "Canada (All)",
-        AB: "Alberta",
-        BC: "British Columbia",
-        MB: "Manitoba",
-        NB: "New Brunswick",
-        NL: "Newfoundland and Labrador",
-        NS: "Nova Scotia",
-        NT: "Northwest Territories",
-        NU: "Nunavut",
-        ON: "Ontario",
-        PE: "Prince Edward Island",
-        QC: "Quebec",
-        SK: "Saskatchewan",
-        YT: "Yukon"
-      };
 
       return (
         <div>
