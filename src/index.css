@@ -31,3 +31,7 @@ input {
   margin: 5px !important;
 }
 
+a.active {
+  text-decoration: underline !important;
+}
+
