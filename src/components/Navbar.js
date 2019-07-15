@@ -3,7 +3,7 @@ import HomeIcon from "@material-ui/icons/Home";
 
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const styles = theme => ({
   button: {
@@ -25,7 +25,10 @@ function Navbar(props) {
     <div>
       <AppBar position="static" color="primary">
         <Toolbar>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          <NavLink
+            to="/"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <Button
               href="/"
               color="inherit"
@@ -40,8 +43,11 @@ function Navbar(props) {
               />
               Holidays Finder
             </Button>
-          </Link>
-          <Link to="/about" style={{ color: "white", textDecoration: "none" }}>
+          </NavLink>
+          <NavLink
+            to="/about"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <Button
               href="/about"
               color="inherit"
@@ -51,8 +57,8 @@ function Navbar(props) {
             >
               About
             </Button>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/favorites"
             style={{ color: "white", textDecoration: "none" }}
           >
@@ -65,7 +71,7 @@ function Navbar(props) {
             >
               View Favorites
             </Button>
-          </Link>
+          </NavLink>
         </Toolbar>
       </AppBar>
     </div>
