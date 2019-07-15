@@ -27,7 +27,9 @@ function Navbar(props) {
         <Toolbar>
           <NavLink
             to="/"
+            exact
             style={{ color: "white", textDecoration: "none" }}
+            activeClassName="active"
           >
             <Button
               href="/"
@@ -47,6 +49,7 @@ function Navbar(props) {
           <NavLink
             to="/about"
             style={{ color: "white", textDecoration: "none" }}
+            activeClassName="active"
           >
             <Button
               href="/about"
@@ -61,6 +64,7 @@ function Navbar(props) {
           <NavLink
             to="/favorites"
             style={{ color: "white", textDecoration: "none" }}
+            activeClassName="active"
           >
             <Button
               href="/favorites"
