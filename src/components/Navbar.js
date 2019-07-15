@@ -5,7 +5,7 @@ import { AppBar, Toolbar, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
-const styles = (theme) => ({
+const styles = theme => ({
   button: {
     margin: theme.spacing.unit
   },
@@ -25,43 +25,46 @@ function Navbar(props) {
     <div>
       <AppBar position="static" color="primary">
         <Toolbar>
-          <Link to="/" style={{ color: "white", textDecoration: 'none'}}>
-          <Button
-            href="/"
-            color="inherit"
-            variant="outlined"
-            className={classes.button}
-            size="medium"
-          >
-            <HomeIcon
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            <Button
+              href="/"
               color="inherit"
-              className={classes.leftIcon}
-              vertical-align="text-top"
-            />
-            Holidays Finder
-          </Button>
+              variant="outlined"
+              className={classes.button}
+              size="medium"
+            >
+              <HomeIcon
+                color="inherit"
+                className={classes.leftIcon}
+                vertical-align="text-top"
+              />
+              Holidays Finder
+            </Button>
           </Link>
-          <Link to="/about" style={{ color: "white", textDecoration: 'none'}}>
-          <Button
-            href="/about"
-            color="inherit"
-            variant="outlined"
-            className={classes.button}
-            size="medium"
-          >
-            About
-          </Button>
+          <Link to="/about" style={{ color: "white", textDecoration: "none" }}>
+            <Button
+              href="/about"
+              color="inherit"
+              variant="outlined"
+              className={classes.button}
+              size="medium"
+            >
+              About
+            </Button>
           </Link>
-          <Link to="/favorites" style={{ color: "white", textDecoration: 'none'}}>
-          <Button
-            href="/favorites"
-            color="inherit"
-            variant="outlined"
-            className={classes.button}
-            size="medium"
+          <Link
+            to="/favorites"
+            style={{ color: "white", textDecoration: "none" }}
           >
-            View Favorites
-          </Button>
+            <Button
+              href="/favorites"
+              color="inherit"
+              variant="outlined"
+              className={classes.button}
+              size="medium"
+            >
+              View Favorites
+            </Button>
           </Link>
         </Toolbar>
       </AppBar>
