@@ -4,6 +4,7 @@ import HolidayHeader from "./HolidayHeader";
 import HolidayLocations from "./HolidayLocations";
 import HolidayObservance from "./HolidayObservance";
 import FavoriteButton from "./FavoriteButton.js";
+import VoteButton from "./VoteButton.js";
 
 import { connect } from "react-redux";
 import { changeFavorite } from "../modules/actions/holidayActions.js";
@@ -25,6 +26,7 @@ export default class Holiday extends React.Component {
           id={this.props.id}
           updateHolidayFavoriteState={this.updateHolidayFavoriteState}
         />
+        <VoteButton />
       </React.Fragment>
     );
   }
