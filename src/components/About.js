@@ -27,7 +27,6 @@ const About = (props) => {
         <Link href="https://calendarific.com/" className={classes.link}>
           https://calendarific.com/
         </Link>.
-
       </Typography>
     </div>
   );

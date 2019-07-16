@@ -8,7 +8,6 @@ const validator = require("email-validator");
 
 export default class EmailInput extends React.Component {
 
-
   handleSubmit = (event) => {
     event.preventDefault();
     if (validator.validate(event.target[0].value)) {
