@@ -29,11 +29,11 @@ It uses:
 * [Material UI](https://github.com/mui-org/material-ui) for styling my React components.
 * [Email Validator](https://github.com/manishsaraan/email-validator) to validate email addresses.
 * [Fast Deep Equal](https://github.com/epoberezkin/fast-deep-equal) for comparisons inside componentDidUpdate.
-* [React Dates](https://github.com/airbnb/react-dates) for the single-date picker
+* [React Dates](https://github.com/airbnb/react-dates) for the single-date picker.
 * [React Picky](https://github.com/Aidurber/react-picky) for the observance/type filter.
 * [React Select](https://github.com/JedWatson/react-select) for the location selection.
 * [uuid](https://github.com/kelektiv/node-uuid) to generate completely random keys for objects without IDs.
-* [humanize-list](https://github.com/johno/humanize-list#readme) to make an array human-readable
+* [humanize-list](https://github.com/johno/humanize-list#readme) to make an array human-readable.
 
 
 ## Contributing ##
