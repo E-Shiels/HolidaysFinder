@@ -32,7 +32,6 @@ function Navbar(props) {
             activeClassName="active"
           >
             <Button
-              href="/"
               color="inherit"
               variant="outlined"
               className={classes.button}
@@ -52,7 +51,6 @@ function Navbar(props) {
             activeClassName="active"
           >
             <Button
-              href="/about"
               color="inherit"
               variant="outlined"
               className={classes.button}
@@ -67,7 +65,6 @@ function Navbar(props) {
             activeClassName="active"
           >
             <Button
-              href="/favorites"
               color="inherit"
               variant="outlined"
               className={classes.button}
