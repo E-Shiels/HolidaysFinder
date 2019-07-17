@@ -89,7 +89,9 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
           }
         })
       })
-      .then((response) => {handleErrors(response)})
+      .then((response) => {
+        handleErrors(response)
+      })
       .catch(error => dispatch(fetchHolidaysFailure(error)));
   };
 };
