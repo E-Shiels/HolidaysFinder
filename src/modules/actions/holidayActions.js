@@ -31,11 +31,12 @@ export const fetchHolidays = () => {
   return dispatch => {
     dispatch(fetchHolidaysBegin());
     return fetch("http://localhost:3000/api/v1/holidays", {
-      method: "GET",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      }})
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        }
+      })
       .then((response) => handleErrors(response))
       .then((response) => response.json())
       .then((json) => {
@@ -77,17 +78,19 @@ export const changeFavoriteStatus = (id, favoriteStatus) => {
 export const putFavoriteStatus = (id, favoriteStatus) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/holidays/${id}.json`, {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        holiday: {
-          favorite: favoriteStatus
-        }
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          holiday: {
+            favorite: favoriteStatus
+          }
+        })
       })
-    });
+      .then((response) => {handleErrors(response)})
+      .catch(error => dispatch(fetchHolidaysFailure(error)));
   };
 };
 
