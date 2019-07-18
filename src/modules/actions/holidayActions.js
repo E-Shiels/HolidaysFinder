@@ -75,7 +75,7 @@ export const changeFavoriteStatus = (id, favoriteStatus) => {
   };
 };
 
-export const putFavoriteStatus = (id, favoriteStatus) => {
+export const changeFavorite = (id, favoriteStatus) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/holidays/${id}.json`, {
         method: "PUT",
@@ -91,15 +91,11 @@ export const putFavoriteStatus = (id, favoriteStatus) => {
       })
       .then((response) => {
         handleErrors(response)
+        if (response.ok) {
+          dispatch(changeFavoriteStatus(id, favoriteStatus));
+        }
       })
       .catch(error => dispatch(fetchHolidaysFailure(error)));
-  };
-};
-
-export const changeFavorite = (id, favoriteStatus) => {
-  return (dispatch) => {
-    dispatch(putFavoriteStatus(id, favoriteStatus));
-    dispatch(changeFavoriteStatus(id, favoriteStatus));
   };
 };
 
