@@ -84,7 +84,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.5-x86-mingw32)
       mini_portile2 (~> 2.4.0)
-    puma (3.12.1)
+    puma (3.12.2)
     rack (2.0.8)
     rack-cors (1.0.5)
       rack (>= 1.6.0)
@@ -150,7 +150,7 @@ DEPENDENCIES
   byebug
   foreman (<= 0.61)
   jbuilder (~> 2.5)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack-cors
   rails (~> 5.2.2, >= 5.2.2.1)
   sqlite3
